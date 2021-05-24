@@ -43,6 +43,9 @@
 }
 .camera_wrap img {
   max-width: none !important;
+  height: 100vh;
+
+  object-fit: cover;
 }
 .camera_fakehover {
   height: 100%;

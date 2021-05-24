@@ -2,6 +2,10 @@
     Version: 1.0
 /****************************************** */
 
+#main-banner {
+  height: 100vh !important;
+}
+
 @media (max-width: 1310px) {
   .macbookright {
     right: -25%;
@@ -161,7 +165,7 @@
   body.politics_version .header_style_01 {
     position: absolute;
     top: 0;
-    background-color: #ffffff !important;
+    background-color: #1f1f1f !important;
   }
   body.realestate_version .message-box,
   body.realestate_version .service-widget {
@@ -263,6 +267,9 @@
   }
   .header_style_01 .navbar-default .navbar-nav > li a {
     padding: 10px 5px;
+  }
+  #main-banner {
+    height: calc(100vh - 90px) !important;
   }
   .first-section .col-md-6 {
     width: 100%;
@@ -366,7 +373,7 @@
     font-size: 32px;
   }
   #main-banner {
-    height: 550px !important;
+    height: calc(100vh - 90px) !important;
   }
   #main-banner .container {
     margin-top: 0px;
@@ -479,7 +486,7 @@
     padding-top: 7px;
   }
   #main-banner {
-    height: 550px !important;
+    height: calc(100vh - 90px) !important;
   }
   #main-banner .container {
     margin-top: 0px;
