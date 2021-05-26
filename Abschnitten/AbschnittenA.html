@@ -150,18 +150,20 @@
         </div>
       </div>
 
-      <!-- <h2>Themenbereiche</h2> -->
-      <ul class="themenbereiche">
-        <li>Duis aute irure dolor in reprehenderit...</li>
-        <li>in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
-        <li>Excepteur sint occaecat cupidatat non proident,</li>
-        <li>sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-      </ul>
-      <!-- <div id="btnSection">
-        <a data-scroll href="#" class="btn btn-redish btn-radius btn-brd grd1"
-          >Mehr Über Mich</a
-        >
-      </div> -->
+      <br />
+
+      <h2>Wo Wir Zu Finden Sind</h2>
+
+      <br />
+
+      <!-- The div element for the map -->
+      <div id="map"></div>
+
+      <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+        async
+      ></script>
     </div>
 
     <a href="#" id="scroll-to-top" class="dmtop global-radius"
@@ -178,5 +180,6 @@
     <!-- ALL PLUGINS -->
     <script src="../js/custom.js"></script>
     <script src="../js/jquery.vide.js"></script>
+    <script src="../js/maps.js"></script>
   </body>
 </html>

@@ -599,10 +599,9 @@ li.social-links a {
   color: #212121;
 }
 
-#textDetailsContainer ul.themenbereiche {
-  margin: 5px 0px 5px -15px;
-
-  list-style-type: circle;
+#map {
+  height: 400px;
+  width: 100%;
 }
 
 #btnSection {
