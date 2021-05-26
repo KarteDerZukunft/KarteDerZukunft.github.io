@@ -50,6 +50,8 @@ body {
   font-size: 15px;
   font-family: "Exo", sans-serif;
   line-height: 1.8;
+
+  overflow-x: hidden;
 }
 
 body.demos .section {
@@ -547,6 +549,49 @@ li.social-links a {
   margin-left: 5px;
 }
 
+#textDetailsContainer p a {
+  color: #ff392b;
+  text-decoration: none;
+
+  transition: 400ms;
+}
+
+#textDetailsContainer p a:hover {
+  color: #212121;
+}
+
+.container .row .col .kiezprojekten {
+  margin: 5px -15vw 5px 5px;
+  padding: 20px 10px;
+
+  background-color: #ff392b11;
+  border-radius: 10px 0px 0px 10px;
+
+  font-size: 2.1rem;
+}
+
+.container .row .col img {
+  height: 153.4px;
+  width: 153.4px;
+  margin: 5px;
+  border-radius: 10px;
+
+  object-fit: cover;
+}
+
+.container .row .col .kiezprojekten a {
+  margin: 5px 15px;
+
+  color: #ff392b;
+  text-decoration: none;
+
+  transition: 400ms;
+}
+
+.container .row .col .kiezprojekten a:hover {
+  color: #212121;
+}
+
 #textDetailsContainer ul.themenbereiche {
   margin: 5px 0px 5px -15px;
 
@@ -562,6 +607,14 @@ li.social-links a {
   #topImgContainer {
     height: 55vh !important;
   }
+
+  /* .container .row .col img {
+    display: inline-block;
+  }
+
+  .container .row .col .kiezprojekten {
+    display: inline-block;
+  } */
 }
 
 @media (max-width: 768px) {
