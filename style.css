@@ -560,14 +560,8 @@ li.social-links a {
   color: #212121;
 }
 
-.container .row .col .kiezprojekten {
-  margin: 5px -15vw 5px 5px;
-  padding: 20px 10px;
-
-  background-color: #ff392b11;
-  border-radius: 10px 0px 0px 10px;
-
-  font-size: 2.1rem;
+.container .row .thatCol {
+  display: block;
 }
 
 .container .row .col img {
@@ -579,8 +573,21 @@ li.social-links a {
   object-fit: cover;
 }
 
+.container .row .col .kiezprojekten {
+  position: absolute;
+  display: inline-flex;
+  margin: 5px -1vw 5px 5px;
+  padding: 20px 10px;
+  right: 0%;
+
+  background-color: #ff392b11;
+  border-radius: 10px 0px 0px 10px;
+
+  font-size: 2.1rem;
+}
+
 .container .row .col .kiezprojekten a {
-  margin: 5px 15px;
+  margin: 5px 50px 5px 15px;
 
   color: #ff392b;
   text-decoration: none;
@@ -607,19 +614,39 @@ li.social-links a {
   #topImgContainer {
     height: 55vh !important;
   }
-
-  /* .container .row .col img {
-    display: inline-block;
-  }
-
-  .container .row .col .kiezprojekten {
-    display: inline-block;
-  } */
 }
 
 @media (max-width: 768px) {
   #topImgContainer {
     height: 40vh !important;
+  }
+
+  .container .row .thatCol {
+    display: inline-flex;
+  }
+
+  .container .row .col img {
+    display: block;
+    height: 210.1px;
+    width: 210.1px;
+
+    margin-left: 5vw;
+  }
+
+  .container .row .col .kiezprojekten {
+    display: block;
+    margin: 5px -15vw 5px 5px;
+    padding: 20px 10px;
+    width: 65vw;
+
+    background-color: #ff392b11;
+    border-radius: 10px 0px 0px 10px;
+
+    font-size: 2.1rem;
+  }
+
+  .container .row .col .kiezprojekten a {
+    line-height: 2.7em;
   }
 }
 
@@ -656,6 +683,17 @@ li.social-links a {
 
   #textDetailsContainer p {
     margin-left: 5px;
+  }
+
+  .container .row .col img {
+    height: 153.4px;
+    width: 153.4px;
+
+    margin-left: 0vw;
+  }
+
+  .container .row .col .kiezprojekten a {
+    line-height: 1em;
   }
 
   #textDetailsContainer ul.themenbereiche {
