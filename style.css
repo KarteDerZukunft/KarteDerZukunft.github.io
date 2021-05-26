@@ -561,7 +561,7 @@ li.social-links a {
 }
 
 .container .row .thatCol {
-  display: block;
+  display: none;
 }
 
 .container .row .col img {
