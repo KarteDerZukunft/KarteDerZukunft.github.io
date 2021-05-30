@@ -130,7 +130,9 @@
     </div>
 
     <div id="textDetailsContainer">
-      <h2>Teil Überschrift [verlinkt]</h2>
+      <h2>
+        Teil Überschrift [<a href="#" style="color: #ff392b">verlinkt</a>]
+      </h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -141,21 +143,86 @@
         <a href="#">#hashtag3</a>
       </p>
 
-      <!-- Left Section + Right Highlighted Section -->
-
-      <div class="container">
-        <div class="row">
-          <div class="col thatCol">
-            <img src="../uploads/person.jpg" />
-            <div class="kiezprojekten">
-              <a href="#">kiezprojekt1</a>
-              <br />
-              <a href="#">kiezprojekt2</a>
-              <br />
-              <a href="#">kiezprojekt3</a>
-            </div>
+      <div class="kiezprojektContainer">
+        <div class="slideshow">
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="../uploads/politic_01.jpg" />
+            <div class="text">Caption Text</div>
           </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="../uploads/politic_02.jpg" />
+            <div class="text">Caption Two</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="../uploads/politic_03.jpg" />
+            <div class="text">Caption Three</div>
+          </div>
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+
+        <br />
+
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <script>
+          var slideIndex = 1;
+
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides((slideIndex += n));
+          }
+
+          function currentSlide(n) {
+            showSlides((slideIndex = n));
+          }
+
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+              slideIndex = 1;
+            }
+
+            if (n < 1) {
+              slideIndex = slides.length;
+            }
+
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "contents";
+            dots[slideIndex - 1].className += " active";
+          }
+        </script>
+      </div>
+
+      <br />
+
+      <div class="kiezprojektContainer">
+        <a href="#">kiezprojekt1</a>
+        <br />
+        <a href="#">kiezprojekt2</a>
+        <br />
+        <a href="#">kiezprojekt3</a>
       </div>
 
       <br />
@@ -165,7 +232,7 @@
       <br />
 
       <!-- The div element for the map -->
-      <div class="mapContinaer">
+      <div class="mapContainer">
         <div id="map" class="map"></div>
 
         <script type="text/javascript">
@@ -177,12 +244,18 @@
               }),
             ],
             view: new ol.View({
-              center: ol.proj.fromLonLat([13.378900, 52.516396]),
+              center: ol.proj.fromLonLat([13.3789, 52.516396]),
               zoom: 16,
             }),
           });
         </script>
       </div>
+
+      <br />
+
+      <h5>
+        <a href="#">Link1</a> | <a href="#">Link2</a> | <a href="#">Link3</a>
+      </h5>
 
       <br />
     </div>
