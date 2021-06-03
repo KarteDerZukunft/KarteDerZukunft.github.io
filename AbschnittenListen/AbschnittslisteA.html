@@ -12,7 +12,7 @@
     />
 
     <!-- Site Metas -->
-    <title>AbschnittenA</title>
+    <title>AbschnittslisteA</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="AbuRadi" />
@@ -111,153 +111,33 @@
       </nav>
     </header>
 
-    <div id="topImgContainer">
-      <img src="../uploads/Tilmann_Häussler.png" />
-    </div>
-
-    <div class="customDivider">
-      <svg
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1200 120"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-          class="shape-fill"
-        ></path>
-      </svg>
-    </div>
+    <br />
 
     <div id="textDetailsContainer">
-      <h2>
-        Teil Überschrift [<a href="#" style="color: #ff392b">verlinkt</a>]
-      </h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-        <br />
-        <a href="#">#hashtag1</a> <a href="#">#hashtag2</a>
-        <a href="#">#hashtag3</a>
-      </p>
+      <h2>Kategoriename</h2>
 
-      <div class="kiezprojektContainer">
-        <div class="slideshow">
-          <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="../uploads/politic_01.jpg" />
-            <div class="text">Caption Text</div>
-          </div>
-
-          <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="../uploads/politic_02.jpg" />
-            <div class="text">Caption Two</div>
-          </div>
-
-          <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="../uploads/politic_03.jpg" />
-            <div class="text">Caption Three</div>
-          </div>
-
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-
-        <br />
-
-        <div style="text-align: center">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-
-        <script>
-          var slideIndex = 1;
-
-          showSlides(slideIndex);
-
-          function plusSlides(n) {
-            showSlides((slideIndex += n));
-          }
-
-          function currentSlide(n) {
-            showSlides((slideIndex = n));
-          }
-
-          function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-
-            if (n > slides.length) {
-              slideIndex = 1;
-            }
-
-            if (n < 1) {
-              slideIndex = slides.length;
-            }
-
-            for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";
-            }
-
-            for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-            }
-
-            slides[slideIndex - 1].style.display = "contents";
-            dots[slideIndex - 1].className += " active";
-          }
-        </script>
+      <div id="sectionList">
+        <!-- the sectionList inserted by the code bellow -->
       </div>
 
-      <br />
+      <script src="../Data/kdz.js"></script>
+      <script>
+        let htmlToInsert = "";
 
-      <div class="kiezprojektContainer">
-        <a href="#">kiezprojekt1</a>
-        <br />
-        <a href="#">kiezprojekt2</a>
-        <br />
-        <a href="#">kiezprojekt3</a>
-      </div>
+        for (let i = 0; i < kdzObj.sections.length; i++) {
+          htmlToInsert += `
+          <a href="../Abschnitten/AbschnittenA.html">
+            <div class="sectionListElement" id="sectionNo_${kdzObj.sections[i].id}">
+              <h1>${kdzObj.sections[i].title}</h1>
+              <p></p>
+            </div>
+          </a>`;
+        }
 
-      <br />
+        const selectedHTML = document.querySelector("#sectionList");
 
-      <h2>Wo Wir Zu Finden Sind</h2>
-
-      <br />
-
-      <!-- The div element for the map -->
-      <div class="mapContainer">
-        <div id="map" class="map"></div>
-
-        <script type="text/javascript">
-          var map = new ol.Map({
-            target: "map",
-            layers: [
-              new ol.layer.Tile({
-                source: new ol.source.OSM(),
-              }),
-            ],
-            view: new ol.View({
-              center: ol.proj.fromLonLat([13.3789, 52.516396]),
-              zoom: 16,
-            }),
-          });
-        </script>
-      </div>
-
-      <br />
-
-      <h5>
-        <a href="../AbschnittenListen/AbschnittslisteA.html">Link1</a> |
-        <a href="../AbschnittenListen/AbschnittslisteA.html">Link2</a> |
-        <a href="../AbschnittenListen/AbschnittslisteA.html">Link3</a>
-      </h5>
+        selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
+      </script>
 
       <br />
     </div>
