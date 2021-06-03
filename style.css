@@ -493,6 +493,10 @@ li.social-links a {
   SECTIONS
 -------------------------------------------------------------------*/
 
+#sectionListKategoriename {
+  margin-top: 92px;
+}
+
 .sectionListElement {
   height: 15vh;
   width: auto;
@@ -518,6 +522,17 @@ li.social-links a {
 .camera_wrap {
   float: none;
 }
+
+@media (max-width: 1000px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  #sectionListKategoriename {
+    margin-top: 0px;
+  }
+}
+
 
 /*------------------------------------------------------------------
   Kandidat(in) Layout

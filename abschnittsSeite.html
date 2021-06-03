@@ -18,15 +18,11 @@
     <meta name="author" content="AbuRadi" />
 
     <!-- Site Icons -->
-    <link
-      rel="shortcut icon"
-      href="../images/favicon.ico"
-      type="image/x-icon"
-    />
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
 
     <!-- OpenLayers CSS -->
     <link
@@ -44,15 +40,15 @@
     /> -->
 
     <!-- Site CSS -->
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="style.css" />
     <!-- Colors CSS -->
 
     <!-- ALL VERSION CSS -->
-    <link rel="stylesheet" href="../css/versions.css" />
+    <link rel="stylesheet" href="css/versions.css" />
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/custom.css" />
+    <link rel="stylesheet" href="css/custom.css" />
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -95,7 +91,7 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html"
-              ><img src="../images/logos/logo.png" alt="image"
+              ><img src="images/logos/logo.png" alt="image"
             /></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
@@ -112,7 +108,7 @@
     </header>
 
     <div id="topImgContainer">
-      <img src="../uploads/Tilmann_Häussler.png" />
+      <img src="uploads/Tilmann_Häussler.png" />
     </div>
 
     <div class="customDivider">
@@ -147,19 +143,19 @@
         <div class="slideshow">
           <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <img src="../uploads/politic_01.jpg" />
+            <img src="uploads/politic_01.jpg" />
             <div class="text">Caption Text</div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <img src="../uploads/politic_02.jpg" />
+            <img src="uploads/politic_02.jpg" />
             <div class="text">Caption Two</div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
-            <img src="../uploads/politic_03.jpg" />
+            <img src="uploads/politic_03.jpg" />
             <div class="text">Caption Three</div>
           </div>
 
@@ -235,6 +231,7 @@
       <div class="mapContainer">
         <div id="map" class="map"></div>
 
+        <script src="Data/kdz.js"></script>
         <script type="text/javascript">
           var map = new ol.Map({
             target: "map",
@@ -248,15 +245,48 @@
               zoom: 16,
             }),
           });
+
+          const iconFeature = new ol.Feature({
+            geometry: new ol.geom.Point(ol.proj.fromLonLat([13.3789, 52.516396])),
+            name: "Somewhere near Nottingham",
+          });
+
+          // const markers = [];
+
+          // for (let i = 0; i < kdzObj.places.length; i++) {
+          //   var e = document.createElement("div");
+
+          //   e.innerHTML =
+          //     '<img src="https://cdn.mapmarker.io/api/v1/fa/stack?size=50&color=DC4C39&icon=fa-microchip&hoffset=1" />';
+
+          //   if (kdzObj.places[i].coordinates !== "") {
+          //     var marker = new ol.Overlay({
+          //       position: [
+          //         kdzObj.places[i].coordinates.lng,
+          //         kdzObj.places[i].coordinates.lat
+          //       ],
+          //       positioning: "center-center",
+          //       element: e,
+          //       stopEvent: false,
+          //     });
+
+          //     markers.push([
+          //       kdzObj.places[i].coordinates.lng,
+          //       kdzObj.places[i].coordinates.lat
+          //     ]);
+          //   }
+          // }
+
+          // console.log(markers);
         </script>
       </div>
 
       <br />
 
       <h5>
-        <a href="../AbschnittenListen/AbschnittslisteA.html">Link1</a> |
-        <a href="../AbschnittenListen/AbschnittslisteA.html">Link2</a> |
-        <a href="../AbschnittenListen/AbschnittslisteA.html">Link3</a>
+        <a href="AbschnittenListen/AbschnittslisteA.html">Link1</a> |
+        <a href="AbschnittenListen/AbschnittslisteA.html">Link2</a> |
+        <a href="AbschnittenListen/AbschnittslisteA.html">Link3</a>
       </h5>
 
       <br />
@@ -267,13 +297,13 @@
     ></a>
 
     <!-- ALL JS FILES -->
-    <script src="../js/all.js"></script>
+    <script src="js/all.js"></script>
     <!-- Camera Slider -->
-    <script src="../js/jquery.mobile.customized.min.js"></script>
-    <script src="../js/jquery.easing.1.3.js"></script>
-    <script src="../js/scrollIt.min.js"></script>
+    <script src="js/jquery.mobile.customized.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/scrollIt.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="../js/custom.js"></script>
-    <script src="../js/jquery.vide.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.vide.js"></script>
   </body>
 </html>

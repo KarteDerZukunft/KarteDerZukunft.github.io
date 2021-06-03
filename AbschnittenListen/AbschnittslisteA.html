@@ -114,7 +114,7 @@
     <br />
 
     <div id="textDetailsContainer">
-      <h2>Kategoriename</h2>
+      <h2 id="sectionListKategoriename">Kategoriename</h2>
 
       <div id="sectionList">
         <!-- the sectionList inserted by the code bellow -->
@@ -126,7 +126,7 @@
 
         for (let i = 0; i < kdzObj.sections.length; i++) {
           htmlToInsert += `
-          <a href="../Abschnitten/AbschnittenA.html">
+          <a href="../abschnittsSeite.html">
             <div class="sectionListElement" id="sectionNo_${kdzObj.sections[i].id}">
               <h1>${kdzObj.sections[i].title}</h1>
               <p></p>
