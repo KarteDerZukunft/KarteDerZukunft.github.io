@@ -209,10 +209,6 @@
 
       <br />
 
-      <div class="kiezprojektContainer" id="kiezprojektContainer"></div>
-
-      <br />
-
       <h2>Wo Wir Zu Finden Sind</h2>
 
       <br />
@@ -223,6 +219,44 @@
 
         <script src="Data/kdz.js"></script>
         <script type="text/javascript">
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(queryString);
+          let lon = 13.3789;
+          let lat = 52.516396;
+
+          if (urlParams.has("kpid")) {
+            kpid = urlParams.get("kpid");
+
+            for (let i = 0; i < kdzObj.places.length; i++) {
+              if (kdzObj.places[i].id == kpid) {
+                if (kdzObj.places[i].type[0].slug === "kiezprojekt") {
+                  document
+                    .querySelector("#title")
+                    .insertAdjacentHTML(
+                      "beforeend",
+                      `${kdzObj.places[i].title} [<a href=\"#\" style=\"color: #ff392b\">verlinkt</a>]`
+                    );
+
+                  document
+                    .querySelector("#description")
+                    .insertAdjacentHTML(
+                      "beforebegin",
+                      `${kdzObj.places[i].description}`
+                    );
+
+                  if (kdzObj.places[i].coordinates) {
+                    lon = kdzObj.places[i].coordinates.lng;
+                    lat = kdzObj.places[i].coordinates.lat;
+                  }
+                } else {
+                  // error msg
+                }
+              }
+            }
+          } else {
+            // error msg
+          }
+
           var map = new ol.Map({
             target: "map",
             layers: [
@@ -231,16 +265,9 @@
               }),
             ],
             view: new ol.View({
-              center: ol.proj.fromLonLat([13.3789, 52.516396]),
+              center: ol.proj.fromLonLat([lon, lat]),
               zoom: 18,
             }),
-          });
-
-          const iconFeature = new ol.Feature({
-            geometry: new ol.geom.Point(
-              ol.proj.fromLonLat([13.3789, 52.516396])
-            ),
-            name: "Somewhere near Nottingham",
           });
 
           // const markers = [];
@@ -282,80 +309,6 @@
       </h5>
 
       <br />
-
-      <script src="Data/kdz.js"></script>
-      <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-
-        if (urlParams.has("sid")) {
-          sid = urlParams.get("sid");
-
-          for (let i = 0; i < kdzObj.sections.length; i++) {
-            if (kdzObj.sections[i].id == sid) {
-              document
-                .querySelector("#title")
-                .insertAdjacentHTML(
-                  "beforeend",
-                  `${kdzObj.sections[i].title} [<a href=\"themenabschnittListe.html?tid=${kdzObj.sections[i].belongs_to_topic}\" style=\"color: #ff392b\">verlinkt</a>]`
-                );
-
-              document
-                .querySelector("#description")
-                .insertAdjacentHTML(
-                  "beforebegin",
-                  `${kdzObj.sections[i].description}`
-                );
-
-              if (kdzObj.sections[i].tags !== "") {
-                let tagsToInsert = "";
-
-                for (let j = 0; j < kdzObj.sections[i].tags.length; j++) {
-                  tagsToInsert += ` <a href="#">#${kdzObj.sections[i].tags[j].slug}</a>`;
-                }
-
-                document
-                  .querySelector("#description")
-                  .insertAdjacentHTML("beforeend", `${tagsToInsert}`);
-              }
-            }
-          }
-
-          // finding the associated topic
-
-          for (let x = 0; x < kdzObj.sections.length; x++) {
-            if (kdzObj.sections[x].id == sid) {
-              tid = kdzObj.sections[x].belongs_to_topic;
-            }
-          }
-
-          // finding the associated cluster
-
-          for (let y = 0; y < kdzObj.topics.length; y++) {
-            if (kdzObj.topics[y].id == tid) {
-              cid = kdzObj.topics[y].belongs_to_cluster;
-            }
-          }
-
-          // listing the associated kiezprojekts
-
-          let kiezprojektsToInsert = "";
-
-          for (let j = 0; j < kdzObj.places.length; j++) {
-            if (kdzObj.places[j].belongs_to_cluster == cid) {
-              if (kdzObj.places[j].type[0].slug === "kiezprojekt") {
-                kiezprojektsToInsert += `
-                  <a href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">${kdzObj.places[j].title}</a>
-                  <br />`;
-              }
-            }
-          }
-
-          document
-            .querySelector("#kiezprojektContainer")
-            .insertAdjacentHTML("beforeend", `${kiezprojektsToInsert}`);
-        }
-      </script>
     </div>
 
     <a href="#" id="scroll-to-top" class="dmtop global-radius"

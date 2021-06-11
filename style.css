@@ -490,21 +490,22 @@ li.social-links a {
 }
 
 /*------------------------------------------------------------------
-  SECTIONS
+  Topics & Sections
 -------------------------------------------------------------------*/
 
-#sectionListKategoriename {
-  margin-top: 92px;
+#sectionListKategoriename,
+#topicSectionTitle {
+  margin-top: 92.5px;
 }
 
 .sectionListElement {
-  height: 15vh;
+  min-height: 15vh;
   width: auto;
   margin: 15px 0px;
   padding: 5px;
 
   border-style: solid;
-  border-width: .25px;
+  border-width: 0.25px;
   border-color: #ff392b50;
   border-radius: 5px;
 }
@@ -519,6 +520,9 @@ li.social-links a {
   color: #212121;
 }
 
+.sectionListElement p {
+}
+
 .camera_wrap {
   float: none;
 }
@@ -528,11 +532,11 @@ li.social-links a {
     overflow-x: hidden;
   }
 
-  #sectionListKategoriename {
+  #sectionListKategoriename,
+  #topicSectionTitle {
     margin-top: 0px;
   }
 }
-
 
 /*------------------------------------------------------------------
   Kandidat(in) Layout

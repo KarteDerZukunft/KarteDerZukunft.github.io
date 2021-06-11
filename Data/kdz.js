@@ -3935,7 +3935,7 @@ var kdzObj = {
   clusters: [
     {
       id: 11,
-      title: "ein vielfältiges und gemeinschaftliches Berlin Mitte",
+      title: "Ein vielfältiges und gemeinschaftliches Berlin Mitte",
       description: "",
       tags: "",
       image: "",

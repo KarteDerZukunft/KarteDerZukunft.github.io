@@ -12,7 +12,7 @@
     />
 
     <!-- Site Metas -->
-    <title>SPD - Wahlprojekt</title>
+    <title>Themenbereich Liste</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="AbuRadi" />
@@ -23,6 +23,22 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- OpenLayers CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    /> -->
+
     <!-- Site CSS -->
     <link rel="stylesheet" href="style.css" />
     <!-- Colors CSS -->
@@ -91,45 +107,54 @@
       </nav>
     </header>
 
-    <div
-      id="main-banner"
-      class="banner-one"
-      data-scroll-index="0"
-      style="height: calc(100vh - 90px)"
-    ></div>
+    <br />
 
-    <script src="Data/kdz.js"></script>
-    <script>
-      let htmlToInsert = "";
+    <div id="textDetailsContainer">
+      <h2 id="topicSectionTitle"></h2>
 
-      for (let i = 0; i < kdzObj.clusters.length; i++) {
-        htmlToInsert += `
-          <div data-src="uploads/slide-${i + 1}.jpg" style="object-fit: cover">
-            <div class="camera_caption">
-              <div class="container">
-                <h1 class="wow fadeInUp animated">
-                  ${kdzObj.clusters[i].title}
-                </h1>
-                <p class="wow fadeInUp animated" data-wow-delay="0.2s">
-                  ${kdzObj.clusters[i].description}
-                </p>
-                <a
-                  data-scroll
-                  href="themenbereichListe.html?cid=${kdzObj.clusters[i].id}"
-                  class="btn btn-light btn-radius btn-brd grd1"
-                  >Mehr Erfahren</a
-                >
-              </div>
-              <!-- /.container -->
-            </div>
-            <!-- /.camera_caption -->
-          </div>`;
-      }
+      <div id="topicSectionList"></div>
 
-      const selectedHTML = document.querySelector("#main-banner");
+      <script src="Data/kdz.js"></script>
+      <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
 
-      selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
-    </script>
+        if (urlParams.has("tid")) {
+          tid = urlParams.get("tid");
+
+          for (let i = 0; i < kdzObj.topics.length; i++) {
+            if (kdzObj.topics[i].id == tid) {
+              document
+                .querySelector("#topicSectionTitle")
+                .insertAdjacentHTML(
+                  "beforebegin",
+                  `${kdzObj.topics[i].title}`
+                );
+            }
+          }
+
+          let htmlToInsert = "";
+
+          for (let j = 0; j < kdzObj.sections.length; j++) {
+            if (kdzObj.sections[j].belongs_to_topic == tid) {
+              htmlToInsert += `
+                <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
+                  <div class="sectionListElement" id="sectionNo_${kdzObj.sections[j].id}">
+                    <!-- <h1>${kdzObj.sections[j].title}</h1> -->
+                    <p>${kdzObj.sections[j].description}</p>
+                  </div>
+                </a>`;
+            }
+          }
+
+          const selectedHTML = document.querySelector("#topicSectionList");
+
+          selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
+        } else {
+          // error msg
+        }
+      </script>
+    </div>
 
     <a href="#" id="scroll-to-top" class="dmtop global-radius"
       ><i class="fa fa-angle-up"></i
@@ -140,7 +165,6 @@
     <!-- Camera Slider -->
     <script src="js/jquery.mobile.customized.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/camera.min.js"></script>
     <script src="js/scrollIt.min.js"></script>
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
