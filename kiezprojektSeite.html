@@ -96,8 +96,9 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a data-scroll-nav="0" href="#homePage">Über Uns</a></li>
-              <li><a data-scroll-nav="1" href="#projects">Wahlprogramm</a></li>
+              <li>
+                <a data-scroll-nav="1" href="./index.html">Wahlprogramm</a>
+              </li>
               <li><a data-scroll-nav="2" href="#candidates">Kandidaten</a></li>
               <li><a data-scroll-nav="3" href="#themes">Themen</a></li>
               <li><a data-scroll-nav="4" href="#projekts">Projekte</a></li>
@@ -249,12 +250,12 @@
                     lat = kdzObj.places[i].coordinates.lat;
                   }
                 } else {
-                  // error msg
+                  // window.location.replace("./404.html");
                 }
               }
             }
           } else {
-            // error msg
+            // window.location.replace("./404.html");
           }
 
           var map = new ol.Map({
@@ -302,13 +303,34 @@
 
       <br />
 
-      <h5>
-        <a href="AbschnittenListen/AbschnittslisteA.html">Link1</a> |
-        <a href="AbschnittenListen/AbschnittslisteA.html">Link2</a> |
-        <a href="AbschnittenListen/AbschnittslisteA.html">Link3</a>
-      </h5>
+      <h5 id="quickLinks"></h5>
 
       <br />
+
+      <script type="text/javascript">
+        // finding the associated cluster
+
+        for (let x = 0; x < kdzObj.places.length; x++) {
+          if (
+            kdzObj.places[x].id == kpid &&
+            kdzObj.places[x].type[0].slug === "kiezprojekt"
+          ) {
+            cid = kdzObj.places[x].belongs_to_cluster;
+            for (let p = 0; p < kdzObj.clusters.length; p++) {
+              if (kdzObj.clusters[p].id == cid) {
+                cTitle = kdzObj.clusters[p].title;
+              }
+            }
+          }
+        }
+
+        document
+          .querySelector("#quickLinks")
+          .insertAdjacentHTML(
+            "beforeend",
+            `<a href="themenbereichListe.html?cid=${cid}">${cTitle}</a>`
+          );
+      </script>
     </div>
 
     <a href="#" id="scroll-to-top" class="dmtop global-radius"
@@ -323,6 +345,5 @@
     <script src="js/scrollIt.min.js"></script>
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
-    <script src="js/jquery.vide.js"></script>
   </body>
 </html>

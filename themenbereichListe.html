@@ -96,8 +96,7 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a data-scroll-nav="0" href="#homePage">Über Uns</a></li>
-              <li><a data-scroll-nav="1" href="#projects">Wahlprogramm</a></li>
+              <li><a data-scroll-nav="1" href="./index.html">Wahlprogramm</a></li>
               <li><a data-scroll-nav="2" href="#candidates">Kandidaten</a></li>
               <li><a data-scroll-nav="3" href="#themes">Themen</a></li>
               <li><a data-scroll-nav="4" href="#projekts">Projekte</a></li>
@@ -126,13 +125,11 @@
             if (kdzObj.clusters[i].id == cid) {
               document
                 .querySelector("#sectionListKategoriename")
-                .insertAdjacentHTML(
-                  "beforebegin",
-                  `${kdzObj.clusters[i].title}`
-                );
+                .insertAdjacentHTML("beforeend", `${kdzObj.clusters[i].title}`);
             }
           }
 
+          let c = 0;
           let htmlToInsert = "";
 
           for (let j = 0; j < kdzObj.topics.length; j++) {
@@ -144,14 +141,19 @@
                     <p></p>
                   </div>
                 </a>`;
+              c++;
             }
+          }
+
+          if (c < 1) {
+            window.location.replace("./404.html");
           }
 
           const selectedHTML = document.querySelector("#topicList");
 
           selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
         } else {
-          // error msg
+          window.location.replace("./404.html");
         }
       </script>
     </div>
@@ -168,6 +170,5 @@
     <script src="js/scrollIt.min.js"></script>
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
-    <script src="js/jquery.vide.js"></script>
   </body>
 </html>
