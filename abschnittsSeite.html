@@ -96,7 +96,9 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-              <li><a data-scroll-nav="1" href="./index.html">Wahlprojekt</a></li>
+              <li>
+                <a data-scroll-nav="1" href="./index.html">Wahlprojekt</a>
+              </li>
               <li><a data-scroll-nav="2" href="#candidates">Kandidaten</a></li>
               <li><a data-scroll-nav="3" href="#themes">Themen</a></li>
               <li><a data-scroll-nav="4" href="#projekts">Projekte</a></li>
@@ -281,6 +283,10 @@
                 kiezprojektsToInsert += `
                   <a href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">${kdzObj.places[j].title}</a>
                   <br />`;
+              }
+              c--;
+              if (c < 1) {
+                break;
               }
             }
           }
