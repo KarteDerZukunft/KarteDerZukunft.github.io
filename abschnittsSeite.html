@@ -149,57 +149,6 @@
       <!-- The div element for the map -->
       <div class="mapContainer">
         <div id="map" class="map"></div>
-
-        <script src="Data/kdz.js"></script>
-        <script type="text/javascript">
-          var map = new ol.Map({
-            target: "map",
-            layers: [
-              new ol.layer.Tile({
-                source: new ol.source.OSM(),
-              }),
-            ],
-            view: new ol.View({
-              center: ol.proj.fromLonLat([13.3789, 52.516396]),
-              zoom: 18,
-            }),
-          });
-
-          const iconFeature = new ol.Feature({
-            geometry: new ol.geom.Point(
-              ol.proj.fromLonLat([13.3789, 52.516396])
-            ),
-            name: "Somewhere near Nottingham",
-          });
-
-          // const markers = [];
-
-          // for (let i = 0; i < kdzObj.places.length; i++) {
-          //   var e = document.createElement("div");
-
-          //   e.innerHTML =
-          //     '<img src="https://cdn.mapmarker.io/api/v1/fa/stack?size=50&color=DC4C39&icon=fa-microchip&hoffset=1" />';
-
-          //   if (kdzObj.places[i].coordinates !== "") {
-          //     var marker = new ol.Overlay({
-          //       position: [
-          //         kdzObj.places[i].coordinates.lng,
-          //         kdzObj.places[i].coordinates.lat
-          //       ],
-          //       positioning: "center-center",
-          //       element: e,
-          //       stopEvent: false,
-          //     });
-
-          //     markers.push([
-          //       kdzObj.places[i].coordinates.lng,
-          //       kdzObj.places[i].coordinates.lat
-          //     ]);
-          //   }
-          // }
-
-          // console.log(markers);
-        </script>
       </div>
 
       <br />
@@ -209,9 +158,50 @@
       <br />
 
       <script src="Data/kdz.js"></script>
-      <script>
+      <script type="text/javascript">
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
+        let lon = 13.3789;
+        let lat = 52.516396;
+
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(assignPosition);
+          } else {
+            var map = new ol.Map({
+              target: "map",
+              layers: [
+                new ol.layer.Tile({
+                  source: new ol.source.OSM(),
+                }),
+              ],
+              view: new ol.View({
+                center: ol.proj.fromLonLat([lon, lat]),
+                zoom: 18,
+              }),
+            });
+          }
+        }
+
+        function assignPosition(position) {
+          lon = position.coords.longitude;
+          lat = position.coords.latitude;
+
+          var map = new ol.Map({
+            target: "map",
+            layers: [
+              new ol.layer.Tile({
+                source: new ol.source.OSM(),
+              }),
+            ],
+            view: new ol.View({
+              center: ol.proj.fromLonLat([lon, lat]),
+              zoom: 18,
+            }),
+          });
+        }
+
+        getLocation();
 
         if (urlParams.has("sid")) {
           sid = urlParams.get("sid");

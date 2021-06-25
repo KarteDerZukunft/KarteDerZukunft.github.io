@@ -221,18 +221,55 @@
           let lon = 13.3789;
           let lat = 52.516396;
 
+          function getLocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(assignPosition);
+            } else {
+              var map = new ol.Map({
+                target: "map",
+                layers: [
+                  new ol.layer.Tile({
+                    source: new ol.source.OSM(),
+                  }),
+                ],
+                view: new ol.View({
+                  center: ol.proj.fromLonLat([lon, lat]),
+                  zoom: 18,
+                }),
+              });
+            }
+          }
+
+          function assignPosition(position) {
+            lon = position.coords.longitude;
+            lat = position.coords.latitude;
+
+            var map = new ol.Map({
+              target: "map",
+              layers: [
+                new ol.layer.Tile({
+                  source: new ol.source.OSM(),
+                }),
+              ],
+              view: new ol.View({
+                center: ol.proj.fromLonLat([lon, lat]),
+                zoom: 18,
+              }),
+            });
+          }
+
+          getLocation();
+
           if (urlParams.has("kpid")) {
             kpid = urlParams.get("kpid");
 
             for (let i = 0; i < kdzObj.places.length; i++) {
               if (kdzObj.places[i].id == kpid) {
                 if (kdzObj.places[i].type[0].slug === "kiezprojekt") {
-                  document
-                    .querySelector("#title")
-                    .insertAdjacentHTML(
-                      "beforeend",
-                      `${kdzObj.places[i].title} [<a href=\"#\" style=\"color: #ff392b\">verlinkt</a>]`
-                    );
+                  document.querySelector("#title").insertAdjacentHTML(
+                    "beforeend",
+                    `${kdzObj.places[i].title}` // [<a href=\"#\" style=\"color: #ff392b\">verlinkt</a>]
+                  );
 
                   document
                     .querySelector("#description")
@@ -253,19 +290,6 @@
           } else {
             // window.location.replace("./404.html");
           }
-
-          var map = new ol.Map({
-            target: "map",
-            layers: [
-              new ol.layer.Tile({
-                source: new ol.source.OSM(),
-              }),
-            ],
-            view: new ol.View({
-              center: ol.proj.fromLonLat([lon, lat]),
-              zoom: 18,
-            }),
-          });
 
           // const markers = [];
 
