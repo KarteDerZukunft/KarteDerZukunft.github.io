@@ -157,6 +157,35 @@
       </script>
     </div>
 
+    <div class="disclaimer" id="disclaimer">
+      <a id="cancelBtn" onclick="return acknowledge()"> &#x2715; </a>
+
+      <p>
+        This site uses cookies. By continuing to browse KarteDerZukunft, you are
+        agreeing to use <a href="#">our site cookies</a>.
+      </p>
+    </div>
+
+    <script>
+      acknowledged = localStorage.getItem("acknowledged");
+
+      if (acknowledged == 1) {
+        var disclaimer = document.getElementById("disclaimer");
+
+        disclaimer.style.display = "none";
+      }
+
+      function acknowledge() {
+        var disclaimer = document.getElementById("disclaimer");
+
+        disclaimer.style.display = "none";
+
+        acknowledged = 1;
+
+        localStorage.setItem("acknowledged", acknowledged);
+      }
+    </script>
+
     <a href="#" id="scroll-to-top" class="dmtop global-radius"
       ><i class="fa fa-angle-up"></i
     ></a>

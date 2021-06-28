@@ -135,20 +135,20 @@
         <div class="slideshow">
           <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <img src="uploads/politic_01.jpg" />
-            <div class="text">Caption Text</div>
+            <img id="_1stSlideImg" src="" />
+            <div id="_1stSlideCaption" class="text"></div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <img src="uploads/politic_02.jpg" />
-            <div class="text">Caption Two</div>
+            <img id="_2ndSlideImg" src="" />
+            <div id="_2ndSlideCaption" class="text"></div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
-            <img src="uploads/politic_03.jpg" />
-            <div class="text">Caption Three</div>
+            <img id="_3rdSlideImg" src="" />
+            <div id="_3rdSlideCaption" class="text"></div>
           </div>
 
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -435,9 +435,13 @@
 
       <br />
 
-      <h5 id="quickLinks"></h5>
+      <div class="mapContainer" style="background-color: #21212110">
+        <!-- using a bootstrap form -->
+      </div>
 
       <br />
+
+      <h5 id="quickLinks"></h5>
 
       <script type="text/javascript">
         // finding the associated cluster
@@ -464,6 +468,35 @@
           );
       </script>
     </div>
+
+    <div class="disclaimer" id="disclaimer">
+      <a id="cancelBtn" onclick="return acknowledge()"> &#x2715; </a>
+
+      <p>
+        This site uses cookies. By continuing to browse KarteDerZukunft, you are
+        agreeing to use <a href="#">our site cookies</a>.
+      </p>
+    </div>
+
+    <script>
+      acknowledged = localStorage.getItem("acknowledged");
+
+      if (acknowledged == 1) {
+        var disclaimer = document.getElementById("disclaimer");
+
+        disclaimer.style.display = "none";
+      }
+
+      function acknowledge() {
+        var disclaimer = document.getElementById("disclaimer");
+
+        disclaimer.style.display = "none";
+
+        acknowledged = 1;
+
+        localStorage.setItem("acknowledged", acknowledged);
+      }
+    </script>
 
     <a href="#" id="scroll-to-top" class="dmtop global-radius"
       ><i class="fa fa-angle-up"></i

@@ -89,6 +89,15 @@
       style="height: calc(100vh - 90px)"
     ></div>
 
+    <div class="disclaimer" id="disclaimer">
+      <a id="cancelBtn" onclick="return acknowledge()"> &#x2715; </a>
+
+      <p>
+        This site uses cookies. By continuing to browse KarteDerZukunft, you are
+        agreeing to use <a href="#">our site cookies</a>.
+      </p>
+    </div>
+
     <script src="Data/kdz.js"></script>
     <script>
       let htmlToInsert = "";
@@ -120,6 +129,24 @@
       const selectedHTML = document.querySelector("#main-banner");
 
       selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
+
+      acknowledged = localStorage.getItem("acknowledged");
+
+      if (acknowledged == 1) {
+        var disclaimer = document.getElementById("disclaimer");
+
+        disclaimer.style.display = "none";
+      }
+
+      function acknowledge() {
+        var disclaimer = document.getElementById("disclaimer");
+
+        disclaimer.style.display = "none";
+
+        acknowledged = 1;
+
+        localStorage.setItem("acknowledged", acknowledged);
+      }
     </script>
 
     <!-- ALL JS FILES -->
