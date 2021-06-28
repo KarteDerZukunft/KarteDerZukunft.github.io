@@ -12,7 +12,7 @@
     />
 
     <!-- Site Metas -->
-    <title>...</title>
+    <title id="tabTitle"></title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="AbuRadi" />
@@ -108,9 +108,7 @@
       </nav>
     </header>
 
-    <div id="topImgContainer">
-      <img src="uploads/Tilmann_Häussler.png" />
-    </div>
+    <div id="topImgContainer"></div>
 
     <div class="customDivider">
       <svg
@@ -149,6 +147,9 @@
       <!-- The div element for the map -->
       <div class="mapContainer">
         <div id="map" class="map"></div>
+        <div id="overlays" style="display: none">
+          <!-- | -->
+        </div>
       </div>
 
       <br />
@@ -164,22 +165,96 @@
         let lon = 13.3789;
         let lat = 52.516396;
 
+        var map = new ol.Map({
+          target: "map",
+          layers: [
+            new ol.layer.Tile({
+              source: new ol.source.OSM(),
+            }),
+          ],
+          view: new ol.View({
+            center: ol.proj.fromLonLat([lon, lat]),
+            zoom: 18,
+          }),
+        });
+
+        // adding the kiezprojekts
+
+        const markers = [];
+
+        for (let i = 0; i < kdzObj.places.length; i++) {
+          if (
+            kdzObj.places[i].type[0].slug === "kiezprojekt" &&
+            kdzObj.places[i].coordinates !== ""
+          ) {
+            document.querySelector("#overlays").insertAdjacentHTML(
+              "beforeend",
+              `
+                <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_blank" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m">${kdzObj.places[i].title}</a>
+                <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
+              `
+            );
+
+            var marker = new ol.Overlay({
+              position: ol.proj.fromLonLat([
+                kdzObj.places[i].coordinates.lng,
+                kdzObj.places[i].coordinates.lat,
+              ]),
+              positioning: "center-center",
+              element: document.getElementById(`marker${kdzObj.places[i].id}`),
+              stopEvent: false,
+            });
+
+            map.addOverlay(marker);
+
+            var kpOverlayX = new ol.Overlay({
+              position: ol.proj.fromLonLat([
+                kdzObj.places[i].coordinates.lng,
+                kdzObj.places[i].coordinates.lat,
+              ]),
+              element: document.getElementById(
+                `kpOverlay${kdzObj.places[i].id}`
+              ),
+            });
+
+            map.addOverlay(kpOverlayX);
+
+            markers.push([
+              kdzObj.places[i].coordinates.lng,
+              kdzObj.places[i].coordinates.lat,
+            ]);
+          } else if (kdzObj.places[i].coordinates !== "") {
+            document.querySelector("#overlays").insertAdjacentHTML(
+              "beforeend",
+              `
+                <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
+              `
+            );
+
+            var marker = new ol.Overlay({
+              position: ol.proj.fromLonLat([
+                kdzObj.places[i].coordinates.lng,
+                kdzObj.places[i].coordinates.lat,
+              ]),
+              positioning: "center-center",
+              element: document.getElementById(`marker${kdzObj.places[i].id}`),
+              stopEvent: false,
+            });
+
+            map.addOverlay(marker);
+
+            markers.push([
+              kdzObj.places[i].coordinates.lng,
+              kdzObj.places[i].coordinates.lat,
+            ]);
+          }
+        }
+
+        // asking users for their geolocation
+
         function getLocation() {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(assignPosition);
-          } else {
-            var map = new ol.Map({
-              target: "map",
-              layers: [
-                new ol.layer.Tile({
-                  source: new ol.source.OSM(),
-                }),
-              ],
-              view: new ol.View({
-                center: ol.proj.fromLonLat([lon, lat]),
-                zoom: 18,
-              }),
-            });
           }
         }
 
@@ -187,18 +262,9 @@
           lon = position.coords.longitude;
           lat = position.coords.latitude;
 
-          var map = new ol.Map({
-            target: "map",
-            layers: [
-              new ol.layer.Tile({
-                source: new ol.source.OSM(),
-              }),
-            ],
-            view: new ol.View({
-              center: ol.proj.fromLonLat([lon, lat]),
-              zoom: 18,
-            }),
-          });
+          map
+            .getView()
+            .setCenter(ol.proj.transform([lon, lat], "EPSG:4326", "EPSG:3857"));
         }
 
         getLocation();
@@ -208,12 +274,32 @@
 
           for (let i = 0; i < kdzObj.sections.length; i++) {
             if (kdzObj.sections[i].id == sid) {
+              if (kdzObj.sections[i].image !== "") {
+                document
+                  .querySelector("#topImgContainer")
+                  .insertAdjacentHTML(
+                    "beforeend",
+                    `<img src="${kdzObj.sections[i].image}" />`
+                  );
+              } else {
+                document
+                  .querySelector("#topImgContainer")
+                  .insertAdjacentHTML(
+                    "beforeend",
+                    `<img src="uploads/fallBack.jpeg" />`
+                  );
+              }
+
               document
                 .querySelector("#title")
                 .insertAdjacentHTML(
                   "beforeend",
                   `${kdzObj.sections[i].title} [<a href=\"themenabschnittListe.html?tid=${kdzObj.sections[i].belongs_to_topic}\" style=\"color: #ff392b\">verlinkt</a>]`
                 );
+
+              document
+                .querySelector("#tabTitle")
+                .insertAdjacentHTML("beforeend", `${kdzObj.sections[i].title}`);
 
               document
                 .querySelector("#description")

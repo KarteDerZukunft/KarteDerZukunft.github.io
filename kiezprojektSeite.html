@@ -12,7 +12,7 @@
     />
 
     <!-- Site Metas -->
-    <title>...</title>
+    <title id="tabTitle"></title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="AbuRadi" />
@@ -108,9 +108,7 @@
       </nav>
     </header>
 
-    <div id="topImgContainer">
-      <img src="uploads/Tilmann_Häussler.png" />
-    </div>
+    <div id="topImgContainer"></div>
 
     <div class="customDivider">
       <svg
@@ -127,6 +125,7 @@
     </div>
 
     <div id="textDetailsContainer">
+      <!-- <h2 id="title" class="kiezprojektTitle"></h2> -->
       <h2 id="title"></h2>
       <p id="description">
         <br />
@@ -213,6 +212,9 @@
       <!-- The div element for the map -->
       <div class="mapContainer">
         <div id="map" class="map"></div>
+        <div id="overlays" style="display: none">
+          <!-- | -->
+        </div>
 
         <script src="Data/kdz.js"></script>
         <script type="text/javascript">
@@ -221,28 +223,11 @@
           let lon = 13.3789;
           let lat = 52.516396;
 
-          function getLocation() {
-            if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(assignPosition);
-            } else {
-              var map = new ol.Map({
-                target: "map",
-                layers: [
-                  new ol.layer.Tile({
-                    source: new ol.source.OSM(),
-                  }),
-                ],
-                view: new ol.View({
-                  center: ol.proj.fromLonLat([lon, lat]),
-                  zoom: 18,
-                }),
-              });
-            }
-          }
+          var thisLon = 13.3789;
+          var thisLat = 52.516396;
 
-          function assignPosition(position) {
-            lon = position.coords.longitude;
-            lat = position.coords.latitude;
+          if (urlParams.has("kpid")) {
+            kpid = urlParams.get("kpid");
 
             var map = new ol.Map({
               target: "map",
@@ -256,20 +241,180 @@
                 zoom: 18,
               }),
             });
-          }
 
-          getLocation();
+            // adding the kiezprojekts
 
-          if (urlParams.has("kpid")) {
-            kpid = urlParams.get("kpid");
+            const markers = [];
+
+            for (let i = 0; i < kdzObj.places.length; i++) {
+              if (
+                kdzObj.places[i].type[0].slug === "kiezprojekt" &&
+                kdzObj.places[i].coordinates !== ""
+              ) {
+                document.querySelector("#overlays").insertAdjacentHTML(
+                  "beforeend",
+                  `
+                    <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_blank" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m">${kdzObj.places[i].title}</a>
+                    <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
+                  `
+                );
+
+                // keeping the this kiezprojekt's position
+
+                if (kdzObj.places[i].id == kpid) {
+                  thisLon = kdzObj.places[i].coordinates.lng;
+                  thisLat = kdzObj.places[i].coordinates.lat;
+                }
+
+                var marker = new ol.Overlay({
+                  position: ol.proj.fromLonLat([
+                    kdzObj.places[i].coordinates.lng,
+                    kdzObj.places[i].coordinates.lat,
+                  ]),
+                  positioning: "center-center",
+                  element: document.getElementById(
+                    `marker${kdzObj.places[i].id}`
+                  ),
+                  stopEvent: false,
+                });
+
+                map.addOverlay(marker);
+
+                var kpOverlayX = new ol.Overlay({
+                  position: ol.proj.fromLonLat([
+                    kdzObj.places[i].coordinates.lng,
+                    kdzObj.places[i].coordinates.lat,
+                  ]),
+                  element: document.getElementById(
+                    `kpOverlay${kdzObj.places[i].id}`
+                  ),
+                });
+
+                map.addOverlay(kpOverlayX);
+
+                markers.push([
+                  kdzObj.places[i].coordinates.lng,
+                  kdzObj.places[i].coordinates.lat,
+                ]);
+              } else if (kdzObj.places[i].coordinates !== "") {
+                document.querySelector("#overlays").insertAdjacentHTML(
+                  "beforeend",
+                  `
+                    <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
+                  `
+                );
+
+                var marker = new ol.Overlay({
+                  position: ol.proj.fromLonLat([
+                    kdzObj.places[i].coordinates.lng,
+                    kdzObj.places[i].coordinates.lat,
+                  ]),
+                  positioning: "center-center",
+                  element: document.getElementById(
+                    `marker${kdzObj.places[i].id}`
+                  ),
+                  stopEvent: false,
+                });
+
+                map.addOverlay(marker);
+
+                markers.push([
+                  kdzObj.places[i].coordinates.lng,
+                  kdzObj.places[i].coordinates.lat,
+                ]);
+              }
+            }
+
+            // asking users for their geolocation (cf: "came from" OR codeFlag)
+
+            if (urlParams.has("cf") && urlParams.get("cf") === "m") {
+              map
+                .getView()
+                .setCenter(
+                  ol.proj.transform(
+                    [thisLon, thisLat],
+                    "EPSG:4326",
+                    "EPSG:3857"
+                  )
+                );
+            } else {
+              function getLocation() {
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(assignPosition);
+                }
+              }
+
+              function assignPosition(position) {
+                lon = position.coords.longitude;
+                lat = position.coords.latitude;
+
+                map
+                  .getView()
+                  .setCenter(
+                    ol.proj.transform([lon, lat], "EPSG:4326", "EPSG:3857")
+                  );
+              }
+
+              getLocation();
+            }
 
             for (let i = 0; i < kdzObj.places.length; i++) {
               if (kdzObj.places[i].id == kpid) {
                 if (kdzObj.places[i].type[0].slug === "kiezprojekt") {
-                  document.querySelector("#title").insertAdjacentHTML(
-                    "beforeend",
-                    `${kdzObj.places[i].title}` // [<a href=\"#\" style=\"color: #ff392b\">verlinkt</a>]
-                  );
+                  if (kdzObj.places[i].image !== "") {
+                    document
+                      .querySelector("#topImgContainer")
+                      .insertAdjacentHTML(
+                        "beforeend",
+                        `<img src="${kdzObj.places[i].image}" />`
+                      );
+
+                    // console.log(`0; ${kdzObj.places[i].image}`);
+                  } else {
+                    for (let x = 0; x < kdzObj.places.length; x++) {
+                      if (
+                        kdzObj.places[x].id == kpid &&
+                        kdzObj.places[x].type[0].slug === "kiezprojekt"
+                      ) {
+                        cid = kdzObj.places[x].belongs_to_cluster;
+                        for (let p = 0; p < kdzObj.clusters.length; p++) {
+                          if (kdzObj.clusters[p].id == cid) {
+                            if (kdzObj.clusters[p].image !== "") {
+                              document
+                                .querySelector("#topImgContainer")
+                                .insertAdjacentHTML(
+                                  "beforeend",
+                                  `<img src="${kdzObj.clusters[p].image}" />`
+                                );
+
+                              // console.log(`1; ${kdzObj.clusters[p].image}`);
+                            } else {
+                              document
+                                .querySelector("#topImgContainer")
+                                .insertAdjacentHTML(
+                                  "beforeend",
+                                  `<img src="uploads/fallBack.jpeg" />`
+                                );
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  document
+                    .querySelector("#title")
+                    .insertAdjacentHTML(
+                      "beforeend",
+                      `${kdzObj.places[i].title}`
+                    );
+
+                  document
+                    .querySelector("#tabTitle")
+                    .insertAdjacentHTML(
+                      "beforeend",
+                      `${kdzObj.sections[i].title}`
+                    );
 
                   document
                     .querySelector("#description")
@@ -277,47 +422,14 @@
                       "beforebegin",
                       `${kdzObj.places[i].description}`
                     );
-
-                  if (kdzObj.places[i].coordinates) {
-                    lon = kdzObj.places[i].coordinates.lng;
-                    lat = kdzObj.places[i].coordinates.lat;
-                  }
                 } else {
-                  // window.location.replace("./404.html");
+                  window.location.replace("./404.html");
                 }
               }
             }
           } else {
-            // window.location.replace("./404.html");
+            window.location.replace("./404.html");
           }
-
-          // const markers = [];
-
-          // for (let i = 0; i < kdzObj.places.length; i++) {
-          //   var e = document.createElement("div");
-
-          //   e.innerHTML =
-          //     '<img src="https://cdn.mapmarker.io/api/v1/fa/stack?size=50&color=DC4C39&icon=fa-microchip&hoffset=1" />';
-
-          //   if (kdzObj.places[i].coordinates !== "") {
-          //     var marker = new ol.Overlay({
-          //       position: [
-          //         kdzObj.places[i].coordinates.lng,
-          //         kdzObj.places[i].coordinates.lat
-          //       ],
-          //       positioning: "center-center",
-          //       element: e,
-          //       stopEvent: false,
-          //     });
-
-          //     markers.push([
-          //       kdzObj.places[i].coordinates.lng,
-          //       kdzObj.places[i].coordinates.lat
-          //     ]);
-          //   }
-          // }
-
-          // console.log(markers);
         </script>
       </div>
 
