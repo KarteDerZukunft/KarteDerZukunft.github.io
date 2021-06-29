@@ -361,12 +361,12 @@
             for (let i = 0; i < kdzObj.places.length; i++) {
               if (kdzObj.places[i].id == kpid) {
                 if (kdzObj.places[i].type[0].slug === "kiezprojekt") {
-                  if (kdzObj.places[i].image !== "") {
+                  if (kdzObj.places[i].image.url !== "") {
                     document
                       .querySelector("#topImgContainer")
                       .insertAdjacentHTML(
                         "beforeend",
-                        `<img src="${kdzObj.places[i].image}" />`
+                        `<img src="${kdzObj.places[i].image.url}" />`
                       );
 
                     // console.log(`0; ${kdzObj.places[i].image}`);
@@ -379,12 +379,12 @@
                         cid = kdzObj.places[x].belongs_to_cluster;
                         for (let p = 0; p < kdzObj.clusters.length; p++) {
                           if (kdzObj.clusters[p].id == cid) {
-                            if (kdzObj.clusters[p].image !== "") {
+                            if (kdzObj.clusters[p].image.url !== "") {
                               document
                                 .querySelector("#topImgContainer")
                                 .insertAdjacentHTML(
                                   "beforeend",
-                                  `<img src="${kdzObj.clusters[p].image}" />`
+                                  `<img src="${kdzObj.clusters[p].image.url}" />`
                                 );
 
                               // console.log(`1; ${kdzObj.clusters[p].image}`);
