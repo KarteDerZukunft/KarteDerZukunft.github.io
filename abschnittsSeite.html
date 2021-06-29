@@ -272,12 +272,12 @@
 
           for (let i = 0; i < kdzObj.sections.length; i++) {
             if (kdzObj.sections[i].id == sid) {
-              if (kdzObj.sections[i].image !== "") {
+              if (kdzObj.sections[i].image.url !== "") {
                 document
                   .querySelector("#topImgContainer")
                   .insertAdjacentHTML(
                     "beforeend",
-                    `<img src="${kdzObj.sections[i].image}" />`
+                    `<img src="${kdzObj.sections[i].image.url}" />`
                   );
               } else {
                 document
