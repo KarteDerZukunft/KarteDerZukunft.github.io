@@ -1136,6 +1136,54 @@ h5 a {
   color: #e7f3ec;
 }
 
+.mapContainer h2 {
+  color: #999;
+  margin-left: 5%;
+  margin-top: 15px;
+}
+
+.form-label {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.form-control {
+  margin: 5px;
+  border-color: #fdfefd;
+  border-radius: 18px;
+
+  color: #999;
+}
+
+.form-control:focus {
+  background-color: #21212110;
+
+  color: #999;
+}
+
+#description {
+  padding-top: 8px;
+
+  height: 25vh;
+}
+
+.quoteFromInput .container .row .col button {
+  margin: 5px 0px;
+  border-color: #fdfefd;
+  border-radius: 18px;
+  width: 25%;
+
+  color: #fdfefd;
+  background: #ff392b;
+
+  transition: 400ms;
+}
+
+.quoteFromInput .container .row .col button:hover {
+  background-color: #9e9ea5;
+  border-color: #242430;
+}
+
 /*------------------------------------------------------------------
   PORTFOLIO
 -------------------------------------------------------------------*/
