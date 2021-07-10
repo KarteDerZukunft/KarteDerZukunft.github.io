@@ -1168,7 +1168,7 @@ h5 a {
 }
 
 .quoteFromInput .container .row .col button {
-  margin: 5px 0px;
+  margin: 5px 0px 5px 0px;
   border-color: #fdfefd;
   border-radius: 18px;
   width: 25%;
