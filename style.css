@@ -46,7 +46,7 @@
 -------------------------------------------------------------------*/
 
 body {
-  color: #999;
+  color: #212121;
   font-size: 15px;
   font-family: "Exo", sans-serif;
   line-height: 1.8;
@@ -101,7 +101,7 @@ h6 {
   letter-spacing: 0;
   font-weight: normal;
   position: relative;
-  padding: 0 0 10px 0;
+  padding: 0 0 0px 0;
   font-weight: normal;
   line-height: 120% !important;
   color: #1f1f1f;
@@ -441,7 +441,7 @@ li.social-links a {
 }
 
 .fixed-menu .navbar-default {
-  position: fixed;
+  position: relative;
   visibility: hidden;
   left: 0px;
   top: 0px;
@@ -480,7 +480,7 @@ li.social-links a {
 }
 
 .fixed-menu .navbar-default {
-  padding: 15px 0px;
+  padding: 5px 0px;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
   border-radius: 0;
 }
@@ -499,21 +499,99 @@ li.social-links a {
   min-height: 15vh;
   width: auto;
   margin: 15px 0px;
-  padding: 5px;
+  padding: 5px 5px 0 5px;
 
   border-style: solid;
-  border-width: 0.25px;
-  border-color: #ff392b50;
+  border-width: 1px;
+  border-color: #ff392b;
   border-radius: 5px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.sectionListElement h1 {
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.sectionListElement .mask {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: calc(100% + 10px);
+  height: 100%;
+  margin: -5px -5px -81px -5px;
+  border-radius: 4px 4px 0 0;
+  background-color: #ff392b36;
+
+  z-index: 0;
+}
+
+.sectionListElement .topicTitle {
+  height: 81px;
+  padding: 7.5px;
+}
+
+.sectionListElement .topicSection {
+  height: 81px;
+  padding: 7.5px;
+}
+
+.sectionListElement .topicTitle h1 {
+  /* white-space: nowrap; */
+  /* text-overflow: ellipsis; */
   overflow: hidden;
 
   font-size: 1.8rem;
   /* color: #ff392b90; */
+  color: white;
+}
+
+.sectionListElement .topicSection h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: white;
+
+  z-index: 10;
+}
+
+.sectionListElement .lowerLip {
+  position: relative;
+  bottom: 0px;
+  margin: -5px;
+  padding: 2.5px;
+
+  background-color: white;
+  border-radius: 0 0 4px 4px;
+}
+
+.sectionListElement .lowerLip h2 {
+  float: left;
+  font-size: 0.8em;
+  padding: 5px;
+}
+
+.sectionListElement .lowerLip a h2 {
+  float: right;
+  color: #ff392b63;
+
+  transition: 400ms;
+}
+
+.sectionListElement .lowerLip a h2:hover {
+  color: #ff392bef;
+}
+
+.sectionListElement .lowerLip h2 a {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  float: right;
+  color: #ff392bef;
+
+  transition: 400ms;
+}
+
+.sectionListElement .lowerLip h2 a:hover {
   color: #212121;
 }
 
@@ -531,6 +609,11 @@ li.social-links a {
   .kiezprojektTitle {
     margin-top: 0px;
   }
+}
+
+.sectionListElement .lowerLip {
+  padding: 0px;
+  margin: 2.5px -5px 0 -5px;
 }
 
 /*------------------------------------------------------------------

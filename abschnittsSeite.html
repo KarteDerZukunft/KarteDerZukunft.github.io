@@ -128,19 +128,14 @@
       <h2 id="title">
         <!-- ${kdzObj.sections[i].title} [<a href="#" style="color: #ff392b">verlinkt</a>] -->
       </h2>
+
       <p id="description">
         <!-- ${kdzObj.sections[i].description} -->
-
-        <br />
       </p>
 
       <br />
 
-      <div class="kiezprojektContainer" id="kiezprojektContainer"></div>
-
-      <br />
-
-      <h2>Wo Wir Zu Finden Sind</h2>
+      <h2>Projekte in deiner Nähe</h2>
 
       <br />
 
@@ -154,6 +149,10 @@
 
       <br />
 
+      <div class="kiezprojektContainer" id="kiezprojektContainer"></div>
+
+      <br />
+
       <div class="mapContainer" style="background-color: #21212110">
         <h2>Wir würden gerne Ihre Vorschläge lesen</h2>
         <form action="" method="POST" class="quoteFromInput">
@@ -162,6 +161,12 @@
               <div class="col">
                 <label for="nameInput" class="form-label">Dein Name</label>
                 <input type="text" class="form-control" id="nameInput" />
+              </div>
+              <div class="col">
+                <label for="phoneInput" class="form-label"
+                  >deine Telefonnummer</label
+                >
+                <input type="text" class="form-control" id="phoneInput" />
               </div>
               <div class="col">
                 <label for="emailInput" class="form-label">Deine E-Mail</label>
@@ -335,7 +340,7 @@
                   .querySelector("#topImgContainer")
                   .insertAdjacentHTML(
                     "beforeend",
-                    `<img src="uploads/fallBack.jpeg" />`
+                    `<img src="uploads/fallBack.jpg" />`
                   );
               }
 
@@ -357,9 +362,9 @@
                   `${kdzObj.sections[i].description}`
                 );
 
-              if (kdzObj.sections[i].tags !== "") {
-                let tagsToInsert = "";
+              let tagsToInsert = "";
 
+              if (kdzObj.sections[i].tags !== "") {
                 for (let j = 0; j < kdzObj.sections[i].tags.length; j++) {
                   tagsToInsert += ` <a href="tagsListe.html?tag=${kdzObj.sections[i].tags[j].slug}">#${kdzObj.sections[i].tags[j].slug}</a>`;
                 }

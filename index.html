@@ -104,7 +104,7 @@
 
       for (let i = 0; i < kdzObj.clusters.length; i++) {
         htmlToInsert += `
-          <div data-src="uploads/slide-${i + 1}.jpg" style="object-fit: cover">
+          <div data-src="${kdzObj.clusters[i].image.url}" style="object-fit: cover">
             <div class="camera_caption">
               <div class="container">
                 <h1 class="wow fadeInUp animated">
