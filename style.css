@@ -1220,8 +1220,9 @@ h5 a {
 }
 
 .mapContainer h2 {
+  text-align: center;
   color: #999;
-  margin-left: 5%;
+  /* margin-left: 1%; */
   margin-top: 15px;
 }
 
@@ -2910,4 +2911,15 @@ select.mobile-device {
   border: 1px solid #ececec !important;
   color: #1f1f1f;
   background-color: transparent;
+}
+
+/* new stuff */
+
+.formIncompleteError::placeholder {
+  color: #ff392b75;
+}
+
+.forMargin {
+  margin: auto 5%;
+  width: calc(90%);
 }

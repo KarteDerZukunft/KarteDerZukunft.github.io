@@ -437,25 +437,31 @@
 
       <div class="mapContainer" style="background-color: #21212110">
         <h2>Wir würden gerne Ihre Vorschläge lesen</h2>
-        <form action="" method="POST" class="quoteFromInput">
+        <form
+          name="quoteFrom"
+          action=""
+          method="POST"
+          class="quoteFromInput"
+          onsubmit="return quateForm()"
+        >
           <div class="container">
             <div class="row row-cols-md-1 row-cols-lg-2">
               <div class="col">
                 <label for="nameInput" class="form-label">Dein Name</label>
-                <input type="text" class="form-control" id="nameInput" />
+                <input type="text" class="form-control" name="nameInput" />
               </div>
               <div class="col">
                 <label for="phoneInput" class="form-label"
                   >deine Telefonnummer</label
                 >
-                <input type="text" class="form-control" id="phoneInput" />
+                <input type="text" class="form-control" name="phoneInput" />
               </div>
               <div class="col">
                 <label for="emailInput" class="form-label">Deine E-Mail</label>
                 <input
                   type="email"
                   class="form-control"
-                  id="emailInput"
+                  name="emailInput"
                   placeholder="Optional"
                 />
               </div>
@@ -482,17 +488,107 @@
 
           <div class="container">
             <div class="row row-cols-md-1 row-cols-lg-2">
-              <div class="col">
+              <div class="col" style="margin-left: 5px">
                 <button class="btn btn-primary" type="submit">Senden</button>
               </div>
+              <div class="col" id="ErrMsg"></div>
             </div>
           </div>
         </form>
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+          function quateForm() {
+            var name = document.forms["quoteFrom"]["nameInput"].value;
+            var email = document.forms["quoteFrom"]["emailInput"].value;
+            var phone = document.forms["quoteFrom"]["phoneInput"].value;
+
+            var more = document.forms["quoteFrom"]["description"].value;
+
+            if (name == "" || phone == "" || more == "") {
+              if (name == "") {
+                document.forms["quoteFrom"]["nameInput"].placeholder =
+                  "Bitte geben Sie einen Namen ein";
+                document.forms["quoteFrom"]["nameInput"].classList.add(
+                  "formIncompleteError"
+                );
+              }
+
+              if (phone == "") {
+                document.forms["quoteFrom"]["phoneInput"].placeholder =
+                  "Bitte geben Sie eine Telefonnummer ein";
+                document.forms["quoteFrom"]["phoneInput"].classList.add(
+                  "formIncompleteError"
+                );
+              }
+
+              if (more == "") {
+                document.forms["quoteFrom"]["description"].placeholder =
+                  "Bitte hinterlassen Sie eine Nachricht zu Senden";
+                document.forms["quoteFrom"]["description"].classList.add(
+                  "formIncompleteError"
+                );
+              }
+
+              return false;
+            } else {
+              if (email == "") {
+                email = "N/A";
+              }
+              document.getElementById("ErrMsg").innerHTML = ``;
+
+              // console.log(`name: ${name}`);
+              // console.log(`email: ${email}`);
+              // console.log(`phone: ${phone}`);
+              // console.log(`more: ${more}`);
+
+              Email.send({
+                SecureToken: "d7f4161b-188f-43cc-92b7-28d3ba55398b",
+                To: "zukunftmitte@spd-rosenthaler-vorstadt.de",
+                From: "messages@kartederzukunft.de",
+                Subject: "Feedback",
+                Body: `
+                <h4>Name: ${name},</h4>
+                <h4>Email: ${email},</h4>
+                <h4>Telefonnummer: ${phone},</h4>
+                <h4>Botschaft: ${more}.</h4>
+              `,
+              }).then((message) => {
+                console.log(message);
+
+                alert("Vielen Dank für Ihre Kontaktaufnahme.");
+              });
+
+              document.forms["quoteFrom"]["nameInput"].value = ``;
+              document.forms["quoteFrom"]["emailInput"].value = ``;
+              document.forms["quoteFrom"]["phoneInput"].value = ``;
+              document.forms["quoteFrom"]["description"].value = ``;
+
+              document.forms["quoteFrom"]["nameInput"].placeholder = ``;
+              document.forms["quoteFrom"]["phoneInput"].placeholder = ``;
+              document.forms["quoteFrom"]["description"].placeholder = ``;
+
+              document.forms["quoteFrom"]["nameInput"].classList.remove(
+                "formIncompleteError"
+              );
+              document.forms["quoteFrom"]["phoneInput"].classList.remove(
+                "formIncompleteError"
+              );
+              document.forms["quoteFrom"]["description"].classList.remove(
+                "formIncompleteError"
+              );
+
+              return false;
+            }
+          }
+        </script>
       </div>
 
       <br />
 
       <h5 id="quickLinks"></h5>
+
+      <br />
 
       <script type="text/javascript">
         // finding the associated cluster
