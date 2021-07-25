@@ -172,16 +172,16 @@
                 <label for="phoneInput" class="form-label"
                   >deine Telefonnummer</label
                 >
-                <input type="text" class="form-control" name="phoneInput" />
+                <input
+                  type="text"
+                  class="form-control"
+                  name="phoneInput"
+                  placeholder="Optional"
+                />
               </div>
               <div class="col">
                 <label for="emailInput" class="form-label">Deine E-Mail</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  name="emailInput"
-                  placeholder="Optional"
-                />
+                <input type="email" class="form-control" name="emailInput" />
               </div>
             </div>
           </div>
@@ -223,7 +223,7 @@
 
             var more = document.forms["quoteFrom"]["description"].value;
 
-            if (name == "" || phone == "" || more == "") {
+            if (name == "" || email == "" || more == "") {
               if (name == "") {
                 document.forms["quoteFrom"]["nameInput"].placeholder =
                   "Bitte geben Sie einen Namen ein";
@@ -232,10 +232,10 @@
                 );
               }
 
-              if (phone == "") {
-                document.forms["quoteFrom"]["phoneInput"].placeholder =
-                  "Bitte geben Sie eine Telefonnummer ein";
-                document.forms["quoteFrom"]["phoneInput"].classList.add(
+              if (email == "") {
+                document.forms["quoteFrom"]["emailInput"].placeholder =
+                  "Bitte geben Sie eine Email ein";
+                document.forms["quoteFrom"]["emailInput"].classList.add(
                   "formIncompleteError"
                 );
               }
@@ -283,13 +283,13 @@
               document.forms["quoteFrom"]["description"].value = ``;
 
               document.forms["quoteFrom"]["nameInput"].placeholder = ``;
-              document.forms["quoteFrom"]["phoneInput"].placeholder = ``;
+              document.forms["quoteFrom"]["emailInput"].placeholder = ``;
               document.forms["quoteFrom"]["description"].placeholder = ``;
 
               document.forms["quoteFrom"]["nameInput"].classList.remove(
                 "formIncompleteError"
               );
-              document.forms["quoteFrom"]["phoneInput"].classList.remove(
+              document.forms["quoteFrom"]["emailInput"].classList.remove(
                 "formIncompleteError"
               );
               document.forms["quoteFrom"]["description"].classList.remove(

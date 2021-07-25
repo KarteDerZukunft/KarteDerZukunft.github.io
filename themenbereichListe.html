@@ -151,15 +151,11 @@
 
               htmlToInsert += `
                 <div link class="sectionListElement" id="topicNo_${kdzObj.topics[j].id}">
-                  <div class="mask">
-                    <br />
-                    <br />
-                    <br />
-                  </div>
                   <div class="topicTitle">
-                    <h1>${kdzObj.topics[j].title}</h1>
+                    
                   </div>
                   <div class="lowerLip">
+                    <h1>${kdzObj.topics[j].title}</h1>
                     <h2>Anzahl der Abschnitte: ${wieVielAbschnitte}</h2>
                     <a href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">
                       <h2>Mehr Info</h2>
@@ -182,7 +178,11 @@
           window.location.replace("./404.html");
         }
       </script>
+
+      <h5 id="quickLinks"><a id="TsCs" href="#">Ts & Cs</a></h5>
     </div>
+
+    <br />
 
     <div class="disclaimer" id="disclaimer">
       <a id="cancelBtn" onclick="return acknowledge()"> &#x2715; </a>

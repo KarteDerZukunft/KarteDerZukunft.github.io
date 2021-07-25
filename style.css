@@ -510,7 +510,7 @@ li.social-links a {
   background-repeat: no-repeat;
 }
 
-.sectionListElement .mask {
+/* .sectionListElement .mask {
   position: relative;
   top: 0;
   left: 0;
@@ -521,7 +521,7 @@ li.social-links a {
   background-color: #ff392b36;
 
   z-index: 0;
-}
+} */
 
 .sectionListElement .topicTitle {
   height: 81px;
@@ -529,27 +529,34 @@ li.social-links a {
 }
 
 .sectionListElement .topicSection {
-  height: 81px;
+  height: 124px;
   padding: 7.5px;
 }
 
-.sectionListElement .topicTitle h1 {
+.sectionListElement .lowerLip h1 {
   /* white-space: nowrap; */
   /* text-overflow: ellipsis; */
   overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  padding-top: 5px;
+  margin: 5px;
+  color: 212121;
 
   font-size: 1.8rem;
-  /* color: #ff392b90; */
-  color: white;
 }
 
-.sectionListElement .topicSection h4 {
+.sectionListElement .lowerLip h4 {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  color: white;
+  padding-top: 5px;
+  margin: 5px;
+  color: #212121;
 
   z-index: 10;
 }
@@ -573,6 +580,7 @@ li.social-links a {
 .sectionListElement .lowerLip a h2 {
   float: right;
   color: #ff392b63;
+  margin: 5px;
 
   transition: 400ms;
 }
@@ -581,18 +589,44 @@ li.social-links a {
   color: #ff392bef;
 }
 
-.sectionListElement .lowerLip h2 a {
+.sectionListElement .lowerLip .tagString {
+  display: flex;
+  height: 2.4rem;
+}
+
+.sectionListElement .lowerLip .tagString .tagStringBase {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  float: right;
+}
+
+.sectionListElement .lowerLip .tagString .tagStringBase a {
+  float: left;
   color: #ff392bef;
 
   transition: 400ms;
 }
 
-.sectionListElement .lowerLip h2 a:hover {
+.sectionListElement .lowerLip .tagString .tagStringBase a:hover {
   color: #212121;
+}
+
+.sectionListElement .lowerLip .tagString span a h2 {
+  float: right;
+  margin: 0px 0px 0px 5px;
+  padding: 0px;
+  font-size: 1.0em;
+  height: 1.2rem;
+}
+
+#TsCs {
+  margin: 0px 12.5px;
+
+  transition: 400ms;
+}
+
+#TsCs:hover {
+  color: #ff392b63;
 }
 
 .camera_wrap {

@@ -159,19 +159,20 @@
 
               htmlToInsert += `
                 <div link class="sectionListElement">
-                  <div class="mask">
-                    <br />
-                    <br />
-                    <br />
-                  </div>
                   <div class="topicSection">
-                    <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
+
                   </div>
                   <div class="lowerLip">
-                    <h2>${tagString}</h2>
-                    <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
-                      <h2>Mehr Info</h2>
-                    </a>
+                    <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
+                    <h2 class="tagString">
+                      <span class="tagStringBase">${tagString}</span>
+                      <span style="flex-shrink: 0;">
+                        <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
+                          <h2>Mehr Info</h2>
+                        </a>
+                      </span>
+                    </h2>
+
                     <br />
                   </div>
                 </div>`.replace("link", img);
@@ -192,7 +193,11 @@
           window.location.replace("./404.html");
         }
       </script>
+
+      <h5 id="quickLinks"><a id="TsCs" href="#">Ts & Cs</a></h5>
     </div>
+
+    <br />
 
     <div class="disclaimer" id="disclaimer">
       <a id="cancelBtn" onclick="return acknowledge()"> &#x2715; </a>
