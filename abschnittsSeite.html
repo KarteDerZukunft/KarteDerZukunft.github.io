@@ -373,7 +373,10 @@
               kdzObj.places[i].coordinates.lng,
               kdzObj.places[i].coordinates.lat,
             ]);
-          } else if (kdzObj.places[i].coordinates !== "") {
+          } else if (
+            kdzObj.places[i].type[0].slug === "ort" &&
+            kdzObj.places[i].coordinates !== ""
+          ) {
             document.querySelector("#overlays").insertAdjacentHTML(
               "beforeend",
               `
@@ -521,12 +524,12 @@
             .querySelector("#kiezprojektContainer")
             .insertAdjacentHTML("beforeend", `${kiezprojektsToInsert}`);
 
-          document
-            .querySelector("#quickLinks")
-            .insertAdjacentHTML(
-              "beforeend",
-              `<a href="themenbereichListe.html?cid=${cid}">${cTitle}</a> | <a href="themenabschnittListe.html?tid=${tid}">${tTitle}</a>`
-            );
+          document.querySelector("#quickLinks").insertAdjacentHTML(
+            "beforeend",
+            `
+              <a href="themenbereichListe.html?cid=${cid}">${cTitle}</a> | <a href="themenabschnittListe.html?tid=${tid}">${tTitle}</a> | <a href="TsCs.html?Impressum">Impressum</a> | <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a>
+            `
+          );
         } else {
           window.location.replace("./404.html");
         }

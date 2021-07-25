@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Site Metas -->
+    <title id="tabTitle"></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="AbuRadi" />
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Colors CSS -->
+
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="css/versions.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="politics_version">
+    <!-- LOADER -->
+    <div id="preloader">
+      <div id="main-ld">
+        <div id="loader"></div>
+      </div>
+    </div>
+    <!-- end loader -->
+    <!-- END LOADER -->
+
+    <header class="header header_style_01">
+      <nav class="megamenu navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html"
+              ><img src="images/logos/logo.png" alt="image"
+            /></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right"></ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      style="margin: 95px 5% 5px 5%; width: 90%; line-height: 240%"
+      id="legalContent"
+    ></div>
+
+    <script src="Data/kdz.js"></script>
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      if (urlParams.has("Datenschutzerklärung")) {
+        document
+          .querySelector("#legalContent")
+          .insertAdjacentHTML("beforeend", `${kdzObj.site_meta.privacy}`);
+      } else if (urlParams.has("Impressum")) {
+        document
+          .querySelector("#legalContent")
+          .insertAdjacentHTML("beforeend", `${kdzObj.site_meta.legal}`);
+      } else {
+        window.location.replace("./404.html");
+      }
+    </script>
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"
+      ><i class="fa fa-angle-up"></i
+    ></a>
+
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- Camera Slider -->
+    <script src="js/jquery.mobile.customized.min.js"></script>
+    <script src="js/scrollIt.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>

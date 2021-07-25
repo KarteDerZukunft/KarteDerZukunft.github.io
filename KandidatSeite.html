@@ -296,7 +296,10 @@
                   kdzObj.places[i].coordinates.lng,
                   kdzObj.places[i].coordinates.lat,
                 ]);
-              } else if (kdzObj.places[i].coordinates !== "") {
+              } else if (
+                kdzObj.places[i].type[0].slug === "ort" &&
+                kdzObj.places[i].coordinates !== ""
+              ) {
                 document.querySelector("#overlays").insertAdjacentHTML(
                   "beforeend",
                   `

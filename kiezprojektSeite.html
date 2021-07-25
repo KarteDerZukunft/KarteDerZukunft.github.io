@@ -296,7 +296,10 @@
                   kdzObj.places[i].coordinates.lng,
                   kdzObj.places[i].coordinates.lat,
                 ]);
-              } else if (kdzObj.places[i].coordinates !== "") {
+              } else if (
+                kdzObj.places[i].type[0].slug === "ort" &&
+                kdzObj.places[i].coordinates !== ""
+              ) {
                 document.querySelector("#overlays").insertAdjacentHTML(
                   "beforeend",
                   `
@@ -607,12 +610,12 @@
           }
         }
 
-        document
-          .querySelector("#quickLinks")
-          .insertAdjacentHTML(
-            "beforeend",
-            `<a href="themenbereichListe.html?cid=${cid}">${cTitle}</a>`
-          );
+        document.querySelector("#quickLinks").insertAdjacentHTML(
+          "beforeend",
+          `
+            <a href="themenbereichListe.html?cid=${cid}">${cTitle}</a> | <a href="TsCs.html?Impressum">Impressum</a> | <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a>
+          `
+        );
       </script>
     </div>
 
