@@ -1,13 +1,155 @@
 var kdzObj = {
-  "site-meta": {
+  "site_meta": {
     "title": "Karte der Zukunft",
     "description": "ein interaktiver Zugang zum Wahlprogramm für Berlin Mitte",
-    "created_at": 1627222436,
+    "created_at": 1627227225,
     "lang": "de",
     "legal": "<h3>Angaben gemäß § 5 TMG</h3>\r\nSozialdemokratische Partei Deutschlands\r\nKreis Mitte\r\nvertreten durch Julia Plehnert &amp; Yannick Haan (Kreisvorsitzende)\r\nMüllerstraße 163\r\n13353 Berlin\r\nFon (030) 4692-130\r\nFax: (030) 4692-164\r\n<a href=\"https://www.spd-berlin-mitte.de/mto/1/\">kreis.mitte@spd.de</a>\r\n<h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>\r\nMathias Schulz\r\nInternetbeauftragter\r\nFon: (030) 4692-130\r\n<a href=\"https://www.spd-berlin-mitte.de/mto/1/\">kreis.mitte@spd.de</a>",
     "privacy": "<!-- wp:heading -->\r\n<h2>Who we are</h2>\r\n<!-- /wp:heading -->\r\n\r\n<!-- wp:paragraph -->\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>Our website address is: ............</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:heading -->\r\n<h2>Comments</h2>\r\n<!-- /wp:heading -->\r\n\r\n<!-- wp:paragraph -->\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:paragraph -->\r\n<p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:heading -->\r\n<h2>Media</h2>\r\n<!-- /wp:heading -->\r\n\r\n<!-- wp:paragraph -->\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:heading -->\r\n<h2>Cookies</h2>\r\n<!-- /wp:heading -->\r\n\r\n<!-- wp:paragraph -->\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:paragraph -->\r\n<p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:paragraph -->\r\n<p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select \"Remember Me\", your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:paragraph -->\r\n<p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:heading -->\r\n<h2>Embedded content from other websites</h2>\r\n<!-- /wp:heading -->\r\n\r\n<!-- wp:paragraph -->\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:paragraph -->\r\n<p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:heading -->\r\n<h2>Who we share your data with</h2>\r\n<!-- /wp:heading -->\r\n\r\n<!-- wp:paragraph -->\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you request a password reset, your IP address will be included in the reset email.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:heading -->\r\n<h2>How long we retain your data</h2>\r\n<!-- /wp:heading -->\r\n\r\n<!-- wp:paragraph -->\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:paragraph -->\r\n<p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:heading -->\r\n<h2>What rights you have over your data</h2>\r\n<!-- /wp:heading -->\r\n\r\n<!-- wp:paragraph -->\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>\r\n<!-- /wp:paragraph -->\r\n\r\n<!-- wp:heading -->\r\n<h2>Where we send your data</h2>\r\n<!-- /wp:heading -->\r\n\r\n<!-- wp:paragraph -->\r\n<p><strong class=\"privacy-policy-tutorial\">Suggested text: </strong>Visitor comments may be checked through an automated spam detection service.</p>\r\n<!-- /wp:paragraph -->"
   },
   "places": [
+    {
+      "id": 1541,
+      "title": "Scheunenviertel",
+      "description": "",
+      "qr_target": "",
+      "tags": "",
+      "coordinates": {
+        "address": "Scheunenviertel, Berlin, Deutschland",
+        "lat": 52.53409720000001,
+        "lng": 13.3785164,
+        "zoom": 14,
+        "place_id": "ChIJyxVvipJRqEcRfzbzxmC6V4s",
+        "name": "Scheunenviertel",
+        "city": "Berlin",
+        "state": "Berlin",
+        "post_code": "10115",
+        "country": "Deutschland",
+        "country_short": "DE"
+      },
+      "belongs_to_section": 0,
+      "belongs_to_cluster": 0,
+      "places": "",
+      "order_num": 0,
+      "image": {
+        "url": "",
+        "credits": ""
+      },
+      "video": "",
+      "type": [
+        {
+          "slug": "ort",
+          "name": "ort"
+        }
+      ]
+    },
+    {
+      "id": 1539,
+      "title": "Sprengelkiez",
+      "description": "",
+      "qr_target": "",
+      "tags": "",
+      "coordinates": {
+        "address": "Sprengelkiez, Berlin, Deutschland",
+        "lat": 52.541773,
+        "lng": 13.3570572,
+        "zoom": 14,
+        "place_id": "ChIJNePMEoJRqEcRKG2ZmbMow9c",
+        "name": "Sprengelkiez",
+        "city": "Berlin",
+        "state": "Berlin",
+        "post_code": "13353",
+        "country": "Deutschland",
+        "country_short": "DE"
+      },
+      "belongs_to_section": 0,
+      "belongs_to_cluster": 0,
+      "places": "",
+      "order_num": 0,
+      "image": {
+        "url": "",
+        "credits": ""
+      },
+      "video": "",
+      "type": [
+        {
+          "slug": "ort",
+          "name": "ort"
+        }
+      ]
+    },
+    {
+      "id": 1537,
+      "title": "Badstraße",
+      "description": "",
+      "qr_target": "",
+      "tags": "",
+      "coordinates": {
+        "address": "Badstraße, Berlin, Deutschland",
+        "lat": 52.5515826,
+        "lng": 13.3829055,
+        "zoom": 14,
+        "place_id": "EhtCYWRzdHJhw59lLCBCZXJsaW4sIEdlcm1hbnkiLiosChQKEgm1E1oDJFKoRxF0Ol86930lVhIUChIJAVkDPzdOqEcRcDteW0YgIQQ",
+        "name": "Badstraße",
+        "street_name": "Badstraße",
+        "city": "Berlin",
+        "state": "Berlin",
+        "country": "Deutschland",
+        "country_short": "DE"
+      },
+      "belongs_to_section": 0,
+      "belongs_to_cluster": 0,
+      "places": "",
+      "order_num": 0,
+      "image": {
+        "url": "",
+        "credits": ""
+      },
+      "video": "",
+      "type": [
+        {
+          "slug": "ort",
+          "name": "ort"
+        }
+      ]
+    },
+    {
+      "id": 1532,
+      "title": "Otto-Spielplatz",
+      "description": "Wir setzen uns für mehr und besser ausgestattete Spielplätze und Angebote für alle Generationen ein. Wir wollen wenig genutzte Kleinflächen zu Kiez- oder Quartiersplätzen weiterentwickeln. Wie wollen leerstehende Gewerberäume rund um öffentliche Plätze im Dialog mit Anrainer*innen und Gewerbetreibenden gestalten. Wir unterstützen die Einrichtung und den Erhalt von Kiez- und Wochenmärkten. Parks, Grünflächen und Planschen wollen wir sanieren und dort Orte für Sport, Kultur, Freizeit und zum Grillen schaffen.",
+      "qr_target": "https://www.kartederzukunft.de/spd/otto-spielplatz",
+      "tags": "",
+      "coordinates": {
+        "address": "Otto-Spielplatz, Alt-Moabit, Berlin, Deutschland",
+        "lat": 52.52551950000001,
+        "lng": 13.3365649,
+        "zoom": 14,
+        "place_id": "ChIJEaTozQ1RqEcR7tYD5xqat9w",
+        "name": "Otto-Spielplatz",
+        "street_number": "34",
+        "street_name": "Alt-Moabit",
+        "city": "Berlin",
+        "state": "Berlin",
+        "post_code": "10555",
+        "country": "Deutschland",
+        "country_short": "DE"
+      },
+      "belongs_to_section": 1,
+      "belongs_to_cluster": 9,
+      "places": "",
+      "order_num": 0,
+      "image": {
+        "url": "",
+        "credits": ""
+      },
+      "video": "",
+      "type": [
+        {
+          "slug": "kiezprojekt",
+          "name": "kiezprojekt"
+        }
+      ]
+    },
     {
       "id": 1523,
       "title": "Magdeburger Platz",
@@ -1510,8 +1652,8 @@ var kdzObj = {
     {
       "id": 242,
       "title": "Lern- & Erinnerungsorte",
-      "description": "Plätze wie der <strong>„Pekinger Platz“ im Weddinger Sprengelkiez sollen Lern- und Erinnerungsorte</strong> werden. Schautafeln sollen die historischen Hintergründe der Namensgebung des Ortes und seiner umliegenden Straßen verständlich erklären. Auch an andere historische Ereignisse, wie beispielsweise die <strong>Gründung von Hertha BSC</strong> <strong>am Arkonaplatz</strong> soll so erinnert werden.",
-      "qr_target": "",
+      "description": "Plätze wie der <strong>Pekinger Platz im Weddinger Sprengelkiez sollen Lern- und Erinnerungsorte</strong> werden. Schautafeln sollen die historischen Hintergründe der Namensgebung des Ortes und seiner umliegenden Straßen verständlich erklären. Auch an andere historische Ereignisse, wie beispielsweise die <strong>Gründung von Hertha BSC</strong> <strong>am Arkonaplatz</strong> soll so erinnert werden.",
+      "qr_target": "https://www.kartederzukunft.de/spd/pekinger-platz",
       "tags": [
         {
           "term_id": 74,
@@ -2218,11 +2360,23 @@ var kdzObj = {
     },
     {
       "id": 228,
-      "title": "Wir setzen uns konse...",
-      "description": "Wir setzen uns konsequent für saubere Gehwege, Plätze, Parks und Spielplätze ein: Die Angebote der BSR werden ausgebaut und bekannter gemacht. Mindestens einmal pro Quartal soll es in jedem Kiez einen Sperrmüllsammeltag geben sowie zusätzlich für jeden Haushalt einmal im Jahr eine kostenlose Sperrmüllabholung nach Voranmeldung. Illegale Altkleidercontainer werden konsequent geahndet und wir setzen uns stattdessen für die Errichtung von ausreichenden legalen Containern ein.",
-      "qr_target": "",
+      "title": "Nettelbeckplatz!",
+      "description": "Wir setzen uns konsequent <strong>für saubere Gehwege, Plätze, Parks und Spielplätze</strong> ein: Die Angebote der BSR werden ausgebaut und bekannter gemacht. Mindestens einmal pro Quartal soll es in jedem Kiez einen <strong>Sperrmüllsammeltag</strong> geben sowie zusätzlich für jeden Haushalt einmal im Jahr eine kostenlose <strong>Sperrmüllabholung</strong> nach Voranmeldung. Illegale Altkleidercontainer werden konsequent geahndet und wir setzen uns stattdessen für die Errichtung von ausreichenden legalen Containern ein.",
+      "qr_target": "https://www.kartederzukunft.de/spd/nettelbeckplatz",
       "tags": "",
-      "coordinates": "",
+      "coordinates": {
+        "address": "Nettelbeckplatz, Berlin, Deutschland",
+        "lat": 52.5449303,
+        "lng": 13.3694961,
+        "zoom": 14,
+        "place_id": "ChIJ1XMerodRqEcRSON18y6vtcA",
+        "name": "Nettelbeckplatz",
+        "city": "Berlin",
+        "state": "Berlin",
+        "post_code": "13347",
+        "country": "Deutschland",
+        "country_short": "DE"
+      },
       "belongs_to_section": 0,
       "belongs_to_cluster": 6,
       "places": "",
@@ -2348,18 +2502,22 @@ var kdzObj = {
     },
     {
       "id": 231,
-      "title": "Das Scheunenviertel,...",
+      "title": "Scheunenviertel, Badstraße & Sprengelkiez: Hier soll ein Kiezblock hin!",
       "description": "Das Scheunenviertel, der Sprengelkiez und die Badstraße sollen in Pilotprojekten zu Kiezblöcken weiterentwickelt werden.",
-      "qr_target": "",
+      "qr_target": "https://www.kartederzukunft.de/spd/kiezblock",
       "tags": "",
       "coordinates": "",
       "belongs_to_section": 0,
       "belongs_to_cluster": 0,
-      "places": "",
+      "places": [
+        "1537",
+        "1541",
+        "1539"
+      ],
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2384,8 +2542,8 @@ var kdzObj = {
       ],
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2409,8 +2567,8 @@ var kdzObj = {
       ],
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2422,18 +2580,93 @@ var kdzObj = {
     },
     {
       "id": 220,
-      "title": "Wir wollen eine züg...",
-      "description": "Wir wollen eine zügige Fortsetzung der Planung und Umsetzung des Baus der neuen Mittelpunktbibliothek in der Turmstraße 22 gemeinsam mit der Staatsanwaltschaft Berlin. Sie soll Ersatz sein für die Bruno-Lösche- Bibliothek, die mittelfristig geschlossen werden muss. Dieser Neubau ist elementar für das soziale und kulturelle Angebot in diesem Bereich Moabits und wird unser kulturelles Leuchtturmprojekt für Berlin-Mitte werden.",
-      "qr_target": "",
-      "tags": "",
-      "coordinates": "",
-      "belongs_to_section": 0,
+      "title": "Bildung für alle, Mittelpunktbibliothek für die Turmstraße!",
+      "description": "Wir wollen eine zügige Fortsetzung der Planung und Umsetzung des Baus der neuen Mittelpunktbibliothek in der Turmstraße 22 gemeinsam mit der Staatsanwaltschaft Berlin. Sie soll Ersatz sein für die Bruno-Lösche-Bibliothek, die mittelfristig geschlossen werden muss. Dieser Neubau ist elementar für das soziale und kulturelle Angebot in diesem Bereich Moabits und wird unser kulturelles Leuchtturmprojekt für Berlin-Mitte werden.",
+      "qr_target": "https://www.kartederzukunft.de/spd/turmstrasse",
+      "tags": [
+        {
+          "term_id": 32,
+          "name": "Bildung",
+          "slug": "bildung",
+          "term_group": 0,
+          "term_taxonomy_id": 32,
+          "taxonomy": "post_tag",
+          "description": "",
+          "parent": 0,
+          "count": 11,
+          "filter": "raw"
+        },
+        {
+          "term_id": 142,
+          "name": "Freizeit",
+          "slug": "freizeit",
+          "term_group": 0,
+          "term_taxonomy_id": 142,
+          "taxonomy": "post_tag",
+          "description": "",
+          "parent": 0,
+          "count": 6,
+          "filter": "raw"
+        },
+        {
+          "term_id": 38,
+          "name": "Jugendliche",
+          "slug": "jugendliche",
+          "term_group": 0,
+          "term_taxonomy_id": 38,
+          "taxonomy": "post_tag",
+          "description": "",
+          "parent": 0,
+          "count": 13,
+          "filter": "raw"
+        },
+        {
+          "term_id": 36,
+          "name": "Kinder",
+          "slug": "kinder",
+          "term_group": 0,
+          "term_taxonomy_id": 36,
+          "taxonomy": "post_tag",
+          "description": "",
+          "parent": 0,
+          "count": 12,
+          "filter": "raw"
+        },
+        {
+          "term_id": 78,
+          "name": "Versorgung",
+          "slug": "versorgung",
+          "term_group": 0,
+          "term_taxonomy_id": 78,
+          "taxonomy": "post_tag",
+          "description": "",
+          "parent": 0,
+          "count": 5,
+          "filter": "raw"
+        }
+      ],
+      "coordinates": {
+        "address": "Turmstraße 22, Berlin, Deutschland",
+        "lat": 52.52645259999999,
+        "lng": 13.3468352,
+        "zoom": 14,
+        "place_id": "ChIJcbKVlwpRqEcRiTR3xq9ov0c",
+        "name": "Turmstraße 22",
+        "street_number": "22",
+        "street_name": "Turmstraße",
+        "city": "Berlin",
+        "state": "Berlin",
+        "post_code": "10559",
+        "country": "Deutschland",
+        "country_short": "DE"
+      },
+      "belongs_to_section": 1,
       "belongs_to_cluster": 6,
       "places": "",
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2455,8 +2688,8 @@ var kdzObj = {
       "places": "",
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2478,8 +2711,8 @@ var kdzObj = {
       "places": "",
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2503,8 +2736,8 @@ var kdzObj = {
       ],
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2529,8 +2762,8 @@ var kdzObj = {
       ],
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2565,8 +2798,8 @@ var kdzObj = {
       "places": "",
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2602,8 +2835,8 @@ var kdzObj = {
       "places": "",
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2625,8 +2858,8 @@ var kdzObj = {
       "places": "",
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2648,8 +2881,8 @@ var kdzObj = {
       "places": "",
       "order_num": 0,
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/5629212798_6e69ee3c4d_o.jpg",
-        "credits": "Von elycefeliz, https://www.flickr.com/photos/elycefeliz/5629212798/"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/05/micheile-henderson-GrdAN0NEIKY-unsplash-scaled.jpg",
+        "credits": ""
       },
       "video": "",
       "type": [
@@ -2866,9 +3099,7 @@ var kdzObj = {
       },
       "belongs_to_section": 0,
       "belongs_to_cluster": 6,
-      "places": [
-        "1523"
-      ],
+      "places": "",
       "order_num": 0,
       "image": {
         "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/06/kadir-celep-5DNxJaBodtk-unsplash-scaled.jpg",
@@ -3489,7 +3720,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 10,
+          "count": 11,
           "filter": "raw"
         },
         {
@@ -4104,7 +4335,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 10,
+          "count": 11,
           "filter": "raw"
         },
         {
@@ -4164,7 +4395,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 4,
+          "count": 5,
           "filter": "raw"
         },
         {
@@ -4500,7 +4731,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 5,
+          "count": 6,
           "filter": "raw"
         },
         {
@@ -4512,7 +4743,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -4524,7 +4755,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         },
         {
@@ -4569,7 +4800,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 10,
+          "count": 11,
           "filter": "raw"
         },
         {
@@ -4581,7 +4812,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 5,
+          "count": 6,
           "filter": "raw"
         },
         {
@@ -4617,7 +4848,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -4629,7 +4860,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         },
         {
@@ -4686,7 +4917,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 5,
+          "count": 6,
           "filter": "raw"
         },
         {
@@ -4710,7 +4941,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -4722,7 +4953,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         },
         {
@@ -4815,7 +5046,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -4827,7 +5058,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         },
         {
@@ -4863,7 +5094,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 4,
+          "count": 5,
           "filter": "raw"
         }
       ],
@@ -4980,7 +5211,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 4,
+          "count": 5,
           "filter": "raw"
         }
       ],
@@ -5341,7 +5572,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 10,
+          "count": 11,
           "filter": "raw"
         },
         {
@@ -5365,7 +5596,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -5377,7 +5608,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         }
       ],
@@ -5446,7 +5677,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -5458,7 +5689,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         },
         {
@@ -5849,7 +6080,7 @@ var kdzObj = {
       "id": 143,
       "title": "Wirksamer Klimaschutz findet vor Ort statt",
       "description": "Wir erkennen den wichtigen Beitrag an, den Kleingärten für die Klimabilanz und die Artenvielfalt erbringen, und befürworten eine weitere Öffnung der Nutzung, etwa durch Kitas, Schulen und öffentliche Gemeinschaftsgärten. Des Weiteren wollen wir Schulungen zur ökologischen Bewirtschaftung von Kleingärten ausbauen und den Mehrwert der Flächen für die Stadtnatur Steigern.",
-      "qr_target": "",
+      "qr_target": "https://www.kartederzukunft.de/spd/kleingarten",
       "tags": [
         {
           "term_id": 32,
@@ -5860,7 +6091,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 10,
+          "count": 11,
           "filter": "raw"
         },
         {
@@ -5872,7 +6103,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 5,
+          "count": 6,
           "filter": "raw"
         },
         {
@@ -5896,7 +6127,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         },
         {
@@ -5977,7 +6208,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 10,
+          "count": 11,
           "filter": "raw"
         },
         {
@@ -6058,7 +6289,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 10,
+          "count": 11,
           "filter": "raw"
         },
         {
@@ -6082,7 +6313,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -6094,7 +6325,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         }
       ],
@@ -6163,7 +6394,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -6175,7 +6406,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         },
         {
@@ -6256,7 +6487,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 10,
+          "count": 11,
           "filter": "raw"
         },
         {
@@ -6280,7 +6511,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -6292,7 +6523,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         }
       ],
@@ -7261,7 +7492,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 10,
+          "count": 11,
           "filter": "raw"
         },
         {
@@ -7273,7 +7504,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 5,
+          "count": 6,
           "filter": "raw"
         },
         {
@@ -7981,7 +8212,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 4,
+          "count": 5,
           "filter": "raw"
         },
         {
@@ -8026,7 +8257,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -8140,7 +8371,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -8371,7 +8602,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 10,
+          "count": 11,
           "filter": "raw"
         },
         {
@@ -8395,7 +8626,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 12,
+          "count": 13,
           "filter": "raw"
         },
         {
@@ -8407,7 +8638,7 @@ var kdzObj = {
           "taxonomy": "post_tag",
           "description": "",
           "parent": 0,
-          "count": 11,
+          "count": 12,
           "filter": "raw"
         },
         {
@@ -9563,7 +9794,7 @@ var kdzObj = {
     {
       "id": 1081,
       "title": "Astrid Hollmann",
-      "description": "<p style=\"text-align: left;\"><strong>Mitte ist ein besonderer Ort.</strong> Hier funktioniert alles zusammen: Wohnen, Leben, Gestalten und Freizeit. Hier ist Heimat, Kindheit, Urlaub, Museum und immer wieder der Ort, an dem Geschichte gemacht und Trends gesetzt werden.</p>\r\n<p style=\"text-align: left;\"><strong>Die Pandemie hat unser Leben verändert und uns gezeigt, was wichtig ist und was gefährdet.</strong> Knapp 30 Millionen Gäste kamen jährlich nach Berlin - auch wegen der einzigartigen Atmosphäre, die vor allem von Ihnen, den Menschen, die hier leben, geschaffen wird. Ich bin davon überzeugt, dass das bald wieder so sein wird. Und doch wird nicht alles sein, wie es war. Vor allem Kleingewerbe, Kultur und Gastronomie haben gelitten. Der Alltag von Erwachsenen und Kindern war und ist auf den Kopf gestellt.</p>\r\n<p style=\"text-align: left;\"><strong>Ich trete an für alles zu kämpfen, was ich an meiner Wahlheimat Berlin und vor allem an Mitte liebe.</strong></p>\r\n<p style=\"text-align: left;\"><strong>Kunst und Kultur schaffen Arbeitsplätze und Sinn.</strong> Diese Vielfalt will ich schützen und fördern: Museen, Kinos und Clubs genauso wie das Schaffen professioneller und ehrenamtlicher Künstler*innen. <strong>Hier wird Berlin gedacht und gemacht.</strong></p>\r\n<p style=\"text-align: left;\"><strong>Mitte ist ein guter Wirtschaftsstandort.</strong> Aus dem ehemaligen Arbeiterviertel ist ein vielfältiger Kiez geworden: Start-up, Späti, Hostel, Bäckerei, Werkbank und Konzernzentrale. <strong>Ich will gute Arbeitsplätze erhalten und neue hinzugewinnen. Dafür brauchen wir gute Rahmenbedingungen und eine menschennahe Verwaltung.</strong></p>\r\n<p style=\"text-align: left;\"><strong>Tourismus ist ein wichtiger Wirtschaftsfaktor für Mitte.</strong> Der massenhafte Andrang hat aber auch seine Schattenseiten: verstopfte Verkehrsmittel, mehr Dreck in den Straßen und nächtlicher Lärm. Ich möchte mich für ein Miteinander und gegenseitiges Verständnis einsetzen<strong>. Ich will, dass sich jede und jeder in Mitte sicher und wohlfühlen kann</strong> - jederzeit, an jedem Ort. <strong>Dafür brauchen wir ein kluges Verkehrskonzept, eine starke Polizei und lebendige Nachbarschaften</strong> mit Initiativen und Vereinen.</p>\r\n<p style=\"text-align: left;\">Eine lebendige Nachbarschaft, das sind auch Familien und Kinder. Dafür brauchen wir genügend Kita- und Schulplätze mit gutem Personal und bezahlbaren Lebens- und Wohnraum. Das werden Schwerpunkte meiner Arbeit sein: <strong>Gutes und bezahlbares Wohnen, gute Bildung, starke Wirtschaft und verträglicher Tourismus</strong>, denn das sind zentrale Fragen für Mitte.</p>\r\n<p style=\"text-align: left;\">Seit 1999 lebe ich in Berlin, seit 2003 in Mitte: Eine Zugezogene, die eine neue Heimat gefunden hat. Ein Arbeiterkind mit Studium, <strong>viel Leidenschaft für die Politik und viel Erfahrung im Beruf und in Ehrenämtern.</strong></p>\r\n<p style=\"text-align: left;\">Erfahren Sie mehr über mich und mein Leben auf meiner Webseite oder im persönlichen Gespräch. <strong>Lassen Sie mich erfahren, was Sie sich für Berlin und Ihr Leben in Mitte wünschen.</strong></p>\r\n<p style=\"text-align: left;\">Ich freue mich Sie zu treffen - vor Ort in Mitte oder im digitalen Raum.</p>",
+      "description": "<p style=\"text-align: left;\"><strong>Mitte ist ein besonderer Ort.</strong> Hier funktioniert alles zusammen: Wohnen, Leben, Gestalten und Freizeit. Hier ist Heimat, Kindheit, Urlaub, Museum und immer wieder der Ort, an dem Geschichte gemacht und Trends gesetzt werden.</p>\r\n<p style=\"text-align: left;\"><strong>Die Pandemie hat unser Leben verändert und uns gezeigt, was wichtig ist und was gefährdet.</strong> Knapp 30 Millionen Gäste kamen jährlich nach Berlin - auch wegen der einzigartigen Atmosphäre, die vor allem von Ihnen, den Menschen, die hier leben, geschaffen wird. Ich bin davon überzeugt, dass das bald wieder so sein wird. Und doch wird nicht alles sein, wie es war. Vor allem Kleingewerbe, Kultur und Gastronomie haben gelitten. Der Alltag von Erwachsenen und Kindern war und ist auf den Kopf gestellt.</p>\r\n<p style=\"text-align: left;\"><strong>Ich trete an für alles zu kämpfen, was ich an meiner Wahlheimat Berlin und vor allem an Mitte liebe.</strong></p>\r\n<p style=\"text-align: left;\"><strong>Kunst und Kultur schaffen Arbeitsplätze und Sinn.</strong> Diese Vielfalt will ich schützen und fördern: Museen, Kinos und Clubs genauso wie das Schaffen professioneller und ehrenamtlicher Künstler*innen. <strong>Hier wird Berlin gedacht und gemacht.</strong></p>\r\n<p style=\"text-align: left;\"><strong>Mitte ist ein guter Wirtschaftsstandort.</strong> Aus dem ehemaligen Arbeiterviertel ist ein vielfältiger Kiez geworden: Start-up, Späti, Hostel, Bäckerei, Werkbank und Konzernzentrale. <strong>Ich will gute Arbeitsplätze erhalten und neue hinzugewinnen. Dafür brauchen wir gute Rahmenbedingungen und eine menschennahe Verwaltung.</strong></p>\r\n<p style=\"text-align: left;\"><strong>Tourismus ist ein wichtiger Wirtschaftsfaktor für Mitte.</strong> Der massenhafte Andrang hat aber auch seine Schattenseiten: verstopfte Verkehrsmittel, mehr Dreck in den Straßen und nächtlicher Lärm. Ich möchte mich für ein Miteinander und gegenseitiges Verständnis einsetzen<strong>. Ich will, dass sich jede und jeder in Mitte sicher und wohlfühlen kann</strong> - jederzeit, an jedem Ort. <strong>Dafür brauchen wir ein kluges Verkehrskonzept, eine starke Polizei und lebendige Nachbarschaften</strong> mit Initiativen und Vereinen.</p>\r\n<p style=\"text-align: left;\">Eine lebendige Nachbarschaft, das sind auch Familien und Kinder. Dafür brauchen wir genügend Kita- und Schulplätze mit gutem Personal und bezahlbaren Lebens- und Wohnraum. Das werden Schwerpunkte meiner Arbeit sein: <strong>Gutes und bezahlbares Wohnen, gute Bildung, starke Wirtschaft und verträglicher Tourismus</strong>, denn das sind zentrale Fragen für Mitte.</p>\r\n<p style=\"text-align: left;\">Seit 1999 lebe ich in Berlin, seit 2003 in Mitte: Eine Zugezogene, die eine neue Heimat gefunden hat. Ein Arbeiterkind mit Studium, <strong>viel Leidenschaft für die Politik und viel Erfahrung im Beruf und in Ehrenämtern.</strong></p>\r\n<p style=\"text-align: left;\">Erfahren Sie mehr über mich und mein Leben auf meiner Webseite oder im persönlichen Gespräch. <strong>Lassen Sie mich erfahren, was Sie sich für Berlin und Ihr Leben in Mitte wünschen.</strong></p>\r\n<p style=\"text-align: left;\">Ich freue mich Sie zu treffen - vor Ort in Mitte oder im digitalen Raum.</p>",
       "candidacy": "AGH-Direktkandidatur im Wahlkreis 1 (Charité, Oranienburger Tor, Zionskirchplatz)",
       "tags": "",
       "image": {
