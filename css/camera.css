@@ -49,7 +49,6 @@
 }
 .camera_fakehover {
   height: 100%;
-  min-height: 60px;
   position: relative;
   width: 100%;
   z-index: 1;
@@ -83,6 +82,7 @@
   right: 0;
   top: 0;
   width: 100%;
+  /* height: calc(100vh - 60px); */
 }
 .camera_target {
   bottom: 0;
