@@ -69,10 +69,25 @@
           $("#scroll-to-top").removeClass("show");
         }
       };
+
     backToTop();
+
     $(window).on("scroll", function () {
       backToTop();
     });
+
+    $(window).scroll(function () {
+      clearTimeout($.data(this, "scrollTimer"));
+      $.data(
+        this,
+        "scrollTimer",
+        setTimeout(function () {
+          // do something
+          $("#scroll-to-top").removeClass("show");
+        }, 2000)
+      );
+    });
+
     $("#scroll-to-top").on("click", function (e) {
       e.preventDefault();
       $("html,body").animate(

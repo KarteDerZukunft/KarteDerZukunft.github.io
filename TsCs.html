@@ -65,9 +65,21 @@
     </header>
 
     <div
-      style="margin: 95px 5% 5px 5%; width: 90%; line-height: 240%"
+      style="margin: 105px 5% 5px 5%; width: 90%; line-height: 240%"
       id="legalContent"
     ></div>
+
+    <style>
+      #legalContent a {
+        color: #ff392b;
+
+        transition: 400ms;
+      }
+
+      #legalContent a:hover {
+        color: #212121;
+      }
+    </style>
 
     <script src="Data/kdz.js"></script>
     <script>
@@ -78,10 +90,24 @@
         document
           .querySelector("#legalContent")
           .insertAdjacentHTML("beforeend", `${kdzObj.site_meta.privacy}`);
+
+        document
+          .querySelector("#legalContent")
+          .insertAdjacentHTML(
+            "beforeend",
+            `<a href="TsCs.html?Impressum">Impressum</a>`
+          );
       } else if (urlParams.has("Impressum")) {
         document
           .querySelector("#legalContent")
           .insertAdjacentHTML("beforeend", `${kdzObj.site_meta.legal}`);
+
+        document
+          .querySelector("#legalContent")
+          .insertAdjacentHTML(
+            "beforeend",
+            `<a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a>`
+          );
       } else {
         window.location.replace("./404.html");
       }

@@ -563,8 +563,9 @@ li.social-links a {
 
 .sectionListElement .lowerLip {
   position: relative;
+  text-align: left;
   bottom: 0px;
-  margin: -5px;
+  margin: 2.5px;
   padding: 2.5px;
 
   background-color: white;
@@ -577,16 +578,17 @@ li.social-links a {
   padding: 5px;
 }
 
-.sectionListElement .lowerLip a h2 {
-  float: right;
-  color: #ff392b63;
-  margin: 5px;
+.sectionListElement .lowerLip a button {
+  background-color: #ff392b;
+  margin: 2.15px;
+  border-radius: 2.5px;
 
   transition: 400ms;
 }
 
-.sectionListElement .lowerLip a h2:hover {
-  color: #ff392bef;
+.sectionListElement .lowerLip a button:hover {
+  background-color: #212121;
+  opacity: 0.8;
 }
 
 .sectionListElement .lowerLip .tagString {
@@ -603,20 +605,13 @@ li.social-links a {
 .sectionListElement .lowerLip .tagString .tagStringBase a {
   float: left;
   color: #ff392bef;
+  padding: 0px 5px 0px 0px;
 
   transition: 400ms;
 }
 
 .sectionListElement .lowerLip .tagString .tagStringBase a:hover {
   color: #212121;
-}
-
-.sectionListElement .lowerLip .tagString span a h2 {
-  float: right;
-  margin: 0px 0px 0px 5px;
-  padding: 0px;
-  font-size: 1.0em;
-  height: 1.2rem;
 }
 
 #TsCs {
