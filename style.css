@@ -736,9 +736,10 @@ li.social-links a {
 
 /* Silde Images */
 
-.kiezprojektContainer .slideshow .mySlides img {
-  width: 100%;
+.kiezprojektContainer .slideshow .mySlides a img {
+  width: calc(100% - 10px);
   border-radius: 5px;
+  margin-top: 5px;
   object-fit: cover;
   vertical-align: middle;
 }
