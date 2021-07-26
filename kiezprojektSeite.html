@@ -144,20 +144,26 @@
         <div class="slideshow">
           <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <img id="_1stSlideImg" src="" />
-            <div id="_1stSlideCaption" class="text"></div>
+            <a id="_1stSlideLink" href="">
+              <img id="_1stSlideImg" src="" />
+              <div id="_1stSlideCaption" class="text"></div>
+            </a>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <img id="_2ndSlideImg" src="" />
-            <div id="_2ndSlideCaption" class="text"></div>
+            <a id="_2ndSlideLink" href="">
+              <img id="_2ndSlideImg" src="" />
+              <div id="_2ndSlideCaption" class="text"></div>
+            </a>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
-            <img id="_3rdSlideImg" src="" />
-            <div id="_3rdSlideCaption" class="text"></div>
+            <a id="_3rdSlideLink" href="">
+              <img id="_3rdSlideImg" src="" />
+              <div id="_3rdSlideCaption" class="text"></div>
+            </a>
           </div>
 
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -168,6 +174,10 @@
         <script>
           for (let i = 0; i < kdzObj.candidates.length; i++) {
             if (kdzObj.candidates[i].type[0].slug === "bt") {
+              document.getElementById(
+                "_1stSlideLink"
+              ).href = `KandidatSeite.html?kid=${kdzObj.candidates[i].id}`;
+
               document.getElementById("_1stSlideImg").src =
                 kdzObj.candidates[i].image.url;
 
@@ -179,6 +189,10 @@
           var random = Math.ceil(
             Math.random() * (kdzObj.candidates.length - 1)
           );
+
+          document.getElementById(
+            "_2ndSlideLink"
+          ).href = `KandidatSeite.html?kid=${kdzObj.candidates[random].id}`;
 
           document.getElementById("_2ndSlideImg").src =
             kdzObj.candidates[random].image.url;
@@ -194,6 +208,10 @@
           ) {
             random = Math.ceil(Math.random() * (kdzObj.candidates.length - 1));
           }
+
+          document.getElementById(
+            "_3rdSlideLink"
+          ).href = `KandidatSeite.html?kid=${kdzObj.candidates[random].id}`;
 
           document.getElementById("_3rdSlideImg").src =
             kdzObj.candidates[random].image.url;
