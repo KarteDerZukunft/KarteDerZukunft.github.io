@@ -575,7 +575,20 @@ li.social-links a {
 .sectionListElement .lowerLip h2 {
   float: left;
   font-size: 0.8em;
-  padding: 5px;
+}
+
+.sectionListElement .lowerLip h2 a {
+  float: left;
+  color: #ff392bef;
+  padding: 0px 5px 5px 0px;
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  transition: 400ms;
+}
+
+.sectionListElement .lowerLip h2 a:hover {
+  color: #212121;
 }
 
 .sectionListElement .lowerLip a button {
@@ -596,22 +609,15 @@ li.social-links a {
   height: 2.4rem;
 }
 
-.sectionListElement .lowerLip .tagString .tagStringBase {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+.sectionListElement .lowerLip div {
+  padding: auto;
+  text-align: center;
 }
 
-.sectionListElement .lowerLip .tagString .tagStringBase a {
-  float: left;
-  color: #ff392bef;
-  padding: 0px 5px 0px 0px;
+.sectionListElement .lowerLip div .moreInfo {
+  margin: 0px auto;
 
-  transition: 400ms;
-}
-
-.sectionListElement .lowerLip .tagString .tagStringBase a:hover {
-  color: #212121;
+  color: gray;
 }
 
 #TsCs {
@@ -679,6 +685,10 @@ li.social-links a {
 .customDivider .shape-fill {
   fill: #ffffff;
 }
+
+/* #textDetailsContainer .title #zuruck:hover {
+  color: #212121;
+} */
 
 #textDetailsContainer {
   width: 90%;
@@ -1283,6 +1293,7 @@ h5 a {
 
 #description {
   padding-top: 8px;
+  font-size: 1.65rem;
 
   height: 25vh;
 }

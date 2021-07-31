@@ -161,20 +161,21 @@
               }
 
               htmlToInsert += `
-                <div link class="sectionListElement" id="topicNo_${kdzObj.topics[j].id}">
-                  <div class="topicTitle">
-                    
+                <a class="moreInfo" href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">
+                  <div link class="sectionListElement" id="topicNo_${kdzObj.topics[j].id}">
+                    <div class="topicTitle">
+                    </div>
+                    <div class="lowerLip">
+                      <h1>${kdzObj.topics[j].title}</h1>
+                      <h2>Anzahl der Abschnitte: ${wieVielAbschnitte}</h2>
+                      <br />
+                      <div style="width: 100%">
+                        <a class="moreInfo" href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">Mehr erfahren</a>
+                      </div>
+                      <br />
+                    </div>
                   </div>
-                  <div class="lowerLip">
-                    <h1>${kdzObj.topics[j].title}</h1>
-                    <h2>Anzahl der Abschnitte: ${wieVielAbschnitte}</h2>
-                    <br />
-                    <a href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">
-                      <button class="btn btn-primary" type="submit">Weitere Informationen</button>
-                    </a>
-                    <br />
-                  </div>
-                </div>`.replace("link", img);
+                </a>`.replace("link", img);
               c++;
             }
           }
@@ -205,8 +206,7 @@
       <a id="cancelBtn" onclick="return acknowledge()"> &#x2715; </a>
 
       <p>
-        This site uses cookies. By continuing to browse KarteDerZukunft, you are
-        agreeing to use <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
+        <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
         <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
           >Datenschutzerklärung</a
         >.
@@ -214,7 +214,7 @@
     </div>
 
     <script>
-      acknowledged = localStorage.getItem("acknowledged");
+      acknowledged = 1;
 
       if (acknowledged == 1) {
         var disclaimer = document.getElementById("disclaimer");

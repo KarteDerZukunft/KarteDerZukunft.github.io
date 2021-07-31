@@ -148,19 +148,20 @@
                 }
 
                 htmlToInsert += `
-                  <div link class="sectionListElement">
-                    <div class="topicSection">
-                      
+                  <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
+                    <div link class="sectionListElement">
+                      <div class="topicSection">
+                      </div>
+                      <div class="lowerLip">
+                        <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
+                        <br />
+                        <div style="width: 100%">
+                          <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">Mehr erfahren</a>
+                        </div>
+                        <br />
+                      </div>
                     </div>
-                    <div class="lowerLip">
-                      <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
-                      <br />
-                      <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
-                        <button class="btn btn-primary" type="submit">Weitere Informationen</button>
-                      </a>
-                      <br />
-                    </div>
-                  </div>`.replace("link", img);
+                  </a>`.replace("link", img);
                 c++;
                 continue;
               }
@@ -193,8 +194,7 @@
       <a id="cancelBtn" onclick="return acknowledge()"> &#x2715; </a>
 
       <p>
-        This site uses cookies. By continuing to browse KarteDerZukunft, you are
-        agreeing to use <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
+        <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
         <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
           >Datenschutzerklärung</a
         >.
@@ -202,7 +202,7 @@
     </div>
 
     <script>
-      acknowledged = localStorage.getItem("acknowledged");
+      acknowledged = 1;
 
       if (acknowledged == 1) {
         var disclaimer = document.getElementById("disclaimer");

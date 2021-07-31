@@ -83,7 +83,8 @@
     max-width: 230px;
   }
   .header_style_01 .navbar-brand img {
-    width: 100%;
+    width: auto;
+    height: 100%;
   }
 }
 

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Site Metas -->
+    <title>SPD - Karte</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="AbuRadi" />
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Colors CSS -->
+
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="css/versions.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="politics_version">
+    <!-- LOADER -->
+    <div id="preloader">
+      <div id="main-ld">
+        <div id="loader"></div>
+      </div>
+    </div>
+    <!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="map" class="map"></div>
+    <div id="overlays" style="display: none">
+      <!-- | -->
+    </div>
+
+    <script type="text/javascript">
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      let lon = 13.3789;
+      let lat = 52.516396;
+
+      // var thisLon = 13.3789;
+      // var thisLat = 52.516396;
+
+      // if (urlParams.has("kpid")) {
+      //   kpid = urlParams.get("kpid");
+
+      //   if (kdzObj.places[i].id == kpid) {
+      //     thisLon = kdzObj.places[i].coordinates.lng;
+      //     thisLat = kdzObj.places[i].coordinates.lat;
+      //   }
+      // }
+
+      var map = new ol.Map({
+        target: "map",
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM(),
+          }),
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([lon, lat]),
+          zoom: 15,
+        }),
+      });
+
+      // adding the kiezprojekts
+
+      const markers = [];
+
+      for (let i = 0; i < kdzObj.places.length; i++) {
+        if (
+          kdzObj.places[i].type[0].slug === "kiezprojekt" &&
+          kdzObj.places[i].coordinates !== ""
+        ) {
+          document.querySelector("#overlays").insertAdjacentHTML(
+            "beforeend",
+            `
+                    <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m">${kdzObj.places[i].title}</a>
+                    <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
+                  `
+          );
+
+          // keeping the this kiezprojekt's position
+
+          var marker = new ol.Overlay({
+            position: ol.proj.fromLonLat([
+              kdzObj.places[i].coordinates.lng,
+              kdzObj.places[i].coordinates.lat,
+            ]),
+            positioning: "center-center",
+            element: document.getElementById(`marker${kdzObj.places[i].id}`),
+            stopEvent: false,
+          });
+
+          map.addOverlay(marker);
+
+          var kpOverlayX = new ol.Overlay({
+            position: ol.proj.fromLonLat([
+              kdzObj.places[i].coordinates.lng,
+              kdzObj.places[i].coordinates.lat,
+            ]),
+            element: document.getElementById(`kpOverlay${kdzObj.places[i].id}`),
+          });
+
+          map.addOverlay(kpOverlayX);
+
+          markers.push([
+            kdzObj.places[i].coordinates.lng,
+            kdzObj.places[i].coordinates.lat,
+          ]);
+        } else if (
+          kdzObj.places[i].type[0].slug === "ort" &&
+          kdzObj.places[i].coordinates !== ""
+        ) {
+          document.querySelector("#overlays").insertAdjacentHTML(
+            "beforeend",
+            `
+                    <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
+                  `
+          );
+
+          var marker = new ol.Overlay({
+            position: ol.proj.fromLonLat([
+              kdzObj.places[i].coordinates.lng,
+              kdzObj.places[i].coordinates.lat,
+            ]),
+            positioning: "center-center",
+            element: document.getElementById(`marker${kdzObj.places[i].id}`),
+            stopEvent: false,
+          });
+
+          map.addOverlay(marker);
+
+          markers.push([
+            kdzObj.places[i].coordinates.lng,
+            kdzObj.places[i].coordinates.lat,
+          ]);
+        }
+      }
+
+      // asking users for their geolocation (cf: "came from" OR codeFlag)
+
+      if (urlParams.has("cf") && urlParams.get("cf") === "m") {
+        map
+          .getView()
+          .setCenter(
+            ol.proj.transform([thisLon, thisLat], "EPSG:4326", "EPSG:3857")
+          );
+      } else {
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(assignPosition);
+          }
+        }
+
+        function assignPosition(position) {
+          lon = position.coords.longitude;
+          lat = position.coords.latitude;
+
+          map
+            .getView()
+            .setCenter(ol.proj.transform([lon, lat], "EPSG:4326", "EPSG:3857"));
+
+          // let candidateList = [];
+
+          // here the geolocation-based candidateListing logic will be done
+        }
+
+        getLocation();
+      }
+    </script>
+
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+    <!-- Camera Slider -->
+    <script src="js/jquery.mobile.customized.min.js"></script>
+    <script src="js/scrollIt.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>

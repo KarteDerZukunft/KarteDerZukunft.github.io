@@ -169,23 +169,22 @@
               }
 
               htmlToInsert += `
-                <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
-                  <div link class="sectionListElement">
-                    <div class="topicSection">
-                    </div>
-                    <div class="lowerLip">
-                      <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
-                      <h2 class="tagString">
-                        <span class="tagStringBase">${tagString}</span>
-                      </h2>
-                      <br />
-                      <div style="width: 100%">
-                        <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">Mehr erfahren</a>
-                      </div>
-                    </div>
-                  </div>
-                </a>`.replace("link", img);
+                <div link class="sectionListElement">
+                  <div class="topicSection">
 
+                  </div>
+                  <div class="lowerLip">
+                    <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
+                    <h2 class="tagString">
+                      <span class="tagStringBase">${tagString}</span>
+                    </h2>
+                    <br />
+                    <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
+                      <button class="btn btn-primary" type="submit">Weitere Informationen</button>
+                    </a>
+                    <br />
+                  </div>
+                </div>`.replace("link", img);
               c++;
 
               sections.push(`sectionNo_${kdzObj.sections[j].id}`);

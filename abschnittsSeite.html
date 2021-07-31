@@ -134,9 +134,7 @@
     </div>
 
     <div id="textDetailsContainer">
-      <h2 id="title">
-        <!-- ${kdzObj.sections[i].title} [<a href="#" style="color: #ff392b">verlinkt</a>] -->
-      </h2>
+      <h2 style="line-height: 1.8rem;" id="title"></h2>
 
       <p id="description">
         <!-- ${kdzObj.sections[i].description} -->
@@ -461,7 +459,7 @@
           ],
           view: new ol.View({
             center: ol.proj.fromLonLat([lon, lat]),
-            zoom: 18,
+            zoom: 15,
           }),
         });
 
@@ -510,33 +508,6 @@
               kdzObj.places[i].coordinates.lng,
               kdzObj.places[i].coordinates.lat,
             ]);
-          } else if (
-            kdzObj.places[i].type[0].slug === "ort" &&
-            kdzObj.places[i].coordinates !== ""
-          ) {
-            document.querySelector("#overlays").insertAdjacentHTML(
-              "beforeend",
-              `
-                <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
-              `
-            );
-
-            var marker = new ol.Overlay({
-              position: ol.proj.fromLonLat([
-                kdzObj.places[i].coordinates.lng,
-                kdzObj.places[i].coordinates.lat,
-              ]),
-              positioning: "center-center",
-              element: document.getElementById(`marker${kdzObj.places[i].id}`),
-              stopEvent: false,
-            });
-
-            map.addOverlay(marker);
-
-            markers.push([
-              kdzObj.places[i].coordinates.lng,
-              kdzObj.places[i].coordinates.lat,
-            ]);
           }
         }
 
@@ -580,12 +551,14 @@
                   );
               }
 
-              document
-                .querySelector("#title")
-                .insertAdjacentHTML(
-                  "beforeend",
-                  `${kdzObj.sections[i].title} [<a href=\"themenabschnittListe.html?tid=${kdzObj.sections[i].belongs_to_topic}\" style=\"color: #ff392b\">verlinkt</a>]`
-                );
+              document.querySelector("#title").insertAdjacentHTML(
+                "beforeend",
+                `
+                  <a href="themenabschnittListe.html?tid=${kdzObj.sections[i].belongs_to_topic}" style="color: #ff392b; font-size: 1.5rem;" id="zuruck">&#10094 Zurück</a>
+                  <br />
+                  ${kdzObj.sections[i].title}
+                `
+              );
 
               document
                 .querySelector("#tabTitle")
@@ -677,8 +650,7 @@
       <a id="cancelBtn" onclick="return acknowledge()"> &#x2715; </a>
 
       <p>
-        This site uses cookies. By continuing to browse KarteDerZukunft, you are
-        agreeing to use <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
+        <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
         <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
           >Datenschutzerklärung</a
         >.
@@ -686,7 +658,7 @@
     </div>
 
     <script>
-      acknowledged = localStorage.getItem("acknowledged");
+      acknowledged = 1;
 
       if (acknowledged == 1) {
         var disclaimer = document.getElementById("disclaimer");

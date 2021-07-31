@@ -76,16 +76,18 @@
                 <a data-scroll-nav="1" href="index.html">Unser Wahlprogramm</a>
               </li>
               <li>
-                <a data-scroll-nav="1" href="karte.html">Karte der Zukunft</a>
+                <a data-scroll-nav="2" href="karte.html">Karte der Zukunft</a>
               </li>
               <li>
-                <a data-scroll-nav="2" href="#candidates"
+                <a data-scroll-nav="3" href="kandidierenden.html"
                   >Unsere Kandidierenden</a
                 >
               </li>
-              <li><a data-scroll-nav="3" href="#themes">Unsere Themen</a></li>
               <li>
-                <a data-scroll-nav="4" href="#projekts">Unsere Projekte</a>
+                <a data-scroll-nav="4" href="themenListe.html">Unsere Themen</a>
+              </li>
+              <li>
+                <a data-scroll-nav="5" href="#projekts">Unsere Projekte</a>
               </li>
             </ul>
           </div>
@@ -104,8 +106,7 @@
       <a id="cancelBtn" onclick="return acknowledge()"> &#x2715; </a>
 
       <p>
-        This site uses cookies. By continuing to browse KarteDerZukunft, you are
-        agreeing to use <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
+        <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
         <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
           >Datenschutzerklärung</a
         >.
@@ -144,7 +145,7 @@
 
       selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
 
-      acknowledged = localStorage.getItem("acknowledged");
+      acknowledged = 1;
 
       if (acknowledged == 1) {
         var disclaimer = document.getElementById("disclaimer");

@@ -185,7 +185,7 @@
               ],
               view: new ol.View({
                 center: ol.proj.fromLonLat([lon, lat]),
-                zoom: 18,
+                zoom: 15,
               }),
             });
 
@@ -570,8 +570,7 @@
       <a id="cancelBtn" onclick="return acknowledge()"> &#x2715; </a>
 
       <p>
-        This site uses cookies. By continuing to browse KarteDerZukunft, you are
-        agreeing to use <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
+        <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
         <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
           >Datenschutzerklärung</a
         >.
@@ -579,7 +578,7 @@
     </div>
 
     <script>
-      acknowledged = localStorage.getItem("acknowledged");
+      acknowledged = 1;
 
       if (acknowledged == 1) {
         var disclaimer = document.getElementById("disclaimer");
