@@ -344,7 +344,7 @@ a img.aligncenter {
 }
 
 .header_style_01 {
-  background-color: rgba(31, 31, 31, 0.5);
+  background-color: white;
   display: block;
   left: 0;
   padding: 20px 40px !important;
@@ -373,7 +373,7 @@ a img.aligncenter {
 
 .header_style_01 .navbar-default .navbar-nav > li > a {
   border-radius: 0;
-  color: #e7f3ec;
+  color: #ff392b;
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
@@ -447,7 +447,7 @@ li.social-links a {
   top: 0px;
   width: 100%;
   padding: 0px 0px;
-  background: #1f1f1f;
+  background: white;
   z-index: 0;
   transition: all 500ms ease;
   -moz-transition: all 500ms ease;
@@ -643,6 +643,10 @@ li.social-links a {
   #topicSectionTitle,
   .kiezprojektTitle {
     margin-top: 0px;
+  }
+
+  .disclaimer h2 {
+    font-size: 1.8rem;
   }
 }
 
@@ -918,12 +922,15 @@ h5 a {
   position: fixed;
   bottom: 0px;
   width: calc(100% - 20px);
-  z-index: 10;
+  height: calc(100% - 20px);
+  z-index: 1050;
 
   padding: 10px;
   margin: 10px;
   background-color: #212121ee;
   border-radius: 10px;
+
+  color: #f2f2f2;
 }
 
 #cancelBtn {
@@ -1013,6 +1020,10 @@ h5 a {
     margin: 5px 0px 5px -15px;
 
     list-style-type: circle;
+  }
+
+  .disclaimer h2 {
+    font-size: 1.65rem;
   }
 }
 
@@ -1265,11 +1276,14 @@ h5 a {
   color: #e7f3ec;
 }
 
-.mapContainer h2 {
+.disclaimer h2 {
   text-align: center;
   color: #999;
   /* margin-left: 1%; */
   margin-top: 15px;
+
+  color: #f2f2f2;
+  font-weight: bold;
 }
 
 .form-label {
@@ -2774,8 +2788,9 @@ select.mobile-device {
   MISC
 -------------------------------------------------------------------*/
 
-.dmtop.show {
-  bottom: 50px;
+.dmtop.show,
+.kommentieren.show {
+  bottom: 25px;
 }
 
 .progress {
@@ -2792,6 +2807,27 @@ select.mobile-device {
   font-size: 15px;
 }
 
+.kommentieren {
+  background-color: #3c3d41;
+  z-index: 100;
+  width: 180px;
+  height: 50px;
+  line-height: 47px;
+  position: fixed;
+  bottom: -100px;
+  border-radius: 3px;
+  right: 90px;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #e7f3ec !important;
+  cursor: pointer;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  -ms-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
 .dmtop {
   background-color: #3c3d41;
   z-index: 100;
@@ -2801,7 +2837,7 @@ select.mobile-device {
   position: fixed;
   bottom: -100px;
   border-radius: 3px;
-  right: 50px;
+  right: 25px;
   text-align: center;
   font-size: 28px;
   color: #e7f3ec !important;

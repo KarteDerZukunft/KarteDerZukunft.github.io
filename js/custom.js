@@ -56,7 +56,7 @@
   });
 
   /* ==============================================
-		Scroll to top  
+		Scroll to top
 	============================================== */
 
   if ($("#scroll-to-top").length) {
@@ -65,8 +65,10 @@
         var scrollTop = $(window).scrollTop();
         if (scrollTop > scrollTrigger) {
           $("#scroll-to-top").addClass("show");
+          $("#kommentieren").addClass("show");
         } else {
           $("#scroll-to-top").removeClass("show");
+          $("#kommentieren").removeClass("show");
         }
       };
 
@@ -84,6 +86,7 @@
         setTimeout(function () {
           // do something
           $("#scroll-to-top").removeClass("show");
+          $("#kommentieren").removeClass("show");
         }, 2000)
       );
     });
