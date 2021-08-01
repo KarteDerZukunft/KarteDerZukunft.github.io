@@ -1097,7 +1097,7 @@ a {
 }
 a:focus,
 a:hover {
-  color: #23527c;
+  color: #212121;
   text-decoration: underline;
 }
 a:focus {
@@ -3509,7 +3509,7 @@ fieldset[disabled] .btn-link {
 }
 .btn-link:focus,
 .btn-link:hover {
-  color: #23527c;
+  color: #212121;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4842,7 +4842,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination > li > span:focus,
 .pagination > li > span:hover {
   z-index: 2;
-  color: #23527c;
+  color: #212121;
   background-color: #eee;
   border-color: #ddd;
 }

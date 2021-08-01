@@ -729,6 +729,11 @@ li.social-links a {
   border-radius: 10px;
 }
 
+.kiezprojektContainer h2 {
+  text-align: center;
+  padding: 10px;
+}
+
 .kiezprojektContainer .slideshow {
   position: relative;
   margin: auto;
@@ -884,11 +889,20 @@ li.social-links a {
   color: white;
   font-size: 10pt;
   font-weight: bold;
-  text-shadow: black 0.1em 0.1em 0.25em;
+  text-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b,
+    0 -1px 0 #ff392b;
 }
 
 .kpOverlay:hover {
   color: #ff392b;
+  text-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white;
+}
+
+.kpOverlay p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 165px;
 }
 
 .marker {
@@ -1308,8 +1322,6 @@ h5 a {
 #description {
   padding-top: 8px;
   font-size: 1.65rem;
-
-  height: 25vh;
 }
 
 .quoteFromInput .container .row .col button {
@@ -3005,4 +3017,9 @@ select.mobile-device {
 .forMargin {
   margin: auto 5%;
   width: calc(90%);
+}
+
+hr.kpSep {
+  border-top: 1px solid #ff392b;
+  margin: 5.25px 40%;
 }

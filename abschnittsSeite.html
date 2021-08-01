@@ -141,6 +141,7 @@
       </p>
 
       <div class="kiezprojektContainer">
+        <h2>Unsere Kandidierenden</h2>
         <div class="slideshow">
           <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
@@ -190,6 +191,10 @@
             Math.random() * (kdzObj.candidates.length - 1)
           );
 
+          while (kdzObj.candidates[random].type[0].slug !== "agh") {
+            random = Math.ceil(Math.random() * (kdzObj.candidates.length - 1));
+          }
+
           document.getElementById(
             "_2ndSlideLink"
           ).href = `KandidatSeite.html?kid=${kdzObj.candidates[random].id}`;
@@ -204,7 +209,8 @@
 
           while (
             document.getElementById("_2ndSlideImg").src ===
-            kdzObj.candidates[random].image.url
+              kdzObj.candidates[random].image.url ||
+            kdzObj.candidates[random].type[0].slug !== "bvv"
           ) {
             random = Math.ceil(Math.random() * (kdzObj.candidates.length - 1));
           }
@@ -270,7 +276,7 @@
 
       <br />
 
-      <h2>Projekte in deiner Nähe</h2>
+      <h2>Weitere Projekte in Deiner Nähe:</h2>
 
       <br />
 
@@ -466,18 +472,26 @@
           let kiezprojektsToInsert = "";
 
           for (let j = 0; j < kdzObj.places.length; j++) {
-            if (kdzObj.places[j].belongs_to_cluster == cid) {
-              if (kdzObj.places[j].type[0].slug === "kiezprojekt") {
-                kiezprojektsToInsert += `
-                  <a href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">${kdzObj.places[j].title}</a>
-                  <br />`;
+            let R = Math.ceil(Math.random() * (kdzObj.places.length - 1));
+
+            if (kdzObj.places[R].belongs_to_cluster == cid) {
+              if (kdzObj.places[R].type[0].slug === "kiezprojekt") {
+                kiezprojektsToInsert += `<a href="kiezprojektSeite.html?kpid=${kdzObj.places[R].id}">${kdzObj.places[R].title}</a><br />`;
+                c--;
               }
-              c--;
               if (c < 1) {
                 break;
+              } else {
+                kiezprojektsToInsert += `<hr class="kpSep">`;
               }
             }
           }
+
+          // if (c === 5) {
+          //   var kCE = document.getElementById("kiezprojektContainerEmpty");
+
+          //   kCE.style.display = "none";
+          // }
 
           document
             .querySelector("#kiezprojektContainer")
@@ -498,7 +512,7 @@
     <div class="disclaimer" id="disclaimer">
       <a id="cancelBtn" onclick="return hideForm()"> &#x2715; </a>
 
-      <h2>Wir würden gerne Ihre Vorschläge lesen</h2>
+      <h2>Wir würden gerne Deine Vorschläge lesen</h2>
       <form
         name="quoteFrom"
         action=""
@@ -534,7 +548,7 @@
           <div class="row">
             <div class="col">
               <label for="description" class="form-label"
-                >Erzählen Sie uns mehr</label
+                >Erzähle uns mehr!</label
               >
               <textarea
                 name="description"
