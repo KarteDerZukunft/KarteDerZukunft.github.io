@@ -30,6 +30,11 @@
 
 @import url("https://fonts.googleapis.com/css?family=Exo:200,300,400,500,600,700");
 
+@font-face {
+  font-family: "BrownLL";
+  src: url("./fonts/BrownLL/TrueType_TTF/Fonts/BrownLLTT-Light.ttf");
+}
+
 /*------------------------------------------------------------------
   IMPORT FILES
 -------------------------------------------------------------------*/
@@ -48,7 +53,7 @@
 body {
   color: #212121;
   font-size: 15px;
-  font-family: "Exo", sans-serif;
+  font-family: "BrownLL", sans-serif;
   line-height: 1.8;
 
   overflow-x: hidden;
@@ -606,7 +611,12 @@ li.social-links a {
 
 .sectionListElement .lowerLip .tagString {
   display: flex;
+  max-width: calc(100% - 5px);
   height: 2.4rem;
+
+  overflow: hidden;
+  white-space: nowrap;
+  /* text-overflow: ellipsis; */
 }
 
 .sectionListElement .lowerLip div {
@@ -689,10 +699,6 @@ li.social-links a {
 .customDivider .shape-fill {
   fill: #ffffff;
 }
-
-/* #textDetailsContainer .title #zuruck:hover {
-  color: #212121;
-} */
 
 #textDetailsContainer {
   width: 90%;
@@ -913,20 +919,6 @@ li.social-links a {
   border: 1px solid white;
   border-radius: 10px;
 }
-
-/* .kiezprojektMarker {
-  width: 20px;
-  height: 20px;
-  border: 1px solid #212121;
-  border-radius: 10px;
-} */
-
-/* .placeMarker {
-  width: 10px;
-  height: 10px;
-  border: 1px solid white;
-  border-radius: 5px;
-} */
 
 h5 a {
   color: #ff392b;
