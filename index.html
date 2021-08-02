@@ -95,221 +95,84 @@
       </nav>
     </header>
 
-    <div
-      id="main-banner"
-      class="banner-one"
-      data-scroll-index="0"
-      style="height: calc(100vh - 90px)"
-    ></div>
+    <div id="main-banner" class="banner-one" data-scroll-index="0">
+      <div class="slideshow" id="slideshow"></div>
 
-    <div class="disclaimer" id="disclaimer">
-      <a id="cancelBtn" onclick="return hideForm()"> &#x2715; </a>
-
-      <h2>Wir würden gerne Deine Vorschläge lesen</h2>
-      <form
-        name="quoteFrom"
-        action=""
-        method="POST"
-        class="quoteFromInput"
-        onsubmit="return quateForm()"
-      >
-        <div class="container">
-          <div class="row row-cols-md-1 row-cols-lg-2">
-            <div class="col">
-              <label for="nameInput" class="form-label">Dein Name</label>
-              <input type="text" class="form-control" name="nameInput" />
-            </div>
-            <div class="col">
-              <label for="phoneInput" class="form-label"
-                >Deine Telefonnummer</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                name="phoneInput"
-                placeholder="Optional"
-              />
-            </div>
-            <div class="col">
-              <label for="emailInput" class="form-label">Deine E-Mail</label>
-              <input type="email" class="form-control" name="emailInput" />
-            </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <label for="description" class="form-label"
-                >Erzähle uns mehr!</label
-              >
-              <textarea
-                name="description"
-                rows="1"
-                cols="50"
-                wrap="physical"
-                class="form-control"
-                id="description"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <div class="container">
-          <div class="row row-cols-md-1 row-cols-lg-2">
-            <div class="col" style="margin-left: 5px">
-              <button class="btn btn-primary" type="submit">Senden</button>
-            </div>
-            <div class="col" id="ErrMsg"></div>
-          </div>
-        </div>
-      </form>
-
-      <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <script src="Data/kdz.js"></script>
       <script>
-        function quateForm() {
-          var name = document.forms["quoteFrom"]["nameInput"].value;
-          var email = document.forms["quoteFrom"]["emailInput"].value;
-          var phone = document.forms["quoteFrom"]["phoneInput"].value;
+        let htmlToInsert = "";
 
-          var more = document.forms["quoteFrom"]["description"].value;
+        for (let i = 0; i < kdzObj.clusters.length; i++) {
+          htmlToInsert += `
+            <div class="mySlides fade">
+              <div class="numbertext">${i + 1} / ${kdzObj.clusters.length}</div>
+              <a id="slideLink" href="themenbereichListe.html?cid=${
+                kdzObj.clusters[i].id
+              }">
+                <img id="slideImg" src="${kdzObj.clusters[i].image.url}" />
+                <div id="slideCaption" class="text">${
+                  kdzObj.clusters[i].title
+                }</div>
+                <!-- ${kdzObj.clusters[i].description} -->
+              </a>
+            </div>`;
+        }
 
-          if (name == "" || email == "" || more == "") {
-            if (name == "") {
-              document.forms["quoteFrom"]["nameInput"].placeholder =
-                "Bitte geben Sie einen Namen ein";
-              document.forms["quoteFrom"]["nameInput"].classList.add(
-                "formIncompleteError"
-              );
-            }
+        htmlToInsert += `<div id="controls" style="text-align: center">`;
 
-            if (email == "") {
-              document.forms["quoteFrom"]["emailInput"].placeholder =
-                "Bitte geben Sie eine Email ein";
-              document.forms["quoteFrom"]["emailInput"].classList.add(
-                "formIncompleteError"
-              );
-            }
+        for (let j = 0; j < kdzObj.clusters.length; j++) {
+          htmlToInsert += `
+            <span class="dot" onclick="currentSlide(${j + 1})"></span>`;
+        }
 
-            if (more == "") {
-              document.forms["quoteFrom"]["description"].placeholder =
-                "Bitte hinterlassen Sie eine Nachricht zu Senden";
-              document.forms["quoteFrom"]["description"].classList.add(
-                "formIncompleteError"
-              );
-            }
+        htmlToInsert += `</div>`;
 
-            return false;
-          } else {
-            if (email == "") {
-              email = "N/A";
-            }
-            document.getElementById("ErrMsg").innerHTML = ``;
+        const selectedHTML = document.querySelector("#slideshow");
 
-            // console.log(`name: ${name}`);
-            // console.log(`email: ${email}`);
-            // console.log(`phone: ${phone}`);
-            // console.log(`more: ${more}`);
+        selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
 
-            Email.send({
-              SecureToken: "9c4890cd-67c0-4189-be99-6dbc311dfd08",
-              To: "zukunftmitte@spd-rosenthaler-vorstadt.de",
-              From: "site@theFOUR.co.za",
-              Subject: "Feedback",
-              Body: `
-                <h4>Name: ${name},</h4>
-                <h4>Email: ${email},</h4>
-                <h4>Telefonnummer: ${phone},</h4>
-                <h4>Botschaft: ${more}.</h4>
-                <br />
-                <h4>URL: ${window.location.href}</h4>
-              `,
-            }).then((message) => {
-              console.log(message);
+        var slideIndex = 1;
 
-              alert("Vielen Dank für Ihre Kontaktaufnahme.");
-            });
+        showSlides(slideIndex);
 
-            document.forms["quoteFrom"]["nameInput"].value = ``;
-            document.forms["quoteFrom"]["emailInput"].value = ``;
-            document.forms["quoteFrom"]["phoneInput"].value = ``;
-            document.forms["quoteFrom"]["description"].value = ``;
+        function plusSlides(n) {
+          showSlides((slideIndex += n));
+        }
 
-            document.forms["quoteFrom"]["nameInput"].placeholder = ``;
-            document.forms["quoteFrom"]["emailInput"].placeholder = ``;
-            document.forms["quoteFrom"]["description"].placeholder = ``;
+        function currentSlide(n) {
+          showSlides((slideIndex = n));
+        }
 
-            document.forms["quoteFrom"]["nameInput"].classList.remove(
-              "formIncompleteError"
-            );
-            document.forms["quoteFrom"]["emailInput"].classList.remove(
-              "formIncompleteError"
-            );
-            document.forms["quoteFrom"]["description"].classList.remove(
-              "formIncompleteError"
-            );
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
 
-            return false;
+          if (n > slides.length) {
+            slideIndex = 1;
           }
+
+          if (n < 1) {
+            slideIndex = slides.length;
+          }
+
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+
+          slides[slideIndex - 1].style.display = "contents";
+          dots[slideIndex - 1].className += " active";
         }
       </script>
     </div>
 
-    <script src="Data/kdz.js"></script>
-    <script>
-      let htmlToInsert = "";
-
-      for (let i = 0; i < kdzObj.clusters.length; i++) {
-        htmlToInsert += `
-          <div data-src="${kdzObj.clusters[i].image.url}" style="object-fit: cover">
-            <div class="camera_caption">
-              <div class="container forMargin">
-                <h1 class="wow fadeInUp animated">
-                  ${kdzObj.clusters[i].title}
-                </h1>
-                <p class="wow fadeInUp animated" data-wow-delay="0.2s">
-                  ${kdzObj.clusters[i].description}
-                </p>
-                <a
-                  data-scroll
-                  href="themenbereichListe.html?cid=${kdzObj.clusters[i].id}"
-                  class="btn btn-light btn-radius btn-brd grd1"
-                  >Mehr Erfahren</a
-                >
-              </div>
-              <!-- /.container -->
-            </div>
-            <!-- /.camera_caption -->
-          </div>`;
-      }
-
-      const selectedHTML = document.querySelector("#main-banner");
-
-      selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
-
-      acknowledged = 1;
-
-      if (acknowledged == 1) {
-        var disclaimer = document.getElementById("disclaimer");
-
-        disclaimer.style.display = "none";
-      }
-
-      function acknowledge() {
-        var disclaimer = document.getElementById("disclaimer");
-
-        disclaimer.style.display = "none";
-
-        acknowledged = 1;
-
-        localStorage.setItem("acknowledged", acknowledged);
-      }
-    </script>
-
     <!-- ALL JS FILES -->
     <script src="js/all.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/camera.min.js"></script>
     <script src="js/scrollIt.min.js"></script>
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>

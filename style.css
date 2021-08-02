@@ -493,6 +493,32 @@ li.social-links a {
   Topics & Sections
 -------------------------------------------------------------------*/
 
+#main-banner,
+#main-banner .slideshow,
+#main-banner .slideshow .mySlides,
+#main-banner .slideshow .mySlides #slideLink {
+  position: relative;
+  top: 0px;
+}
+
+#main-banner .slideshow .mySlides #slideLink #slideImg {
+  height: calc(100vh - 60px);
+  width: 100vw;
+  object-fit: cover;
+}
+
+#main-banner .slideshow .mySlides .numbertext {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: white;
+}
+
+#main-banner .slideshow .mySlides #controls {
+  position: relative;
+  bottom: 0px;
+}
+
 #sectionListKategoriename,
 #topicSectionTitle,
 .kiezprojektTitle {
@@ -1066,37 +1092,6 @@ h5 a {
   SECTIONS
 -------------------------------------------------------------------*/
 
-#main-banner .container {
-  position: relative;
-  z-index: 1;
-  top: 50%;
-  margin-top: 80px;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-#main-banner h6 {
-  font-size: 16px;
-  font-weight: 700;
-  color: #e7f3ec;
-}
-
-#main-banner h1 {
-  color: #e7f3ec;
-  margin: 0px;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 64px;
-}
-
-#main-banner p {
-  color: #e7f3ec;
-  margin-bottom: 30px;
-  font-size: 18px;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-
 .parallax {
   background-attachment: fixed;
   background-size: cover;
@@ -1256,6 +1251,10 @@ h5 a {
   background-color: #21212110;
 
   color: #999;
+}
+
+#checkbox {
+  display: inline;
 }
 
 #description {

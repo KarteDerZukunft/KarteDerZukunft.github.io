@@ -103,26 +103,6 @@
   }
 
   /* ==============================================
-	Banner slider -->
-	=============================================== */
-  var banner = $("#main-banner");
-  if (banner.length) {
-    banner.camera({
-      height: "100%",
-      pagination: true,
-      navigation: false,
-      thumbnails: false,
-      playPause: false,
-      pauseOnClick: false,
-      autoPlay: true,
-      hover: false,
-      overlayer: true,
-      loader: "none",
-      time: 400000,
-    });
-  }
-
-  /* ==============================================
 	LOADER -->
 	=============================================== */
 
@@ -150,8 +130,8 @@
   });
 
   /* ==============================================
-     FUN FACTS -->
-     =============================================== */
+  FUN FACTS -->
+  =============================================== */
 
   function count($this) {
     var current = parseInt($this.html(), 10);
