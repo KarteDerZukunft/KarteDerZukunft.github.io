@@ -68,15 +68,6 @@
       </div>
     </div>
     <!-- END LOADER -->
-
-    <!-- <div class="topbar text-center hidden-xs">
-      <p>
-        This site uses cookies. By continuing to browse "Ganz Sicher Berlin",
-        you are agreeing to use our site cookies.
-        <a href="#">Find out more here</a>
-      </p>
-    </div> -->
-
     <header class="header header_style_01">
       <nav class="megamenu navbar navbar-default">
         <div class="container">
@@ -142,16 +133,19 @@
           }
 
           htmlToInsert += `
-            <div link class="sectionListElement">
-              <div class="topicSection"></div>
-              <br />
-              <div class="lowerLip">
-                <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
-                <div style="width: 100%">
-                  <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
+            <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
+              <div link class="sectionListElement">
+                <div class="topicSection"></div>
+                <br />
+                <div class="lowerLip">
+                  <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
+                  <div style="width: 100%">
+                    <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
+                  </div>
                 </div>
               </div>
-            </div>`.replace("link", img);
+            </a>`.replace("link", img);
+
           c++;
 
           candidates.push(`sectionNo_${kdzObj.candidates[j].id}`);
@@ -201,7 +195,9 @@
               />
             </div>
             <div class="col">
-              <label for="emailInput" class="form-label">Deine Email-Adresse</label>
+              <label for="emailInput" class="form-label"
+                >Deine Email-Adresse</label
+              >
               <input type="email" class="form-control" name="emailInput" />
             </div>
           </div>

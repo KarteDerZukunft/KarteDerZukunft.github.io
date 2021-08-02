@@ -97,7 +97,7 @@
           document.querySelector("#overlays").insertAdjacentHTML(
             "beforeend",
             `
-                    <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m">${kdzObj.places[i].title}</a>
+                    <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m"><p>${kdzObj.places[i].title}</p></a>
                     <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
                   `
           );

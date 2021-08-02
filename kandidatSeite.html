@@ -30,6 +30,11 @@
       href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
 
     <!-- <link
@@ -64,15 +69,6 @@
       </div>
     </div>
     <!-- END LOADER -->
-
-    <!-- <div class="topbar text-center hidden-xs">
-      <p>
-        This site uses cookies. By continuing to browse "Ganz Sicher Berlin",
-        you are agreeing to use our site cookies.
-        <a href="#">Find out more here</a>
-      </p>
-    </div> -->
-
     <header class="header header_style_01">
       <nav class="megamenu navbar navbar-default">
         <div class="container">
@@ -134,7 +130,7 @@
     </div>
 
     <div id="textDetailsContainer">
-      <h2 id="title"></h2>
+      <h2 style="line-height: 1.8rem" id="title"></h2>
       <p id="description">
         <br />
       </p>
@@ -166,13 +162,65 @@
             kid = urlParams.get("kid");
 
             for (let i = 0; i < kdzObj.candidates.length; i++) {
-              if (kdzObj.candidates[i].id === kid) {
+              if (kdzObj.candidates[i].id == kid) {
                 document
                   .querySelector("#topImgContainer")
                   .insertAdjacentHTML(
                     "beforeend",
                     `<img src="${kdzObj.candidates[i].image.url}" />`
                   );
+
+                document.querySelector("#title").insertAdjacentHTML(
+                  "beforeend",
+                  `
+                    <a href="kandidierenden.html" style="color: #ff392b; font-size: 1.5rem;" id="zuruck">&#10094 Zurück</a>
+                    <br />
+                    ${kdzObj.candidates[i].title}
+                  `
+                );
+
+                document
+                  .querySelector("#description")
+                  .insertAdjacentHTML(
+                    "beforeend",
+                    `${kdzObj.candidates[i].description}`
+                  );
+
+                let tagsToInsert = "";
+
+                if (kdzObj.candidates[i].tags !== "") {
+                  for (let j = 0; j < kdzObj.candidates[i].tags.length; j++) {
+                    tagsToInsert += ` <a href="tagsListe.html?tag=${kdzObj.candidates[i].tags[j].slug}">#${kdzObj.candidates[i].tags[j].slug}</a>`;
+                  }
+
+                  document
+                    .querySelector("#description")
+                    .insertAdjacentHTML("beforeend", `${tagsToInsert}`);
+                }
+
+                let URLs = `<br /><div id="URLs" style="color: white">`;
+
+                if (kdzObj.candidates[i].urls.website !== "") {
+                  URLs += `<a href="${kdzObj.candidates[i].urls.website}" class="fa fa-internet-explorer"></a>`;
+                }
+
+                if (kdzObj.candidates[i].urls.instagram_url !== "") {
+                  URLs += `<a href="${kdzObj.candidates[i].urls.instagram_url}" class="fa fa-instagram"></a>`;
+                }
+
+                if (kdzObj.candidates[i].urls.facebook_url !== "") {
+                  URLs += `<a href="${kdzObj.candidates[i].urls.facebook_url}" class="fa fa-facebook"></a>`;
+                }
+
+                if (kdzObj.candidates[i].urls.twitter_url !== "") {
+                  URLs += `<a href="${kdzObj.candidates[i].urls.twitter_url}" class="fa fa-twitter"></a>`;
+                }
+
+                URLs += `</div>`;
+
+                document
+                  .querySelector("#description")
+                  .insertAdjacentHTML("beforeend", `${URLs}`);
               }
             }
 
@@ -248,106 +296,36 @@
 
             // asking users for their geolocation (cf: "came from" OR codeFlag)
 
-            // if (urlParams.has("cf") && urlParams.get("cf") === "m") {
-            //   map
-            //     .getView()
-            //     .setCenter(
-            //       ol.proj.transform(
-            //         [thisLon, thisLat],
-            //         "EPSG:4326",
-            //         "EPSG:3857"
-            //       )
-            //     );
-            // } else {
-            //   function getLocation() {
-            //     if (navigator.geolocation) {
-            //       navigator.geolocation.getCurrentPosition(assignPosition);
-            //     }
-            //   }
+            if (urlParams.has("cf") && urlParams.get("cf") === "m") {
+              map
+                .getView()
+                .setCenter(
+                  ol.proj.transform(
+                    [thisLon, thisLat],
+                    "EPSG:4326",
+                    "EPSG:3857"
+                  )
+                );
+            } else {
+              function getLocation() {
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(assignPosition);
+                }
+              }
 
-            //   function assignPosition(position) {
-            //     lon = position.coords.longitude;
-            //     lat = position.coords.latitude;
+              function assignPosition(position) {
+                lon = position.coords.longitude;
+                lat = position.coords.latitude;
 
-            //     map
-            //       .getView()
-            //       .setCenter(
-            //         ol.proj.transform([lon, lat], "EPSG:4326", "EPSG:3857")
-            //       );
-            //   }
+                map
+                  .getView()
+                  .setCenter(
+                    ol.proj.transform([lon, lat], "EPSG:4326", "EPSG:3857")
+                  );
+              }
 
-            //   getLocation();
-            // }
-
-            // for (let i = 0; i < kdzObj.places.length; i++) {
-            //   if (kdzObj.places[i].id == kid) {
-            //     if (kdzObj.places[i].type[0].slug === "kiezprojekt") {
-            //       if (kdzObj.places[i].image.url !== "") {
-            //         document
-            //           .querySelector("#topImgContainer")
-            //           .insertAdjacentHTML(
-            //             "beforeend",
-            //             `<img src="${kdzObj.places[i].image.url}" />`
-            //           );
-
-            //         // console.log(`0; ${kdzObj.places[i].image.url}`);
-            //       } else {
-            //         for (let x = 0; x < kdzObj.places.length; x++) {
-            //           if (
-            //             kdzObj.places[x].id == kid &&
-            //             kdzObj.places[x].type[0].slug === "kiezprojekt"
-            //           ) {
-            //             cid = kdzObj.places[x].belongs_to_cluster;
-            //             for (let p = 0; p < kdzObj.clusters.length; p++) {
-            //               if (kdzObj.clusters[p].id == cid) {
-            //                 if (kdzObj.clusters[p].image.url !== "") {
-            //                   document
-            //                     .querySelector("#topImgContainer")
-            //                     .insertAdjacentHTML(
-            //                       "beforeend",
-            //                       `<img src="${kdzObj.clusters[p].image.url}" />`
-            //                     );
-
-            //                   // console.log(`1; ${kdzObj.clusters[p].image.url}`);
-            //                 } else {
-            //                   document
-            //                     .querySelector("#topImgContainer")
-            //                     .insertAdjacentHTML(
-            //                       "beforeend",
-            //                       `<img src="uploads/fallBack.jpeg" />`
-            //                     );
-            //                 }
-            //               }
-            //             }
-            //           }
-            //         }
-            //       }
-
-            //       document
-            //         .querySelector("#title")
-            //         .insertAdjacentHTML(
-            //           "beforeend",
-            //           `${kdzObj.places[i].title}`
-            //         );
-
-            //       document
-            //         .querySelector("#tabTitle")
-            //         .insertAdjacentHTML(
-            //           "beforeend",
-            //           `${kdzObj.sections[i].title}`
-            //         );
-
-            //       document
-            //         .querySelector("#description")
-            //         .insertAdjacentHTML(
-            //           "beforebegin",
-            //           `${kdzObj.places[i].description}`
-            //         );
-            //     } else {
-            //       window.location.replace("./404.html");
-            //     }
-            //   }
-            // }
+              getLocation();
+            }
           } else {
             window.location.replace("./404.html");
           }
@@ -420,7 +398,9 @@
               />
             </div>
             <div class="col">
-              <label for="emailInput" class="form-label">Deine Email-Adresse</label>
+              <label for="emailInput" class="form-label"
+                >Deine Email-Adresse</label
+              >
               <input type="email" class="form-control" name="emailInput" />
             </div>
           </div>

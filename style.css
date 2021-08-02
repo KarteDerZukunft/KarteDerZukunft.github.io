@@ -501,6 +501,14 @@ li.social-links a {
   top: 0px;
 }
 
+#main-banner .slideshow {
+  scroll-snap-type: x mandatory;
+}
+
+#main-banner .slideshow > #main-banner .slideshow .mySlides {
+  scroll-snap-align: start;
+}
+
 #main-banner,
 #main-banner .slideshow {
   height: calc(100vh - 87px);
@@ -530,14 +538,12 @@ li.social-links a {
 
 #main-banner .slideshow .mySlides #slideLink #slideCaption #slideCaptionLink {
   background: transparent;
-  box-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b,
-    0 -1px 0 #ff392b;
+  /* box-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b, 0 -1px 0 #ff392b; */
   border-radius: 25px;
   border: 2.5px solid;
   color: white;
 
-  text-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b,
-    0 -1px 0 #ff392b;
+  /* text-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b, 0 -1px 0 #ff392b; */
 
   transition: 400ms;
 }
@@ -549,9 +555,9 @@ li.social-links a {
   #slideCaption
   #slideCaptionLink:hover {
   box-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white;
-  color: #ff392b;
+  /* color: #ff392b; */
 
-  text-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white;
+  /* text-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white; */
 }
 
 #main-banner .slideshow .mySlides .numbertext {
@@ -3007,4 +3013,23 @@ select.mobile-device {
 hr.kpSep {
   border-top: 1px solid #ff392b;
   margin: 5.25px 40%;
+}
+
+/* #URLs {
+  
+} */
+#textDetailsContainer #URLs a {
+  display: inline-block;
+  background: #ff392b;
+  width: 50px;
+  padding: 10px;
+  margin: 0px 2.5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: white;
+}
+
+#textDetailsContainer #URLs a:hover {
+  background: #ff392b90;
 }

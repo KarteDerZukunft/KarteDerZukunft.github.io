@@ -64,15 +64,6 @@
       </div>
     </div>
     <!-- END LOADER -->
-
-    <!-- <div class="topbar text-center hidden-xs">
-      <p>
-        This site uses cookies. By continuing to browse "Ganz Sicher Berlin",
-        you are agreeing to use our site cookies.
-        <a href="#">Find out more here</a>
-      </p>
-    </div> -->
-
     <header class="header header_style_01">
       <nav class="megamenu navbar navbar-default">
         <div class="container">
@@ -330,7 +321,7 @@
             document.querySelector("#overlays").insertAdjacentHTML(
               "beforeend",
               `
-                <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m">${kdzObj.places[i].title}</a>
+                <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m"><p>${kdzObj.places[i].title}</p></a>
                 <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
               `
             );
@@ -538,7 +529,9 @@
               />
             </div>
             <div class="col">
-              <label for="emailInput" class="form-label">Deine Email-Adresse</label>
+              <label for="emailInput" class="form-label"
+                >Deine Email-Adresse</label
+              >
               <input type="email" class="form-control" name="emailInput" />
             </div>
           </div>
