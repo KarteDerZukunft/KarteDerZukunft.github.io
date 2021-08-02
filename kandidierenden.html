@@ -12,7 +12,7 @@
     />
 
     <!-- Site Metas -->
-    <title>Themenabschnitt Liste</title>
+    <title>Kandidierenden Liste</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="AbuRadi" />
@@ -124,83 +124,42 @@
     <br />
 
     <div id="textDetailsContainer">
-      <h2 id="topicSectionTitle"></h2>
+      <h2 id="topicSectionTitle">Kandidierenden Liste</h2>
 
       <div id="topicSectionList"></div>
 
       <script src="Data/kdz.js"></script>
       <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
+        let c = 0;
+        let htmlToInsert = "";
+        let img = "uploads/fallBack.jpg";
 
-        if (urlParams.has("tid")) {
-          tid = urlParams.get("tid");
+        let candidates = [];
 
-          for (let i = 0; i < kdzObj.topics.length; i++) {
-            if (kdzObj.topics[i].id == tid) {
-              document
-                .querySelector("#topicSectionTitle")
-                .insertAdjacentHTML("beforeend", `${kdzObj.topics[i].title}`);
-            }
+        for (let j = 0; j < kdzObj.candidates.length; j++) {
+          if (kdzObj.candidates[j].image !== "") {
+            img = `style=\"background-image: url(\'${kdzObj.candidates[j].image.url}\');\"`;
           }
 
-          let c = 0;
-          let htmlToInsert = "";
-          let img = "uploads/fallBack.jpg";
+          htmlToInsert += `
+            <div link class="sectionListElement">
+              <div class="topicSection"></div>
+              <br />
+              <div class="lowerLip">
+                <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
+                <div style="width: 100%">
+                  <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
+                </div>
+              </div>
+            </div>`.replace("link", img);
+          c++;
 
-          let sections = [];
-
-          for (let j = 0; j < kdzObj.sections.length; j++) {
-            if (kdzObj.sections[j].belongs_to_topic == tid) {
-              if (kdzObj.sections[j].image !== "") {
-                img = `style=\"background-image: url(\'${kdzObj.sections[j].image.url}\');\"`;
-              }
-
-              let tagString = "";
-
-              if (kdzObj.sections[j].tags !== "") {
-                for (
-                  let k = 0;
-                  k < 5 && k < kdzObj.sections[j].tags.length;
-                  k++
-                ) {
-                  tagString += ` <a href="tagsListe.html?tag=${kdzObj.sections[j].tags[k].slug}">#${kdzObj.sections[j].tags[k].slug}</a>`;
-                }
-              }
-
-              htmlToInsert += `
-                <div link class="sectionListElement">
-                  <div class="topicSection">
-
-                  </div>
-                  <div class="lowerLip">
-                    <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
-                    <h2 class="tagString">
-                      <span class="tagStringBase">${tagString}</span>
-                    </h2>
-                    <br />
-                    <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
-                      <button class="btn btn-primary" type="submit">Weitere Informationen</button>
-                    </a>
-                    <br />
-                  </div>
-                </div>`.replace("link", img);
-              c++;
-
-              sections.push(`sectionNo_${kdzObj.sections[j].id}`);
-            }
-          }
-
-          if (c < 1) {
-            window.location.replace("./404.html");
-          }
-
-          const selectedHTML = document.querySelector("#topicSectionList");
-
-          selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
-        } else {
-          window.location.replace("./404.html");
+          candidates.push(`sectionNo_${kdzObj.candidates[j].id}`);
         }
+
+        const selectedHTML = document.querySelector("#topicSectionList");
+
+        selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
       </script>
 
       <h5 id="quickLinks">

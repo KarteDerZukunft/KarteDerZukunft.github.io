@@ -191,91 +191,62 @@
 
             // adding the kiezprojekts
 
-            // const markers = [];
+            const markers = [];
 
-            // for (let i = 0; i < kdzObj.places.length; i++) {
-            //   if (
-            //     kdzObj.places[i].type[0].slug === "kiezprojekt" &&
-            //     kdzObj.places[i].coordinates !== ""
-            //   ) {
-            //     document.querySelector("#overlays").insertAdjacentHTML(
-            //       "beforeend",
-            //       `
-            //         <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_blank" href="kiezprojektSeite.html?kid=${kdzObj.places[i].id}&cf=m">${kdzObj.places[i].title}</a>
-            //         <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
-            //       `
-            //     );
+            for (let i = 0; i < kdzObj.places.length; i++) {
+              if (
+                kdzObj.places[i].type[0].slug === "kiezprojekt" &&
+                kdzObj.places[i].coordinates !== ""
+              ) {
+                document.querySelector("#overlays").insertAdjacentHTML(
+                  "beforeend",
+                  `
+                    <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m"><p>${kdzObj.places[i].title}</p></a>
+                    <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
+                  `
+                );
 
-            //     // keeping the this kiezprojekt's position
+                // keeping the this kiezprojekt's position
 
-            //     if (kdzObj.places[i].id == kid) {
-            //       thisLon = kdzObj.places[i].coordinates.lng;
-            //       thisLat = kdzObj.places[i].coordinates.lat;
-            //     }
+                if (kdzObj.places[i].id == kid) {
+                  thisLon = kdzObj.places[i].coordinates.lng;
+                  thisLat = kdzObj.places[i].coordinates.lat;
+                }
 
-            //     var marker = new ol.Overlay({
-            //       position: ol.proj.fromLonLat([
-            //         kdzObj.places[i].coordinates.lng,
-            //         kdzObj.places[i].coordinates.lat,
-            //       ]),
-            //       positioning: "center-center",
-            //       element: document.getElementById(
-            //         `marker${kdzObj.places[i].id}`
-            //       ),
-            //       stopEvent: false,
-            //     });
+                var marker = new ol.Overlay({
+                  position: ol.proj.fromLonLat([
+                    kdzObj.places[i].coordinates.lng,
+                    kdzObj.places[i].coordinates.lat,
+                  ]),
+                  positioning: "center-center",
+                  element: document.getElementById(
+                    `marker${kdzObj.places[i].id}`
+                  ),
+                  stopEvent: false,
+                });
 
-            //     map.addOverlay(marker);
+                map.addOverlay(marker);
 
-            //     var kpOverlayX = new ol.Overlay({
-            //       position: ol.proj.fromLonLat([
-            //         kdzObj.places[i].coordinates.lng,
-            //         kdzObj.places[i].coordinates.lat,
-            //       ]),
-            //       element: document.getElementById(
-            //         `kpOverlay${kdzObj.places[i].id}`
-            //       ),
-            //     });
+                var kpOverlayX = new ol.Overlay({
+                  position: ol.proj.fromLonLat([
+                    kdzObj.places[i].coordinates.lng,
+                    kdzObj.places[i].coordinates.lat,
+                  ]),
+                  element: document.getElementById(
+                    `kpOverlay${kdzObj.places[i].id}`
+                  ),
+                });
 
-            //     map.addOverlay(kpOverlayX);
+                map.addOverlay(kpOverlayX);
 
-            //     markers.push([
-            //       kdzObj.places[i].coordinates.lng,
-            //       kdzObj.places[i].coordinates.lat,
-            //     ]);
-            //   } else if (
-            //     kdzObj.places[i].type[0].slug === "ort" &&
-            //     kdzObj.places[i].coordinates !== ""
-            //   ) {
-            //     document.querySelector("#overlays").insertAdjacentHTML(
-            //       "beforeend",
-            //       `
-            //         <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
-            //       `
-            //     );
+                markers.push([
+                  kdzObj.places[i].coordinates.lng,
+                  kdzObj.places[i].coordinates.lat,
+                ]);
+              }
+            }
 
-            //     var marker = new ol.Overlay({
-            //       position: ol.proj.fromLonLat([
-            //         kdzObj.places[i].coordinates.lng,
-            //         kdzObj.places[i].coordinates.lat,
-            //       ]),
-            //       positioning: "center-center",
-            //       element: document.getElementById(
-            //         `marker${kdzObj.places[i].id}`
-            //       ),
-            //       stopEvent: false,
-            //     });
-
-            //     map.addOverlay(marker);
-
-            //     markers.push([
-            //       kdzObj.places[i].coordinates.lng,
-            //       kdzObj.places[i].coordinates.lat,
-            //     ]);
-            //   }
-            // }
-
-            // // asking users for their geolocation (cf: "came from" OR codeFlag)
+            // asking users for their geolocation (cf: "came from" OR codeFlag)
 
             // if (urlParams.has("cf") && urlParams.get("cf") === "m") {
             //   map
@@ -385,7 +356,12 @@
 
       <br />
 
-      <h5 id="quickLinks"></h5>
+      <h5 id="quickLinks">
+        <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
+        <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
+          >Datenschutzerklärung</a
+        >
+      </h5>
 
       <br />
 

@@ -104,7 +104,8 @@ body.politics_version .first-section i {
 
 body.politics_version .header_style_01 {
   top: 0px;
-  background-color: rgba(31, 31, 31, 1);
+  background-color: white;
+  border-bottom: 1px solid #f44336;
 }
 
 body.politics_version .header_style_01 .navbar-default .navbar-nav > li > a {
