@@ -110,9 +110,11 @@
                 kdzObj.clusters[i].id
               }">
                 <img id="slideImg" src="${kdzObj.clusters[i].image.url}" />
-                <div id="slideCaption" class="text">${
-                  kdzObj.clusters[i].title
-                }</div>
+                <div id="slideCaption" class="text">
+                  ${kdzObj.clusters[i].title}
+                  <br />
+                  <button id="slideCaptionLink">Mehr erfahren</button>
+                </div>
                 <!-- ${kdzObj.clusters[i].description} -->
               </a>
             </div>`;

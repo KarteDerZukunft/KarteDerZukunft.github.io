@@ -501,10 +501,57 @@ li.social-links a {
   top: 0px;
 }
 
+#main-banner,
+#main-banner .slideshow {
+  height: calc(100vh - 87px);
+}
+
 #main-banner .slideshow .mySlides #slideLink #slideImg {
   height: calc(100vh - 60px);
   width: 100vw;
   object-fit: cover;
+}
+
+#main-banner .slideshow .mySlides #slideLink #slideCaption {
+  position: absolute;
+  top: calc(-27px - 50%);
+  left: 5vw;
+
+  width: 90vw;
+
+  font-size: 2.7rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+
+  text-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b,
+    0 -1px 0 #ff392b;
+}
+
+#main-banner .slideshow .mySlides #slideLink #slideCaption #slideCaptionLink {
+  background: transparent;
+  box-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b,
+    0 -1px 0 #ff392b;
+  border-radius: 25px;
+  border: 2.5px solid;
+  color: white;
+
+  text-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b,
+    0 -1px 0 #ff392b;
+
+  transition: 400ms;
+}
+
+#main-banner
+  .slideshow
+  .mySlides
+  #slideLink
+  #slideCaption
+  #slideCaptionLink:hover {
+  box-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white;
+  color: #ff392b;
+
+  text-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white;
 }
 
 #main-banner .slideshow .mySlides .numbertext {
@@ -514,9 +561,9 @@ li.social-links a {
   color: white;
 }
 
-#main-banner .slideshow .mySlides #controls {
-  position: relative;
-  bottom: 0px;
+#main-banner .slideshow #controls {
+  position: inherit;
+  top: -27px;
 }
 
 #sectionListKategoriename,
@@ -873,7 +920,7 @@ li.social-links a {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #ff392b30;
+  background-color: #ff392b90;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -881,7 +928,7 @@ li.social-links a {
 
 .active,
 .dot:hover {
-  background-color: #ff392b90;
+  background-color: #ff392be9;
 }
 
 .kiezprojektContainer a {
