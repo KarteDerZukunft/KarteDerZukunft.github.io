@@ -22,13 +22,13 @@ with open('./Data/kdz.json') as json_file:
                     if (i == "places"):
 
                         txt = '<script>window.location.replace(\"' \
-                            + 'kiezprojektSeite.html?kpid=' + str(k['id']) \
+                            + 'https://kartederzukunft.de/kiezprojektSeite.html?kpid=' + str(k['id']) \
                             + '\");</script>'
 
                     elif (i == "sections"):
 
                         txt = '<script>window.location.replace(\"' \
-                            + 'abschnittsSeite.html?sid=' + str(k['id']) \
+                            + 'https://kartederzukunft.de/abschnittsSeite.html?sid=' + str(k['id']) \
                             + '\");</script>'
 
                     os.system('echo \'' + txt + '\' > ' + fileName)
