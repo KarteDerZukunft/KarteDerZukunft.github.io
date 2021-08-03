@@ -104,7 +104,7 @@
               </li>
               <li><a data-scroll-nav="4" href="#themes">Unsere Themen</a></li>
               <li>
-                <a data-scroll-nav="5" href="#projekts">Unsere Projekte</a>
+                <a data-scroll-nav="5" href="">Unsere Projekte</a>
               </li>
             </ul>
           </div>
@@ -147,6 +147,15 @@
                 img = `style=\"background-image: url(\'${kdzObj.sections[j].image.url}\');\"`;
               }
 
+              let description = "";
+
+              if (kdzObj.sections[j].id == 173) {
+                description =
+                  kdzObj.sections[j].description.substring(0, 135) + `...`;
+              } else {
+                description = kdzObj.sections[j].description;
+              }
+
               let tagString = "";
 
               if (kdzObj.sections[j].tags !== "") {
@@ -165,7 +174,7 @@
                     <div class="topicSection">
                     </div>
                     <div class="lowerLip">
-                      <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
+                      <h4 id="sectionNo_${kdzObj.sections[j].id}">${description}</h4>
                       <h2 class="tagString">
                         <span class="tagStringBase">${tagString}</span>
                       </h2>

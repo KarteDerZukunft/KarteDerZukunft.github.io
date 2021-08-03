@@ -3033,3 +3033,23 @@ hr.kpSep {
 #textDetailsContainer #URLs a:hover {
   background: #ff392b90;
 }
+
+.kartePage,
+.karteMap {
+  height: 100vh;
+  width: auto;
+}
+
+.karteMap .ol-zoom {
+  left: auto;
+  right: 0.5em;
+}
+
+.kartePage a #floatingLogo {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+
+  width: 120px;
+  height: auto;
+}
