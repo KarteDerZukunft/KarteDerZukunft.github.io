@@ -256,7 +256,7 @@
               <input id="checkbox" type="checkbox" name="consent" value="1" />
               <label
                 for="description"
-                class="form-label"
+                class="form-label legalNote"
                 style="display: inline"
                 >Hiermit bestätige und akzeptiere ich die
                 Datenschutzbestimmungen (link) und stimme zu, dass die SPD Mitte
@@ -286,7 +286,12 @@
 
           var more = document.forms["quoteFrom"]["description"].value;
 
-          if (name == "" || email == "" || more == "") {
+          if (
+            name == "" ||
+            email == "" ||
+            more == "" ||
+            !document.querySelector("#checkbox:checked")
+          ) {
             if (name == "") {
               document.forms["quoteFrom"]["nameInput"].placeholder =
                 "Bitte geben Sie einen Namen ein";
@@ -309,6 +314,11 @@
               document.forms["quoteFrom"]["description"].classList.add(
                 "formIncompleteError"
               );
+            }
+
+            if (!document.querySelector("#checkbox:checked")) {
+              document.querySelector(".legalNote").style.textDecoration =
+                "underline";
             }
 
             return false;
@@ -360,6 +370,9 @@
             document.forms["quoteFrom"]["description"].classList.remove(
               "formIncompleteError"
             );
+
+            document.querySelector("#checkbox").checked = false;
+            document.querySelector(".legalNote").style.textDecoration = "none";
 
             return false;
           }
