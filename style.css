@@ -503,6 +503,7 @@ li.social-links a {
 
 #main-banner .slideshow {
   scroll-snap-type: x mandatory;
+  margin-top: 61.5px;
 }
 
 #main-banner .slideshow > #main-banner .slideshow .mySlides {
@@ -726,6 +727,10 @@ li.social-links a {
   #sectionListKategoriename,
   #topicSectionTitle,
   .kiezprojektTitle {
+    margin-top: 0px;
+  }
+
+  #main-banner .slideshow {
     margin-top: 0px;
   }
 
