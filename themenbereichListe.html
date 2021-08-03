@@ -100,7 +100,7 @@
                 <a href="themenListe.html"> Unsere Themen </a>
               </li>
               <li>
-                <a href="kiezprojektListe.html"> Unsere Projekte </a>
+                <a href="kiezprojektenListe.html"> Unsere Projekte </a>
               </li>
             </ul>
           </div>
@@ -134,6 +134,7 @@
           let c = 0;
           let htmlToInsert = "";
           let img = "uploads/fallBack.jpg";
+          let l = 0;
 
           for (let j = 0; j < kdzObj.topics.length; j++) {
             if (kdzObj.topics[j].belongs_to_cluster == cid) {
@@ -167,12 +168,19 @@
                     </div>
                   </div>
                 </a>`.replace("link", img);
+
+              l = j;
+
               c++;
             }
           }
 
           if (c < 1) {
             window.location.replace("./404.html");
+          } else if (c == 1) {
+            window.location.replace(
+              `themenabschnittListe.html?tid=${kdzObj.topics[l].id}`
+            );
           }
 
           const selectedHTML = document.querySelector("#topicList");

@@ -12,7 +12,7 @@
     />
 
     <!-- Site Metas -->
-    <title>Themenabschnitt Liste</title>
+    <title>Kiezprojektenliste</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="AbuRadi" />
@@ -115,93 +115,68 @@
     <br />
 
     <div id="textDetailsContainer">
-      <h2 id="topicSectionTitle"></h2>
+      <h2 id="topicSectionTitle">Kiezprojektenliste</h2>
 
       <div id="topicSectionList"></div>
 
       <script src="Data/kdz.js"></script>
       <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
+        let c = 0;
+        let htmlToInsert = "";
+        let img = "uploads/fallBack.jpg";
 
-        if (urlParams.has("tid")) {
-          tid = urlParams.get("tid");
+        let places = [];
 
-          for (let i = 0; i < kdzObj.topics.length; i++) {
-            if (kdzObj.topics[i].id == tid) {
-              document
-                .querySelector("#topicSectionTitle")
-                .insertAdjacentHTML("beforeend", `${kdzObj.topics[i].title}`);
+        for (let j = 0; j < kdzObj.places.length; j++) {
+          if (kdzObj.places[j].type[0].slug === "kiezprojekt") {
+            if (kdzObj.places[j].image !== "") {
+              img = `style=\"background-image: url(\'${kdzObj.places[j].image.url}\');\"`;
             }
-          }
 
-          let c = 0;
-          let htmlToInsert = "";
-          let img = "uploads/fallBack.jpg";
+            let description = "";
 
-          let sections = [];
+            if (kdzObj.places[j].id == 173) {
+              description =
+                kdzObj.places[j].description.substring(0, 135) + `...`;
+            } else {
+              description = kdzObj.places[j].description;
+            }
 
-          for (let j = 0; j < kdzObj.sections.length; j++) {
-            if (kdzObj.sections[j].belongs_to_topic == tid) {
-              if (kdzObj.sections[j].image !== "") {
-                img = `style=\"background-image: url(\'${kdzObj.sections[j].image.url}\');\"`;
+            let tagString = "";
+
+            if (kdzObj.places[j].tags !== "") {
+              for (let k = 0; k < 5 && k < kdzObj.places[j].tags.length; k++) {
+                tagString += ` <a href="tagsListe.html?tag=${kdzObj.places[j].tags[k].slug}">#${kdzObj.places[j].tags[k].slug}</a>`;
               }
+            }
 
-              let description = "";
-
-              if (kdzObj.sections[j].id == 173) {
-                description =
-                  kdzObj.sections[j].description.substring(0, 135) + `...`;
-              } else {
-                description = kdzObj.sections[j].description;
-              }
-
-              let tagString = "";
-
-              if (kdzObj.sections[j].tags !== "") {
-                for (
-                  let k = 0;
-                  k < 5 && k < kdzObj.sections[j].tags.length;
-                  k++
-                ) {
-                  tagString += ` <a href="tagsListe.html?tag=${kdzObj.sections[j].tags[k].slug}">#${kdzObj.sections[j].tags[k].slug}</a>`;
-                }
-              }
-
-              htmlToInsert += `
-                <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
-                  <div link class="sectionListElement">
-                    <div class="topicSection">
-                    </div>
-                    <div class="lowerLip">
-                      <h4 id="sectionNo_${kdzObj.sections[j].id}">${description}</h4>
-                      <h2 class="tagString">
-                        <span class="tagStringBase">${tagString}</span>
-                      </h2>
-                      <br />
-                      <div style="width: 100%">
-                        <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">Mehr erfahren</a>
-                      </div>
+            htmlToInsert += `
+              <a class="moreInfo" href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">
+                <div link class="sectionListElement">
+                  <div class="topicSection">
+                  </div>
+                  <div class="lowerLip">
+                    <h4 id="sectionNo_${kdzObj.places[j].id}">${description}</h4>
+                    <h2 class="tagString">
+                      <span class="tagStringBase">${tagString}</span>
+                    </h2>
+                    <br />
+                    <div style="width: 100%">
+                      <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.places[j].id}">Mehr erfahren</a>
                     </div>
                   </div>
-                </a>`.replace("link", img);
+                </div>
+              </a>`.replace("link", img);
 
-              c++;
+            c++;
 
-              sections.push(`sectionNo_${kdzObj.sections[j].id}`);
-            }
+            places.push(`sectionNo_${kdzObj.places[j].id}`);
           }
-
-          if (c < 1) {
-            window.location.replace("./404.html");
-          }
-
-          const selectedHTML = document.querySelector("#topicSectionList");
-
-          selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
-        } else {
-          window.location.replace("./404.html");
         }
+
+        const selectedHTML = document.querySelector("#topicSectionList");
+
+        selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
       </script>
 
       <h5 id="quickLinks">

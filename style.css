@@ -632,6 +632,10 @@ li.social-links a {
   font-size: 1.8rem;
 }
 
+.sectionListElement .lowerLip h2 {
+  margin: 0px 5px;
+}
+
 .sectionListElement .lowerLip h4 {
   overflow: hidden;
   text-overflow: ellipsis;

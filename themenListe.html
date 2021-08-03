@@ -12,7 +12,7 @@
     />
 
     <!-- Site Metas -->
-    <title>Themenabschnitt Liste</title>
+    <title>Themenliste</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="AbuRadi" />
@@ -115,93 +115,74 @@
     <br />
 
     <div id="textDetailsContainer">
-      <h2 id="topicSectionTitle"></h2>
+      <h2 id="topicSectionTitle">Themenliste</h2>
 
       <div id="topicSectionList"></div>
 
       <script src="Data/kdz.js"></script>
       <script>
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
+        let c = 0;
+        let htmlToInsert = "";
+        let img = "uploads/fallBack.jpg";
 
-        if (urlParams.has("tid")) {
-          tid = urlParams.get("tid");
+        let clusterArray = [];
 
-          for (let i = 0; i < kdzObj.topics.length; i++) {
-            if (kdzObj.topics[i].id == tid) {
-              document
-                .querySelector("#topicSectionTitle")
-                .insertAdjacentHTML("beforeend", `${kdzObj.topics[i].title}`);
+        for (let j = 0; j < kdzObj.topics.length; j++) {
+          if (kdzObj.topics[j].image !== "") {
+            img = `style=\"background-image: url(\'${kdzObj.topics[j].image.url}\');\"`;
+          }
+
+          let color = "#212121";
+
+          if (kdzObj.topics[j].belongs_to_cluster == 1550) {
+          } else if (kdzObj.topics[j].belongs_to_cluster == 11) {
+            // ...
+          } else if (kdzObj.topics[j].belongs_to_cluster == 9) {
+            // ...
+          } else if (kdzObj.topics[j].belongs_to_cluster == 6) {
+            // ...
+          }
+
+          let wieVielAbschnitte = 0;
+
+          for (let k = 0; k < kdzObj.sections.length; k++) {
+            if (kdzObj.sections[k].belongs_to_topic == kdzObj.topics[j].id) {
+              wieVielAbschnitte++;
             }
           }
 
-          let c = 0;
-          let htmlToInsert = "";
-          let img = "uploads/fallBack.jpg";
+          htmlToInsert += `
+            <a class="moreInfo" href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">
+              <div link class="sectionListElement" id="topicNo_${kdzObj.topics[j].id}">
+                <div class="topicTitle">
+                </div>
+                <div class="lowerLip">
+                  <h1>${kdzObj.topics[j].title}</h1>
+                  <h2>Anzahl der Abschnitte: ${wieVielAbschnitte}</h2>
 
-          let sections = [];
-
-          for (let j = 0; j < kdzObj.sections.length; j++) {
-            if (kdzObj.sections[j].belongs_to_topic == tid) {
-              if (kdzObj.sections[j].image !== "") {
-                img = `style=\"background-image: url(\'${kdzObj.sections[j].image.url}\');\"`;
-              }
-
-              let description = "";
-
-              if (kdzObj.sections[j].id == 173) {
-                description =
-                  kdzObj.sections[j].description.substring(0, 135) + `...`;
-              } else {
-                description = kdzObj.sections[j].description;
-              }
-
-              let tagString = "";
-
-              if (kdzObj.sections[j].tags !== "") {
-                for (
-                  let k = 0;
-                  k < 5 && k < kdzObj.sections[j].tags.length;
-                  k++
-                ) {
-                  tagString += ` <a href="tagsListe.html?tag=${kdzObj.sections[j].tags[k].slug}">#${kdzObj.sections[j].tags[k].slug}</a>`;
-                }
-              }
-
-              htmlToInsert += `
-                <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
-                  <div link class="sectionListElement">
-                    <div class="topicSection">
-                    </div>
-                    <div class="lowerLip">
-                      <h4 id="sectionNo_${kdzObj.sections[j].id}">${description}</h4>
-                      <h2 class="tagString">
-                        <span class="tagStringBase">${tagString}</span>
-                      </h2>
-                      <br />
-                      <div style="width: 100%">
-                        <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">Mehr erfahren</a>
-                      </div>
-                    </div>
+                  <br />
+                  <div style="width: 100%">
+                    <a class="moreInfo" href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">Mehr erfahren</a>
                   </div>
-                </a>`.replace("link", img);
+                  <br />
+                </div>
+              </div>
+            </a>`.replace("link", img);
 
-              c++;
+          c++;
+        }
 
-              sections.push(`sectionNo_${kdzObj.sections[j].id}`);
+        function clusterName(n) {
+          for (let i = 0; i < kdzObj.clusters.length; i++) {
+            if (kdzObj.clusters[i].id == n) {
+              return `${kdzObj.clusters[i].title}`;
             }
           }
-
-          if (c < 1) {
-            window.location.replace("./404.html");
-          }
-
-          const selectedHTML = document.querySelector("#topicSectionList");
-
-          selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
-        } else {
-          window.location.replace("./404.html");
         }
+
+        const selectedHTML = document.querySelector("#topicSectionList");
+
+        selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
       </script>
 
       <h5 id="quickLinks">

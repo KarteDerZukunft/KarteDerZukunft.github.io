@@ -100,7 +100,7 @@
                 <a href="themenListe.html"> Unsere Themen </a>
               </li>
               <li>
-                <a href="kiezprojektListe.html"> Unsere Projekte </a>
+                <a href="kiezprojektenListe.html"> Unsere Projekte </a>
               </li>
             </ul>
           </div>
@@ -126,7 +126,7 @@
 
     <div id="textDetailsContainer">
       <!-- <h2 id="title" class="kiezprojektTitle"></h2> -->
-      <h2 id="title">Kiezprojekt:</h2>
+      <h2 id="title"></h2>
       <p id="description">
         <br />
       </p>
@@ -446,9 +446,9 @@
                   document.querySelector("#title").insertAdjacentHTML(
                     "beforeend",
                     `
-                      <a href="kiezprojektListe.html" style="color: #ff392b; font-size: 1.5rem;" id="zuruck">&#10094 Zurück</a>
+                      <a href="kiezprojektenListe.html" style="color: #ff392b; font-size: 1.5rem;" id="zuruck">&#10094 Zurück</a>
                       <br />
-                      ${kdzObj.places[i].title}
+                      Kiezprojekt: ${kdzObj.places[i].title}
                     `
                   );
 
@@ -468,9 +468,9 @@
 
                   let tagsToInsert = "";
 
-                  if (kdzObj.sections[i].tags !== "") {
-                    for (let j = 0; j < kdzObj.sections[i].tags.length; j++) {
-                      tagsToInsert += ` <a href="tagsListe.html?tag=${kdzObj.sections[i].tags[j].slug}">#${kdzObj.sections[i].tags[j].slug}</a>`;
+                  if (kdzObj.places[i].tags !== "") {
+                    for (let j = 0; j < kdzObj.places[i].tags.length; j++) {
+                      tagsToInsert += ` <a href="tagsListe.html?tag=${kdzObj.places[i].tags[j].slug}">#${kdzObj.places[i].tags[j].slug}</a>`;
                     }
 
                     document
