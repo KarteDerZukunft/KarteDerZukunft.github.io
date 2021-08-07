@@ -12,7 +12,7 @@
     />
 
     <!-- Site Metas -->
-    <title>Kandidierendenliste</title>
+    <title>Unsere Kandidierenden</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="AbuRadi" />
@@ -115,9 +115,17 @@
     <br />
 
     <div id="textDetailsContainer">
-      <h2 id="topicSectionTitle">Kandidierendenliste</h2>
+      <h2 id="topicSectionTitle">Für den Bundestag</h2>
 
-      <div id="topicSectionList"></div>
+      <div id="btList"></div>
+
+      <h2 id="">Für die Bezirksverordnetenversammlung</h2>
+
+      <div id="bvvList"></div>
+
+      <h2 id="">Für das Abgeordnetenhaus</h2>
+
+      <div id="aghList"></div>
 
       <script src="Data/kdz.js"></script>
       <script>
@@ -128,38 +136,108 @@
         let candidates = [];
 
         for (let j = 0; j < kdzObj.candidates.length; j++) {
-          if (kdzObj.candidates[j].image !== "") {
-            img = `style=\"background-image: url(\'${kdzObj.candidates[j].image.url}\');\"`;
-          }
+          if (kdzObj.candidates[j].type[0].slug === "bt") {
+            if (kdzObj.candidates[j].image !== "") {
+              img = `style=\"background-image: url(\'${kdzObj.candidates[j].image.url}\');\"`;
+            }
 
-          htmlToInsert += `
-            <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
-              <div link class="sectionListElement">
-                <div class="topicSection"></div>
-                <br />
-                <div class="lowerLip">
-                  <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
-                  <div style="width: 100%">
-                    <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
+            htmlToInsert += `
+              <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
+                <div link class="sectionListElement">
+                  <div class="topicSection"></div>
+                  <br />
+                  <div class="lowerLip">
+                    <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
+                    <div style="width: 100%">
+                      <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>`.replace("link", img);
+              </a>`.replace("link", img);
 
-          c++;
+            c++;
 
-          candidates.push(`sectionNo_${kdzObj.candidates[j].id}`);
+            candidates.push(`sectionNo_${kdzObj.candidates[j].id}`);
+          }
         }
 
-        const selectedHTML = document.querySelector("#topicSectionList");
+        const btList = document.querySelector("#btList");
 
-        selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
+        btList.insertAdjacentHTML("beforeend", htmlToInsert);
+
+        htmlToInsert = "";
+
+        for (let j = 0; j < kdzObj.candidates.length; j++) {
+          if (kdzObj.candidates[j].type[0].slug === "bvv") {
+            if (kdzObj.candidates[j].image !== "") {
+              img = `style=\"background-image: url(\'${kdzObj.candidates[j].image.url}\');\"`;
+            }
+
+            htmlToInsert += `
+              <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
+                <div link class="sectionListElement">
+                  <div class="topicSection"></div>
+                  <br />
+                  <div class="lowerLip">
+                    <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
+                    <div style="width: 100%">
+                      <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
+                    </div>
+                  </div>
+                </div>
+              </a>`.replace("link", img);
+
+            c++;
+
+            candidates.push(`sectionNo_${kdzObj.candidates[j].id}`);
+          }
+        }
+
+        const bvvList = document.querySelector("#bvvList");
+
+        bvvList.insertAdjacentHTML("beforeend", htmlToInsert);
+
+        htmlToInsert = "";
+
+        for (let j = 0; j < kdzObj.candidates.length; j++) {
+          if (kdzObj.candidates[j].type[0].slug === "agh") {
+            if (kdzObj.candidates[j].image !== "") {
+              img = `style=\"background-image: url(\'${kdzObj.candidates[j].image.url}\');\"`;
+            }
+
+            htmlToInsert += `
+              <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
+                <div link class="sectionListElement">
+                  <div class="topicSection"></div>
+                  <br />
+                  <div class="lowerLip">
+                    <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
+                    <div style="width: 100%">
+                      <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
+                    </div>
+                  </div>
+                </div>
+              </a>`.replace("link", img);
+
+            c++;
+
+            candidates.push(`sectionNo_${kdzObj.candidates[j].id}`);
+          }
+        }
+
+        const aghList = document.querySelector("#aghList");
+
+        aghList.insertAdjacentHTML("beforeend", htmlToInsert);
       </script>
 
-      <h5 id="quickLinks">
+      <h5 id="quickLinks" style="font-size: 0.9rem">
         <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
         <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
           >Datenschutzerklärung</a
+        > | <a
+          id="TsCs"
+          href="https://www.spd-berlin-mitte.de/dl/Wahlprogramm_SPD_Mitte_2021.pdf"
+          >Wahlprogramm (pdf)</a
         >
       </h5>
     </div>

@@ -532,9 +532,11 @@ li.social-links a {
   font-weight: bold;
   text-align: center;
   color: white;
+  font-weight: bold;
+  text-align: left;
 
   /* text-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b, 0 -1px 0 #ff392b; */
-  text-shadow: 1px 1px 0 #ff392b;
+  /* text-shadow: 1px 1px 0 #ff392b; */
 }
 
 #main-banner .slideshow .mySlides #slideLink #slideCaption #slideCaptionLink {
@@ -543,6 +545,7 @@ li.social-links a {
   border-radius: 25px;
   border: 2.5px solid;
   color: white;
+  font-weight: normal;
 
   /* text-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b, 0 -1px 0 #ff392b; */
 
