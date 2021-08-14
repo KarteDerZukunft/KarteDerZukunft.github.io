@@ -620,6 +620,21 @@ li.social-links a {
   padding: 7.5px;
 }
 
+#urheberrechte {
+  font-weight: bold;
+  color: white;
+  font-size: 0.9rem;
+}
+
+#urheberrechteVorSeite {
+  position: relative;
+  margin: -40px 0px -0px 40px;
+
+  font-weight: bold;
+  color: white;
+  font-size: 0.9rem;
+}
+
 .sectionListElement .lowerLip h1 {
   /* white-space: nowrap; */
   /* text-overflow: ellipsis; */
@@ -697,10 +712,10 @@ li.social-links a {
 
 .sectionListElement .lowerLip .tagString {
   display: flex;
-  max-width: calc(100% - 5px);
+  max-width: calc(100% - 15px);
   height: 2.4rem;
 
-  overflow: hidden;
+  overflow: auto;
   white-space: nowrap;
   /* text-overflow: ellipsis; */
 }
@@ -1079,6 +1094,10 @@ h5 a {
 
     margin: 10px;
     border-radius: 5px;
+  }
+
+  #urheberrechteVorSeite {
+    margin: -30px 0px 0px 20px;
   }
 
   .customDivider {

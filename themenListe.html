@@ -124,17 +124,23 @@
         let c = 0;
         let htmlToInsert = "";
         let img = "uploads/fallBack.jpg";
+        let rgt = ``;
 
         let clusterArray = [];
 
         for (let j = 0; j < kdzObj.topics.length; j++) {
           if (kdzObj.topics[j].image !== "") {
             img = `style=\"background-image: url(\'${kdzObj.topics[j].image.url}\');\"`;
+
+            if (kdzObj.topics[j].image.credits !== "") {
+              rgt = `© ${kdzObj.topics[j].image.credits}`;
+            }
           }
 
           let color = "#212121";
 
           if (kdzObj.topics[j].belongs_to_cluster == 1550) {
+            // ...
           } else if (kdzObj.topics[j].belongs_to_cluster == 11) {
             // ...
           } else if (kdzObj.topics[j].belongs_to_cluster == 9) {
@@ -155,6 +161,7 @@
             <a class="moreInfo" href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">
               <div link class="sectionListElement" id="topicNo_${kdzObj.topics[j].id}">
                 <div class="topicTitle">
+                  <h4 id="urheberrechte">${rgt}</h4>
                 </div>
                 <div class="lowerLip">
                   <h1>${kdzObj.topics[j].title}</h1>

@@ -124,6 +124,7 @@
         let c = 0;
         let htmlToInsert = "";
         let img = "uploads/fallBack.jpg";
+        let rgt = ``;
 
         let places = [];
 
@@ -131,6 +132,10 @@
           if (kdzObj.places[j].type[0].slug === "kiezprojekt") {
             if (kdzObj.places[j].image !== "") {
               img = `style=\"background-image: url(\'${kdzObj.places[j].image.url}\');\"`;
+
+              if (kdzObj.places[j].image.credits !== "") {
+                rgt = `© ${kdzObj.places[j].image.credits}`;
+              }
             }
 
             let description = "";
@@ -154,6 +159,7 @@
               <a class="moreInfo" href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">
                 <div link class="sectionListElement">
                   <div class="topicSection">
+                    <h4 id="urheberrechte">${rgt}</h4>
                   </div>
                   <div class="lowerLip">
                     <h4 id="sectionNo_${kdzObj.places[j].id}">${description}</h4>

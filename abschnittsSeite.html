@@ -397,6 +397,19 @@
                   );
               }
 
+              let rgt = ``;
+
+              if (kdzObj.sections[i].image.credits !== "") {
+                rgt = `© ${kdzObj.sections[i].image.credits}`;
+              }
+
+              document
+                .querySelector("#topImgContainer")
+                .insertAdjacentHTML(
+                  "beforeend",
+                  `<h4 id="urheberrechteVorSeite">${rgt}</h4>`
+                );
+
               document.querySelector("#title").insertAdjacentHTML(
                 "beforeend",
                 `
@@ -491,7 +504,7 @@
           document.querySelector("#quickLinks").insertAdjacentHTML(
             "beforeend",
             `
-              <a href="themenbereichListe.html?cid=${cid}">${cTitle}</a> | <a href="themenabschnittListe.html?tid=${tid}">${tTitle}</a> | <a href="TsCs.html?Impressum">Impressum</a> | <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a>
+              <a href="themenbereichListe.html?cid=${cid}">${cTitle}</a> | <a href="themenabschnittListe.html?tid=${tid}">${tTitle}</a> | <a href="TsCs.html?Impressum">Impressum</a> | <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a> | <a href="https://www.spd-berlin-mitte.de/dl/Wahlprogramm_SPD_Mitte_2021.pdf">Wahlprogramm (pdf)</a>
             `
           );
         } else {
