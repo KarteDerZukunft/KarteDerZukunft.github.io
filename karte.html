@@ -94,13 +94,31 @@
             kdzObj.places[i].type[0].slug === "kiezprojekt" &&
             kdzObj.places[i].coordinates !== ""
           ) {
-            document.querySelector("#overlays").insertAdjacentHTML(
-              "beforeend",
-              `
-                  <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m"><p>${kdzObj.places[i].title}</p></a>
-                  <div class="marker" id="marker${kdzObj.places[i].id}" title=""></div>
+            if (kdzObj.places[i].belongs_to_cluster == 6) {
+              document.querySelector("#overlays").insertAdjacentHTML(
+                "beforeend",
                 `
-            );
+                  <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m"><p>${kdzObj.places[i].title}</p></a>
+                  <div class="mapMarkerHeart" id="marker${kdzObj.places[i].id}" title=""></div>
+                `
+              );
+            } else if (kdzObj.places[i].belongs_to_cluster == 9) {
+              document.querySelector("#overlays").insertAdjacentHTML(
+                "beforeend",
+                `
+                  <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m"><p>${kdzObj.places[i].title}</p></a>
+                  <div class="mapMarkerStairs" id="marker${kdzObj.places[i].id}" title=""></div>
+                `
+              );
+            } else if (kdzObj.places[i].belongs_to_cluster == 11) {
+              document.querySelector("#overlays").insertAdjacentHTML(
+                "beforeend",
+                `
+                  <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m"><p>${kdzObj.places[i].title}</p></a>
+                  <div class="mapMarkerMarker" id="marker${kdzObj.places[i].id}" title=""></div>
+                `
+              );
+            }
 
             // keeping the this kiezprojekt's position
 

@@ -546,6 +546,8 @@ li.social-links a {
   border: 2.5px solid;
   color: white;
   font-weight: normal;
+  margin-top: 22.5px;
+  padding: 0px 15px;
 
   /* text-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b, 0 -1px 0 #ff392b; */
 
@@ -1012,13 +1014,37 @@ li.social-links a {
   max-width: 165px;
 }
 
-.marker {
-  background-color: #ff392b75;
-  opacity: 0.5;
-  width: 20px;
+.mapMarker {
+  /* background-color: #ff392b75; */
+  /* opacity: 0.5; */
   height: 20px;
-  border: 1px solid white;
-  border-radius: 10px;
+  width: 20px;
+  /* border: 1px solid white; */
+  /* border-radius: 10px; */
+}
+
+.mapMarkerHeart {
+  height: 18px;
+  width: 18px;
+
+  background: url("images/heart.png");
+  background-size: cover;
+}
+
+.mapMarkerStairs {
+  height: 18px;
+  width: 18px;
+
+  background: url("images/stairs.png");
+  background-size: cover;
+}
+
+.mapMarkerMarker {
+  height: 18px;
+  width: 18px;
+
+  background: url("images/marker.png");
+  background-size: cover;
 }
 
 h5 a {
