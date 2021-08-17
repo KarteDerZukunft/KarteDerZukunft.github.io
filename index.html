@@ -100,6 +100,10 @@
       <script>
         let htmlToInsert = "";
 
+        kdzObj.clusters.sort(
+          (x, y) => parseFloat(x.order_num) - parseFloat(y.order_num)
+        );
+
         for (let i = 0; i < kdzObj.clusters.length; i++) {
           htmlToInsert += `
             <div class="mySlides fade">
@@ -131,7 +135,7 @@
 
         selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
 
-        var slideIndex = 2;
+        var slideIndex = 1;
 
         showSlides(slideIndex);
 
@@ -167,11 +171,25 @@
           slides[slideIndex - 1].style.display = "contents";
           dots[slideIndex - 1].className += " active";
         }
+
+        window.setInterval(function () {
+          if (slideIndex < document.getElementsByClassName("mySlides").length) {
+            slideIndex += 1;
+
+            showSlides(slideIndex);
+          } else if (
+            slideIndex == document.getElementsByClassName("mySlides").length
+          ) {
+            slideIndex = 1;
+
+            showSlides(slideIndex);
+          }
+        }, 5000);
       </script>
     </div>
 
     <div style="position: relative; margin-top: 36px; margin-bottom: 7.5px">
-      <h5 id="quickLinks" style="font-size: 0.9rem">
+      <h5 id="quickLinks" style="font-size: 1.2rem">
         <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
         <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
           >Datenschutzerklärung</a

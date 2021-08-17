@@ -713,13 +713,11 @@ li.social-links a {
 }
 
 .sectionListElement .lowerLip .tagString {
-  display: flex;
+  display: inline-block;
   max-width: calc(100% - 15px);
-  height: 2.4rem;
+  height: 1.8rem;
 
-  overflow: auto;
-  white-space: nowrap;
-  /* text-overflow: ellipsis; */
+  overflow-y: hidden;
 }
 
 .sectionListElement .lowerLip div {
@@ -740,6 +738,14 @@ li.social-links a {
 }
 
 #TsCs:hover {
+  color: #ff392b63;
+}
+
+#link {
+  color: #ff392b;
+}
+
+#link:hover {
   color: #ff392b63;
 }
 
@@ -841,6 +847,11 @@ li.social-links a {
 .kiezprojektContainer h2 {
   text-align: center;
   padding: 10px;
+}
+
+.mapContainer h2 {
+  text-align: center;
+  padding: 5px 0px 15px 0px;
 }
 
 .kiezprojektContainer .slideshow {
@@ -2899,6 +2910,7 @@ select.mobile-device {
   border-radius: 3px;
   right: 25px;
   text-align: center;
+  line-height: 1.5;
   font-size: 28px;
   color: #e7f3ec !important;
   cursor: pointer;
@@ -2907,20 +2919,6 @@ select.mobile-device {
   -o-transition: all 0.7s ease-in-out;
   -ms-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
-}
-
-.icon_wrap {
-  background-color: #1f1f1f;
-  width: 100px;
-  height: 100px;
-  display: block;
-  line-height: 100px;
-  font-size: 34px;
-  color: #e7f3ec;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 !important;
-  border: 0 !important;
 }
 
 .stat-wrap h3 {
