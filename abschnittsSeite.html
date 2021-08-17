@@ -102,6 +102,11 @@
               <li>
                 <a href="kiezprojektenListe.html"> Unsere Projekte </a>
               </li>
+              <li>
+                <a href="https://www.spd.de/unterstuetzen/mitglied-werden/">
+                  <button>Mitmachen</button>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -387,6 +392,55 @@
           map
             .getView()
             .setCenter(ol.proj.transform([lon, lat], "EPSG:4326", "EPSG:3857"));
+
+          var aghNameList = [];
+          var aghDistList = [];
+          var tmpPlaceId = 0;
+          var tmpLocation;
+
+          for (let j = 0; j < kdzObj.candidates.length; j++) {
+            if (kdzObj.candidates[j].type[0].slug === "agh") {
+              tmpPlaceId = parseInt(kdzObj.candidates[j].places[0]);
+
+              for (let k = 0; k < kdzObj.places.length; k++) {
+                if (
+                  kdzObj.places[k].id == tmpPlaceId &&
+                  kdzObj.places[k].coordinates !== ""
+                ) {
+                  tmpLocation = [
+                    kdzObj.places[k].coordinates.lng,
+                    kdzObj.places[k].coordinates.lat,
+                  ];
+
+                  aghNameList.push(kdzObj.candidates[j].title);
+                  aghDistList.push(
+                    Math.sqrt(
+                      Math.abs(tmpLocation[0] - lon) ** 2 +
+                        Math.abs(tmpLocation[1] - lat) ** 2
+                    )
+                  );
+                }
+              }
+            }
+          }
+
+          for (let l = 0; l < aghDistList.length; l++) {
+            if (aghDistList[l] == Math.min(...aghDistList)) {
+              for (let c = 0; c < kdzObj.candidates.length; c++) {
+                if (kdzObj.candidates[c].title === aghNameList[l]) {
+                  document.getElementById(
+                    "_2ndSlideLink"
+                  ).href = `kandidatSeite.html?kid=${kdzObj.candidates[c].id}`;
+
+                  document.getElementById("_2ndSlideImg").src =
+                    kdzObj.candidates[c].image.url;
+
+                  document.getElementById("_2ndSlideCaption").innerHTML =
+                    kdzObj.candidates[c].title;
+                }
+              }
+            }
+          }
         }
 
         getLocation();
@@ -592,9 +646,13 @@
                 class="form-label legalNote"
                 style="display: inline"
                 >Hiermit bestätige und akzeptiere ich die
-                Datenschutzbestimmungen (<a id="link" href="TsCs.html?Datenschutzerklärung">link</a>) und stimme zu, dass die SPD Mitte
-                meine E- Mail-Addresse und Telefonnummer verwenden darf, um mich
-                zu kontaktieren und z.B. zu Veranstaltungen einzuladen.</label
+                Datenschutzbestimmungen (<a
+                  id="link"
+                  href="TsCs.html?Datenschutzerklärung"
+                  >link</a
+                >) und stimme zu, dass die SPD Mitte meine E- Mail-Addresse und
+                Telefonnummer verwenden darf, um mich zu kontaktieren und z.B.
+                zu Veranstaltungen einzuladen.</label
               >
             </div>
           </div>
@@ -683,6 +741,25 @@
               console.log(message);
 
               alert("Vielen Dank für Ihre Kontaktaufnahme.");
+            });
+
+            Email.send({
+              SecureToken: "642e79da-30fa-4f6f-bb52-3fc0ac2ca6f6",
+              To: `${email}`,
+              From: "site@kartederzukunft.de",
+              Subject: "Dank für Ihr Feedback",
+              Body: `
+                Hier ist eine Kopie Ihres Kommentars:
+                <br />
+                <h4>Dein Name: ${name},</h4>
+                <h4>Deine Email-Adresse: ${email},</h4>
+                <h4>Deine Telefonnummer: ${phone},</h4>
+                <h4>Rückmeldung: ${more}.</h4>
+                <br />
+                <h4>URL: ${window.location.href}</h4>
+                <br />
+                Wir danken Ihnen für die Zeit, die Sie sich beim Ausfüllen des Formulars genommen haben, mit freundlichen Grüßen.
+              `,
             });
 
             document.forms["quoteFrom"]["nameInput"].value = ``;

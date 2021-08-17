@@ -385,6 +385,13 @@ a img.aligncenter {
   background-color: transparent;
 }
 
+.header_style_01 .navbar-default .navbar-nav > li > a > button {
+  background: white;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: #ff392b;
+}
+
 .header_style_01 .navbar-default .navbar-nav > li a {
   background-color: transparent !important;
 }
@@ -838,7 +845,7 @@ li.social-links a {
 }
 
 .kiezprojektContainer {
-  padding: 5px;
+  padding: 5px 10px;
 
   background-color: #ff392b10;
   border-radius: 10px;
@@ -876,7 +883,7 @@ li.social-links a {
 /* Silde Images */
 
 .kiezprojektContainer .slideshow .mySlides a img {
-  width: calc(100% - 10px);
+  width: calc(100%);
   border-radius: 5px;
   margin-top: 5px;
   object-fit: cover;
@@ -925,7 +932,9 @@ li.social-links a {
 /* Next & previous buttons */
 
 .kiezprojektContainer .slideshow .prev,
-.kiezprojektContainer .slideshow .next {
+.kiezprojektContainer .slideshow .next,
+.slideshow .prev,
+.slideshow .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -978,8 +987,6 @@ li.social-links a {
 }
 
 .kiezprojektContainer a {
-  margin: 5px;
-
   color: #ff392b;
   text-decoration: none;
   font-size: 2.1rem;
@@ -1116,6 +1123,12 @@ h5 a {
 @media (max-width: 768px) {
   #topImgContainer {
     height: 40vh !important;
+  }
+
+  #main-banner .slideshow .mySlides #slideLink #slideCaption {
+    left: 10vw;
+
+    width: 80vw;
   }
 }
 

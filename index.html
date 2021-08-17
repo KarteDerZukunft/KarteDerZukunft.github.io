@@ -87,6 +87,11 @@
               <li>
                 <a href="kiezprojektenListe.html"> Unsere Projekte </a>
               </li>
+              <li>
+                <a href="https://www.spd.de/unterstuetzen/mitglied-werden/">
+                  <button>Mitmachen</button>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -134,6 +139,14 @@
         const selectedHTML = document.querySelector("#slideshow");
 
         selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
+
+        selectedHTML.insertAdjacentHTML(
+          "beforeend",
+          `
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a style="right: 0;" class="next" onclick="plusSlides(1)">&#10095;</a>
+          `
+        );
 
         var slideIndex = 1;
 
