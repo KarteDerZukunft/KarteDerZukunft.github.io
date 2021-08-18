@@ -98,46 +98,6 @@
       </nav>
     </header>
 
-    <script>
-      acknowledged = 1;
-
-      if (acknowledged == 1) {
-        var disclaimer = document.getElementById("disclaimer");
-
-        disclaimer.style.display = "none";
-      }
-
-      function hideForm() {
-        var disclaimer = document.getElementById("disclaimer");
-
-        disclaimer.style.display = "none";
-
-        acknowledged = 1;
-
-        localStorage.setItem("acknowledged", acknowledged);
-      }
-
-      function showForm() {
-        var disclaimer = document.getElementById("disclaimer");
-
-        disclaimer.style.display = "block";
-
-        acknowledged = 0;
-
-        localStorage.setItem("acknowledged", acknowledged);
-      }
-    </script>
-
-    <a
-      href="#"
-      id="kommentieren"
-      onclick="return showForm()"
-      class="kommentieren global-radius"
-      >Kommentieren</a
-    >
-
-    <a href="#" id="scroll-to-top" class="dmtop global-radius">&#9650;</a>
-
     <!-- ALL JS FILES -->
     <script src="js/all.js"></script>
     <script src="js/scrollIt.min.js"></script>
