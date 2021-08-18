@@ -482,9 +482,10 @@
               document.querySelector("#title").insertAdjacentHTML(
                 "beforeend",
                 `
-                  <a href="themenabschnittListe.html?tid=${kdzObj.sections[i].belongs_to_topic}" style="color: #ff392b; font-size: 1.5rem;" id="zuruck">&#10094 Zurück</a>
+                  <a href="themenabschnittListe.html?tid=${kdzObj.sections[i].belongs_to_topic}" style="color: #ff392b; font-size: 1.5rem;" id="zuruck">&#10094 Zurück</a><br />
                   <br />
-                  ${kdzObj.sections[i].title}
+                  ${kdzObj.sections[i].title}<br />
+                  <br />
                 `
               );
 
@@ -526,56 +527,56 @@
             }
           }
 
-          // finding the associated cluster
+          if (typeof tid !== "undefined") {
+            // finding the associated cluster
 
-          for (let y = 0; y < kdzObj.topics.length; y++) {
-            if (kdzObj.topics[y].id == tid) {
-              cid = kdzObj.topics[y].belongs_to_cluster;
-              for (let p = 0; p < kdzObj.clusters.length; p++) {
-                if (kdzObj.clusters[p].id == cid) {
-                  cTitle = kdzObj.clusters[p].title;
+            for (let y = 0; y < kdzObj.topics.length; y++) {
+              if (kdzObj.topics[y].id == tid) {
+                cid = kdzObj.topics[y].belongs_to_cluster;
+                for (let p = 0; p < kdzObj.clusters.length; p++) {
+                  if (kdzObj.clusters[p].id == cid) {
+                    cTitle = kdzObj.clusters[p].title;
+                  }
                 }
               }
             }
-          }
 
-          // listing the associated kiezprojekts
+            if (typeof cid !== "undefined") {
+              // listing the associated kiezprojekts
 
-          let c = 5;
-          let kiezprojektsToInsert = "";
+              let c = 5;
+              let kiezprojektsToInsert = "";
 
-          for (let j = 0; j < kdzObj.places.length; j++) {
-            let R = Math.ceil(Math.random() * (kdzObj.places.length - 1));
+              for (let j = 0; j < kdzObj.places.length; j++) {
+                let R = Math.ceil(Math.random() * (kdzObj.places.length - 1));
 
-            if (kdzObj.places[R].belongs_to_cluster == cid) {
-              if (kdzObj.places[R].type[0].slug === "kiezprojekt") {
-                kiezprojektsToInsert += `<a href="kiezprojektSeite.html?kpid=${kdzObj.places[R].id}">${kdzObj.places[R].title}</a><br />`;
-                c--;
+                if (kdzObj.places[R].belongs_to_cluster == cid) {
+                  if (kdzObj.places[R].type[0].slug === "kiezprojekt") {
+                    kiezprojektsToInsert += `<a href="kiezprojektSeite.html?kpid=${kdzObj.places[R].id}">${kdzObj.places[R].title}</a><br />`;
+                    c--;
+                  }
+                  if (c < 1) {
+                    break;
+                  } else {
+                    kiezprojektsToInsert += `<hr class="kpSep">`;
+                  }
+                }
               }
-              if (c < 1) {
-                break;
-              } else {
-                kiezprojektsToInsert += `<hr class="kpSep">`;
-              }
+
+              document
+                .querySelector("#kiezprojektContainer")
+                .insertAdjacentHTML("beforeend", `${kiezprojektsToInsert}`);
+
+              document.querySelector("#quickLinks").insertAdjacentHTML(
+                "beforeend",
+                `
+                  <a href="themenbereichListe.html?cid=${cid}">${cTitle}</a> | <a href="themenabschnittListe.html?tid=${tid}">${tTitle}</a> | <a href="TsCs.html?Impressum">Impressum</a> | <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a> | <a href="https://www.spd-berlin-mitte.de/dl/Wahlprogramm_SPD_Mitte_2021.pdf">Wahlprogramm (pdf)</a>
+                `
+              );
             }
+          } else {
+            window.location.replace("./404.html");
           }
-
-          // if (c === 5) {
-          //   var kCE = document.getElementById("kiezprojektContainerEmpty");
-
-          //   kCE.style.display = "none";
-          // }
-
-          document
-            .querySelector("#kiezprojektContainer")
-            .insertAdjacentHTML("beforeend", `${kiezprojektsToInsert}`);
-
-          document.querySelector("#quickLinks").insertAdjacentHTML(
-            "beforeend",
-            `
-              <a href="themenbereichListe.html?cid=${cid}">${cTitle}</a> | <a href="themenabschnittListe.html?tid=${tid}">${tTitle}</a> | <a href="TsCs.html?Impressum">Impressum</a> | <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a> | <a href="https://www.spd-berlin-mitte.de/dl/Wahlprogramm_SPD_Mitte_2021.pdf">Wahlprogramm (pdf)</a>
-            `
-          );
         } else {
           window.location.replace("./404.html");
         }

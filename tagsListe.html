@@ -116,9 +116,13 @@
     <br />
 
     <div id="textDetailsContainer">
-      <h2 id="topicSectionTitle">Themen mit dem Hashtag:</h2>
+      <h2 id="firstTitle"></h2>
 
-      <div id="topicSectionList"></div>
+      <div id="fisrtList"></div>
+
+      <h2 id="secondList"></h2>
+
+      <div id="secondList"></div>
 
       <script src="Data/kdz.js"></script>
       <script>
@@ -128,55 +132,113 @@
         if (urlParams.has("tag")) {
           tag = urlParams.get("tag");
 
-          document
-            .querySelector("#topicSectionTitle")
-            .insertAdjacentHTML("beforeend", ` #${tag}`);
-
-          let c = 0;
+          let tc = 0;
+          let kc = 0;
           let htmlToInsert = "";
           let img = "uploads/fallBack.jpg";
           let rgt = ``;
 
+          var selectedHTML;
+
           for (let j = 0; j < kdzObj.sections.length; j++) {
-            for (let k = 0; k < kdzObj.sections[j].tags.length; k++) {
-              if (kdzObj.sections[j].tags[k].slug == tag) {
-                if (kdzObj.sections[j].image !== "") {
-                  img = `style=\"background-image: url(\'${kdzObj.sections[j].image.url}\');\"`;
+            if (kdzObj.sections[j].tags !== "") {
+              for (let k = 0; k < kdzObj.sections[j].tags.length; k++) {
+                if (kdzObj.sections[j].tags[k].slug == tag) {
+                  if (kdzObj.sections[j].image !== "") {
+                    img = `style=\"background-image: url(\'${kdzObj.sections[j].image.url}\');\"`;
 
-                  if (kdzObj.sections[j].image.credits !== "") {
-                    rgt = `© ${kdzObj.sections[j].image.credits}`;
+                    if (kdzObj.sections[j].image.credits !== "") {
+                      rgt = `© ${kdzObj.sections[j].image.credits}`;
+                    }
                   }
-                }
 
-                htmlToInsert += `
-                  <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
-                    <div link class="sectionListElement">
-                      <div class="topicSection">
-                        <h4 id="urheberrechte">${rgt}</h4>
-                      </div>
-                      <div class="lowerLip">
-                        <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
-                        <br />
-                        <div style="width: 100%">
-                          <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">Mehr erfahren</a>
+                  htmlToInsert += `
+                    <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
+                      <div link class="sectionListElement">
+                        <div class="topicSection">
+                          <h4 id="urheberrechte">${rgt}</h4>
                         </div>
-                        <br />
+                        <div class="lowerLip">
+                          <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
+                          <br />
+                          <div style="width: 100%">
+                            <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">Mehr erfahren</a>
+                          </div>
+                          <br />
+                        </div>
                       </div>
-                    </div>
-                  </a>`.replace("link", img);
-                c++;
-                continue;
+                    </a>`.replace("link", img);
+                  tc++;
+                }
               }
             }
           }
 
-          if (c < 1) {
-            window.location.replace("./404.html");
+          if (tc > 0) {
+            document
+              .querySelector("#firstTitle")
+              .insertAdjacentHTML(
+                "beforeend",
+                `Themen mit dem Hashtag #${tag}`
+              );
+
+            selectedHTML = document.querySelector("#fisrtList");
+
+            selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
           }
 
-          const selectedHTML = document.querySelector("#topicSectionList");
+          htmlToInsert = "";
 
-          selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
+          for (let j = 0; j < kdzObj.places.length; j++) {
+            if (kdzObj.places[j].tags !== "") {
+              for (let k = 0; k < kdzObj.places[j].tags.length; k++) {
+                if (kdzObj.places[j].tags[k].slug == tag) {
+                  if (kdzObj.places[j].image !== "") {
+                    img = `style=\"background-image: url(\'${kdzObj.places[j].image.url}\');\"`;
+
+                    if (kdzObj.places[j].image.credits !== "") {
+                      rgt = `© ${kdzObj.places[j].image.credits}`;
+                    }
+                  }
+
+                  htmlToInsert += `
+                    <a href="abschnittsSeite.html?sid=${kdzObj.places[j].id}">
+                      <div link class="sectionListElement">
+                        <div class="topicSection">
+                          <h4 id="urheberrechte">${rgt}</h4>
+                        </div>
+                        <div class="lowerLip">
+                          <h4 id="sectionNo_${kdzObj.places[j].id}">${kdzObj.places[j].description}</h4>
+                          <br />
+                          <div style="width: 100%">
+                            <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.places[j].id}">Mehr erfahren</a>
+                          </div>
+                          <br />
+                        </div>
+                      </div>
+                    </a>`.replace("link", img);
+                  kc++;
+                }
+              }
+            }
+          }
+
+          if (kc > 0) {
+            document
+              .querySelector("#secondList")
+              .insertAdjacentHTML(
+                "beforeend",
+                `Kiezprojekte mit dem Hashtag #${tag}`
+              );
+
+            selectedHTML = document.querySelector("#secondList");
+
+            selectedHTML.insertAdjacentHTML("beforeend", htmlToInsert);
+          }
+
+          if (tc < 1 && kc < 1) {
+            window.location.replace("./404.html");
+          }
         } else {
           window.location.replace("./404.html");
         }
@@ -260,9 +322,13 @@
                 class="form-label legalNote"
                 style="display: inline"
                 >Hiermit bestätige und akzeptiere ich die
-                Datenschutzbestimmungen (<a id="link" href="TsCs.html?Datenschutzerklärung">link</a>) und stimme zu, dass die SPD Mitte
-                meine E- Mail-Addresse und Telefonnummer verwenden darf, um mich
-                zu kontaktieren und z.B. zu Veranstaltungen einzuladen.</label
+                Datenschutzbestimmungen (<a
+                  id="link"
+                  href="TsCs.html?Datenschutzerklärung"
+                  >link</a
+                >) und stimme zu, dass die SPD Mitte meine E- Mail-Addresse und
+                Telefonnummer verwenden darf, um mich zu kontaktieren und z.B.
+                zu Veranstaltungen einzuladen.</label
               >
             </div>
           </div>
@@ -370,8 +436,7 @@
                 <br />
                 Wir danken Ihnen für die Zeit, die Sie sich beim Ausfüllen des Formulars genommen haben, mit freundlichen Grüßen.
               `,
-            })
-
+            });
 
             document.forms["quoteFrom"]["nameInput"].value = ``;
             document.forms["quoteFrom"]["emailInput"].value = ``;

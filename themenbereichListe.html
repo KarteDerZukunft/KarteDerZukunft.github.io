@@ -142,6 +142,10 @@
           let l = 0;
           let rgt = ``;
 
+          kdzObj.topics.sort(
+            (x, y) => parseFloat(x.order_num) - parseFloat(y.order_num)
+          );
+
           for (let j = 0; j < kdzObj.topics.length; j++) {
             if (kdzObj.topics[j].belongs_to_cluster == cid) {
               if (kdzObj.topics[j].image !== "") {
@@ -280,9 +284,13 @@
                 class="form-label legalNote"
                 style="display: inline"
                 >Hiermit bestätige und akzeptiere ich die
-                Datenschutzbestimmungen (<a id="link" href="TsCs.html?Datenschutzerklärung">link</a>) und stimme zu, dass die SPD Mitte
-                meine E- Mail-Addresse und Telefonnummer verwenden darf, um mich
-                zu kontaktieren und z.B. zu Veranstaltungen einzuladen.</label
+                Datenschutzbestimmungen (<a
+                  id="link"
+                  href="TsCs.html?Datenschutzerklärung"
+                  >link</a
+                >) und stimme zu, dass die SPD Mitte meine E- Mail-Addresse und
+                Telefonnummer verwenden darf, um mich zu kontaktieren und z.B.
+                zu Veranstaltungen einzuladen.</label
               >
             </div>
           </div>
@@ -390,8 +398,7 @@
                 <br />
                 Wir danken Ihnen für die Zeit, die Sie sich beim Ausfüllen des Formulars genommen haben, mit freundlichen Grüßen.
               `,
-            })
-
+            });
 
             document.forms["quoteFrom"]["nameInput"].value = ``;
             document.forms["quoteFrom"]["emailInput"].value = ``;
