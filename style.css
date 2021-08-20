@@ -593,7 +593,7 @@ li.social-links a {
 }
 
 .sectionListElement {
-  min-height: 40vh;
+  min-height: 35vh;
   max-height: 300px;
   width: auto;
   min-width: 100px;
