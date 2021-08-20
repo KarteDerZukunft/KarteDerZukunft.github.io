@@ -2,7 +2,7 @@ var kdzObj = {
   "site_meta": {
     "title": "Karte der Zukunft",
     "description": "ein interaktiver Zugang zum Wahlprogramm für Berlin Mitte",
-    "created_at": 1629465926,
+    "created_at": 1629474355,
     "lang": "de",
     "legal": "<h3>Angaben gemäß § 5 TMG</h3>\r\nSozialdemokratische Partei Deutschlands\r\nKreis Mitte\r\nvertreten durch Julia Plehnert &amp; Yannick Haan (Kreisvorsitzende)\r\nMüllerstraße 163\r\n13353 Berlin\r\nFon (030) 4692-130\r\nFax: (030) 4692-164\r\n<a href=\"https://www.spd-berlin-mitte.de/mto/1/\">kreis.mitte@spd.de</a>\r\n<h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>\r\nMathias Schulz\r\nInternetbeauftragter\r\nFon: (030) 4692-130\r\n<a href=\"https://www.spd-berlin-mitte.de/mto/1/\">kreis.mitte@spd.de</a>",
     "privacy": "§ 1 Information über die Erhebung personenbezogener Daten\r\n\r\n(1) Im Folgenden informieren wir über die Erhebung personenbezogener Daten bei Nutzung unserer Website. Personenbezogene Daten sind alle Daten, die auf Sie persönlich beziehbar sind, z. B. Name, E-Mail-Adresse.\r\n\r\n(2) Verantwortlicher gem. Art. 4 Abs. 7 EU-Datenschutz-Grundverordnung (DS-GVO) ist: Sozialdemokratische Partei Deutschlands, Kreis Berlin-Mitte, vertreten durch Julia Plehnert und Yannick Haan (Kreisvorsitzende), Müllerstraße 163, 13353 Berlin. [Unseren Datenschutzbeauftragten erreichen Sie unter <a href=\"https://www.spd-berlin-mitte.de/mto/1/\" target=\"_blank\" rel=\"noopener noreferrer\">datenschutz.berlin@spd.de</a> oder unserer Postadresse mit dem Zusatz „der Datenschutzbeauftragte“.]\r\n\r\n(3) Bei Ihrer Kontaktaufnahme mit uns per E-Mail oder über ein Kontaktformular werden die von Ihnen mitgeteilten Daten (Ihre E-Mail-Adresse, ggf. Ihr Name und Ihre Telefonnummer) von uns gespeichert, um Ihre Fragen zu beantworten. Die in diesem Zusammenhang anfallenden Daten löschen wir, nachdem die Speicherung nicht mehr erforderlich ist, oder schränken die Verarbeitung ein, falls gesetzliche Aufbewahrungspflichten bestehen.\r\n\r\n(4) Falls wir für einzelne Funktionen unseres Angebots auf beauftragte Dienstleister zurückgreifen oder Ihre Daten für werbliche Zwecke nutzen möchten, werden wir Sie untenstehend im Detail über die jeweiligen Vorgänge informieren. Dabei nennen wir auch die festgelegten Kriterien der Speicherdauer.\r\n\r\n§ 2 Ihre Rechte\r\n\r\n(1) Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:\r\n<p class=\"Liste1\">–   Recht auf Auskunft,</p>\r\n<p class=\"Liste1\">–   Recht auf Berichtigung oder Löschung,</p>\r\n<p class=\"Liste1\">–   Recht auf Einschränkung der Verarbeitung,</p>\r\n<p class=\"Liste1\">–   Recht auf Widerspruch gegen die Verarbeitung,</p>\r\n<p class=\"Liste1\">–   Recht auf Datenübertragbarkeit.</p>\r\n(2) Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren.\r\n\r\n&nbsp;\r\n\r\n§ 3 Erhebung personenbezogener Daten bei Besuch unserer Website\r\n\r\n(1) Bei der bloß informatorischen Nutzung der Website, also wenn Sie sich nicht registrieren oder uns anderweitig Informationen übermitteln, erheben wir nur die personenbezogenen Daten, die Ihr Browser an unseren Server übermittelt. Wenn Sie unsere Website betrachten möchten, erheben wir die folgenden Daten, die für uns technisch erforderlich sind, um Ihnen unsere Website anzuzeigen und die Stabilität und Sicherheit zu gewährleisten (Rechtsgrundlage ist Art. 6 Abs. 1 S. 1 lit. f DS-GVO):\r\n<p class=\"Liste1\">–   IP-Adresse</p>\r\n<p class=\"Liste1\">–   Datum und Uhrzeit der Anfrage</p>\r\n<p class=\"Liste1\">–   Zeitzonendifferenz zur Greenwich Mean Time (GMT)</p>\r\n<p class=\"Liste1\">–   Inhalt der Anforderung (konkrete Seite)</p>\r\n<p class=\"Liste1\">–   Zugriffsstatus/HTTP-Statuscode</p>\r\n<p class=\"Liste1\">–   jeweils übertragene Datenmenge</p>\r\n<p class=\"Liste1\">–   Website, von der die Anforderung kommt</p>\r\n<p class=\"Liste1\">–   Browser</p>\r\n<p class=\"Liste1\">–   Betriebssystem und dessen Oberfläche</p>\r\n<p class=\"Liste1\">–   Sprache und Version der Browsersoftware.</p>\r\n(2) Zusätzlich zu den zuvor genannten Daten werden bei Ihrer Nutzung unserer Website Cookies auf Ihrem Rechner gespeichert. Bei Cookies handelt es sich um kleine Textdateien, die auf Ihrer Festplatte dem von Ihnen verwendeten Browser zugeordnet gespeichert werden und durch welche der Stelle, die den Cookie setzt (hier durch uns), bestimmte Informationen zufließen. Cookies können keine Programme ausführen oder Viren auf Ihren Computer übertragen. Sie dienen dazu, das Internetangebot insgesamt nutzerfreundlicher und effektiver zu machen.\r\n\r\n(3) Einsatz von Cookies: Diese Website nutzt keine Cookies.\r\n<p class=\"H1\">§ 4 Weitere Funktionen und Angebote unserer Website</p>\r\n(1) Neben der rein informatorischen Nutzung unserer Website bieten wir verschiedene Leistungen an, die Sie bei Interesse nutzen können. Dazu müssen Sie in der Regel weitere personenbezogene Daten angeben, die wir zur Erbringung der jeweiligen Leistung nutzen und für die die zuvor genannten Grundsätze zur Datenverarbeitung gelten.\r\n\r\n(2) Teilweise bedienen wir uns zur Verarbeitung Ihrer Daten externer Dienstleister. Diese wurden von uns sorgfältig ausgewählt und beauftragt, sind an unsere Weisungen gebunden und werden regelmäßig kontrolliert.\r\n\r\n(3) Weiterhin können wir Ihre personenbezogenen Daten an Dritte weitergeben, wenn Aktionsteilnahmen, Gewinnspiele, Vertragsabschlüsse oder ähnliche Leistungen von uns gemeinsam mit Partnern angeboten werden. Nähere Informationen hierzu erhalten Sie bei Angabe Ihrer personenbezogenen Daten oder untenstehend in der Beschreibung des Angebotes.\r\n\r\n(4) Soweit unsere Dienstleister oder Partner ihren Sitz in einem Staat außerhalb des Europäischen Wirtschaftsraumen (EWR) haben, informieren wir Sie über die Folgen dieses Umstands in der Beschreibung des Angebotes.\r\n\r\n§ 5 Widerspruch oder Widerruf gegen die Verarbeitung Ihrer Daten\r\n\r\n(1) Falls Sie eine Einwilligung zur Verarbeitung Ihrer Daten erteilt haben, können Sie diese jederzeit widerrufen. Ein solcher Widerruf beeinflusst die Zulässigkeit der Verarbeitung Ihrer personenbezogenen Daten, nachdem Sie ihn gegenüber uns ausgesprochen haben.\r\n\r\n(2) Soweit wir die Verarbeitung Ihrer personenbezogenen Daten auf die Interessenabwägung stützen, können Sie Widerspruch gegen die Verarbeitung einlegen. Dies ist der Fall, wenn die Verarbeitung insbesondere nicht zur Erfüllung eines Vertrags mit Ihnen erforderlich ist, was von uns jeweils bei der nachfolgenden Beschreibung der Funktionen dargestellt wird. Bei Ausübung eines solchen Widerspruchs bitten wir um Darlegung der Gründe, weshalb wir Ihre personenbezogenen Daten nicht wie von uns durchgeführt verarbeiten sollten. Im Falle Ihres begründeten Widerspruchs prüfen wir die Sachlage und werden entweder die Datenverarbeitung einstellen bzw. anpassen oder Ihnen unsere zwingenden schutzwürdigen Gründe aufzeigen, aufgrund derer wir die Verarbeitung fortführen.\r\n\r\n(3) Selbstverständlich können Sie der Verarbeitung Ihrer personenbezogenen Daten für Zwecke der Werbung und Datenanalyse jederzeit widersprechen.\r\n<p class=\"Liste1\">§ Social Media und andere Plug-Ins</p>\r\n1.Einbindung von Google Maps\r\n<p class=\"Liste2\">(1) Auf dieser Webseite nutzen wir das Angebot von Google Maps. Dadurch können wir Ihnen interaktive Karten direkt in der Website anzeigen und ermöglichen Ihnen die komfortable Nutzung der Karten-Funktion.</p>\r\n<p class=\"Liste2\">(2) Durch den Besuch auf der Website erhält Google die Information, dass Sie die entsprechende Unterseite unserer Website aufgerufen haben. Zudem werden die unter § 3 dieser Erklärung genannten Daten übermittelt. Dies erfolgt unabhängig davon, ob Google ein Nutzerkonto bereitstellt, über das Sie eingeloggt sind, oder ob kein Nutzerkonto besteht. Wenn Sie bei Google eingeloggt sind, werden Ihre Daten direkt Ihrem Konto zugeordnet. Wenn Sie die Zuordnung mit Ihrem Profil bei Google nicht wünschen, müssen Sie sich vor Aktivierung des Buttons ausloggen. Google speichert Ihre Daten als Nutzungsprofile und nutzt sie für Zwecke der Werbung, Marktforschung und/oder bedarfsgerechten Gestaltung seiner Website. Eine solche Auswertung erfolgt insbesondere (selbst für nicht eingeloggte Nutzer) zur Erbringung von bedarfsgerechter Werbung und um andere Nutzer des sozialen Netzwerks über Ihre Aktivitäten auf unserer Website zu informieren. Ihnen steht ein Widerspruchsrecht zu gegen die Bildung dieser Nutzerprofile, wobei Sie sich zur Ausübung dessen an Google richten müssen.</p>\r\n<p class=\"Liste2\">(3) Weitere Informationen zu Zweck und Umfang der Datenerhebung und ihrer Verarbeitung durch den Plug-in-Anbieter erhalten Sie in den Datenschutzerklärungen des Anbieters. Dort erhalten Sie auch weitere Informationen zu Ihren diesbezüglichen Rechten und Einstellungsmöglichkeiten zum Schutze Ihrer Privatsphäre: http://www.google.de/intl/de/policies/privacy. Google verarbeitet Ihre personenbezogenen Daten auch in den USA und hat sich dem EU-US Privacy Shield unterworfen, https://www.privacyshield.gov/EU-US-Framework.</p>"
@@ -17485,9 +17485,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://www.annikaklose.de/",
-        "instagram-url": "https://www.instagram.com/annikloseberlin/",
-        "facebook-url": "https://www.facebook.com/AnnikaKlose.BerlinMitte?_rdc=1&_rdr",
-        "twitter-url": "https://twitter.com/AnniKlose"
+        "instagram_url": "https://www.instagram.com/annikloseberlin/",
+        "facebook_url": "https://www.facebook.com/AnnikaKlose.BerlinMitte?_rdc=1&_rdr",
+        "twitter_url": "https://twitter.com/AnniKlose"
       },
       "places": "",
       "order_num": 0,
@@ -17576,9 +17576,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://www.betueloezdemir.com",
-        "instagram-url": "https://www.instagram.com/betul_elif.o",
-        "facebook-url": "https://www.facebook.com/betulelif",
-        "twitter-url": "https://www.twitter.com/betuel_ozdemir"
+        "instagram_url": "https://www.instagram.com/betul_elif.o",
+        "facebook_url": "https://www.facebook.com/betulelif",
+        "twitter_url": "https://www.twitter.com/betuel_ozdemir"
       },
       "places": "",
       "order_num": 0,
@@ -17655,9 +17655,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://www.spd-berlin-mitte.de/dl/BVV19_Alexander_Slotty.pdf",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -17722,9 +17722,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -17813,9 +17813,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://www.spd-berlin-mitte.de/dl/BVV14_Svenja_Linnemann.pdf",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -17904,9 +17904,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "https://www.instagram.com/anton.beling/?hl=de",
-        "facebook-url": "https://de-de.facebook.com/anton.beling.1",
-        "twitter-url": ""
+        "instagram_url": "https://www.instagram.com/anton.beling/?hl=de",
+        "facebook_url": "https://de-de.facebook.com/anton.beling.1",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -17934,9 +17934,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -17964,9 +17964,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -18055,9 +18055,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "https://www.instagram.com/katrin.benzenberg/",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "https://www.instagram.com/katrin.benzenberg/",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -18134,9 +18134,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -18225,9 +18225,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://www.spd-fraktion-mitte.de/",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": "https://twitter.com/sonkmai"
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": "https://twitter.com/sonkmai"
       },
       "places": "",
       "order_num": 0,
@@ -18316,9 +18316,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://www.spd-mitte-luisenstadt.de",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -18407,9 +18407,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -18474,9 +18474,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://www.spd-schillerpark.de/",
-        "instagram-url": "https://www.instagram/com/guido_rohmann",
-        "facebook-url": "",
-        "twitter-url": "https://twitter.com/GuidoRohmann"
+        "instagram_url": "https://www.instagram/com/guido_rohmann",
+        "facebook_url": "",
+        "twitter_url": "https://twitter.com/GuidoRohmann"
       },
       "places": "",
       "order_num": 0,
@@ -18565,9 +18565,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -18656,9 +18656,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "https://www.instagram.com/s.fischer65/?hl=de",
-        "facebook-url": "",
-        "twitter-url": "https://twitter.com/sfischer65?lang=de"
+        "instagram_url": "https://www.instagram.com/s.fischer65/?hl=de",
+        "facebook_url": "",
+        "twitter_url": "https://twitter.com/sfischer65?lang=de"
       },
       "places": "",
       "order_num": 0,
@@ -18747,9 +18747,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": "https://twitter.com/noerdlich"
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": "https://twitter.com/noerdlich"
       },
       "places": "",
       "order_num": 0,
@@ -18826,9 +18826,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -18856,9 +18856,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -18941,15 +18941,15 @@ var kdzObj = {
         }
       ],
       "image": {
-        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/06/2017_bezirksstadtrat_ephraim_gothe-e1629465548346.jpg",
-        "credits": "SPD Berlin Mitte 2017"
+        "url": "https://kartederzukunft.live-website.com/wp-content/uploads/2021/06/BW_SPD_Gothe_Ephraim_1064_RGB_01-scaled-e1629474344918.jpg",
+        "credits": ""
       },
       "video": "",
       "urls": {
         "website": "https://www.spd-fraktion-mitte.de/ephraim-gothe-bezirksstadtrat/",
-        "instagram-url": "https://www.instagram.com/ephraimgothe/?hl=de",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "https://www.instagram.com/ephraimgothe/?hl=de",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": "",
       "order_num": 0,
@@ -19038,9 +19038,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://www.spd-moabitnord.de/anab-awale-in-die-bvv/",
-        "instagram-url": "https://www.instagram.com/anab_awale/?hl=de",
-        "facebook-url": "",
-        "twitter-url": "https://twitter.com/a_n_a_b_a?lang=de"
+        "instagram_url": "https://www.instagram.com/anab_awale/?hl=de",
+        "facebook_url": "",
+        "twitter_url": "https://twitter.com/a_n_a_b_a?lang=de"
       },
       "places": "",
       "order_num": 0,
@@ -19117,9 +19117,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://melis-yeter.de/",
-        "instagram-url": "https://www.instagram.com/melisyeterberlin/",
-        "facebook-url": "https://www.facebook.com/pg/MelisYeter.Berlin/posts/",
-        "twitter-url": "https://twitter.com/melis_berlin"
+        "instagram_url": "https://www.instagram.com/melisyeterberlin/",
+        "facebook_url": "https://www.facebook.com/pg/MelisYeter.Berlin/posts/",
+        "twitter_url": "https://twitter.com/melis_berlin"
       },
       "places": [
         "1147"
@@ -19210,9 +19210,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": [
         "1139"
@@ -19242,9 +19242,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": [
         "1141"
@@ -19323,9 +19323,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://www.astrid-hollmann.de",
-        "instagram-url": "https://www.instagram.com/astrid.hollmann",
-        "facebook-url": "https://www.facebook.com/astrid.hollmann.9",
-        "twitter-url": "https://twitter.com/hollmannas"
+        "instagram_url": "https://www.instagram.com/astrid.hollmann",
+        "facebook_url": "https://www.facebook.com/astrid.hollmann.9",
+        "twitter_url": "https://twitter.com/hollmannas"
       },
       "places": [
         "1137"
@@ -19416,9 +19416,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://daniel-bussenius.de/",
-        "instagram-url": "https://www.instagram.com/danielbussenius",
-        "facebook-url": "https://www.facebook.com/DanielBussenius.BerlinMitte/",
-        "twitter-url": ""
+        "instagram_url": "https://www.instagram.com/danielbussenius",
+        "facebook_url": "https://www.facebook.com/DanielBussenius.BerlinMitte/",
+        "twitter_url": ""
       },
       "places": [
         "1143"
@@ -19513,9 +19513,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://www.maja-lasic.de/ ",
-        "instagram-url": "https://www.instagram.com/majalasic/?hl=de",
-        "facebook-url": "https://de-de.facebook.com/Maja.Lasic.SPD/",
-        "twitter-url": "https://twitter.com/lasicmaja?lang=de"
+        "instagram_url": "https://www.instagram.com/majalasic/?hl=de",
+        "facebook_url": "https://de-de.facebook.com/Maja.Lasic.SPD/",
+        "twitter_url": "https://twitter.com/lasicmaja?lang=de"
       },
       "places": [
         "1149"
@@ -19606,9 +19606,9 @@ var kdzObj = {
       "video": "",
       "urls": {
         "website": "https://spd.berlin/personen/mathias-schulz-agh/",
-        "instagram-url": "",
-        "facebook-url": "",
-        "twitter-url": ""
+        "instagram_url": "",
+        "facebook_url": "",
+        "twitter_url": ""
       },
       "places": [
         "1145"
