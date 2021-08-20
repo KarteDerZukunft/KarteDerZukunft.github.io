@@ -122,15 +122,15 @@
     <div id="textDetailsContainer">
       <h2 id="topicSectionTitle">Für den Bundestag</h2>
 
-      <div id="btList"></div>
+      <div id="btList" class="elementList"></div>
 
       <h2 id="">Für das Abgeordnetenhaus</h2>
 
-      <div id="aghList"></div>
+      <div id="aghList" class="elementList"></div>
 
       <h2 id="">Für die Bezirksverordnetenversammlung</h2>
 
-      <div id="bvvList"></div>
+      <div id="bvvList" class="elementList"></div>
 
       <script src="Data/kdz.js"></script>
       <script>
@@ -147,8 +147,9 @@
             }
 
             htmlToInsert += `
-              <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
+
                 <div link class="sectionListElement">
+                <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
                   <div class="topicSection"></div>
                   <br />
                   <div class="lowerLip">
@@ -157,8 +158,9 @@
                       <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
                     </div>
                   </div>
+                  </a>
                 </div>
-              </a>`.replace("link", img);
+                `.replace("link", img);
 
             c++;
 
@@ -198,18 +200,18 @@
           }
 
           htmlToInsert += `
-              <a class="moreInfo" href="kandidatSeite.html?kid=${bvvListOfCandidates[j].id}">
                 <div link class="sectionListElement">
-                  <div class="topicSection"></div>
-                  <br />
-                  <div class="lowerLip">
-                    <h4 id="sectionNo_${bvvListOfCandidates[j].id}">${bvvListOfCandidates[j].title}</h4>
-                    <div style="width: 100%">
-                      <a class="moreInfo" href="kandidatSeite.html?kid=${bvvListOfCandidates[j].id}">Mehr erfahren</a>
+                  <a class="moreInfo" href="kandidatSeite.html?kid=${bvvListOfCandidates[j].id}">
+                    <div class="topicSection"></div>
+                    <br />
+                    <div class="lowerLip">
+                      <h4 id="sectionNo_${bvvListOfCandidates[j].id}">${bvvListOfCandidates[j].title}</h4>
+                      <div style="width: 100%">
+                        <a class="moreInfo" href="kandidatSeite.html?kid=${bvvListOfCandidates[j].id}">Mehr erfahren</a>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </a>`.replace("link", img);
+                  </a>
+                </div>`.replace("link", img);
 
           c++;
 
@@ -229,18 +231,18 @@
             }
 
             htmlToInsert += `
-              <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
                 <div link class="sectionListElement">
-                  <div class="topicSection"></div>
-                  <br />
-                  <div class="lowerLip">
-                    <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
-                    <div style="width: 100%">
-                      <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
+                  <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
+                    <div class="topicSection"></div>
+                    <br />
+                    <div class="lowerLip">
+                      <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
+                      <div style="width: 100%">
+                        <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </a>`.replace("link", img);
+                  </a>
+                </div>`.replace("link", img);
 
             c++;
 

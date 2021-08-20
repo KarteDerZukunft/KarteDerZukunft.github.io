@@ -118,11 +118,11 @@
     <div id="textDetailsContainer">
       <h2 id="firstTitle"></h2>
 
-      <div id="fisrtList"></div>
+      <div id="fisrtList" class="elementList"></div>
 
-      <h2 id="secondList"></h2>
+      <h2 id="secondList" class="elementList"></h2>
 
-      <div id="secondList"></div>
+      <div id="secondList" class="elementList"></div>
 
       <script src="Data/kdz.js"></script>
       <script>
@@ -153,21 +153,21 @@
                   }
 
                   htmlToInsert += `
-                    <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
                       <div link class="sectionListElement">
-                        <div class="topicSection">
-                          <h4 id="urheberrechte">${rgt}</h4>
-                        </div>
-                        <div class="lowerLip">
-                          <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
-                          <br />
-                          <div style="width: 100%">
-                            <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">Mehr erfahren</a>
+                        <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
+                          <div class="topicSection">
+                            <h4 id="urheberrechte">${rgt}</h4>
                           </div>
-                          <br />
-                        </div>
-                      </div>
-                    </a>`.replace("link", img);
+                          <div class="lowerLip">
+                            <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
+                            <br />
+                            <div style="width: 100%">
+                              <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">Mehr erfahren</a>
+                            </div>
+                            <br />
+                          </div>
+                        </a>
+                      </div>`.replace("link", img);
                   tc++;
                 }
               }
@@ -202,21 +202,21 @@
                   }
 
                   htmlToInsert += `
-                    <a href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">
                       <div link class="sectionListElement">
-                        <div class="topicSection">
-                          <h4 id="urheberrechte">${rgt}</h4>
-                        </div>
-                        <div class="lowerLip">
-                          <h4 id="sectionNo_${kdzObj.places[j].id}">${kdzObj.places[j].description}</h4>
-                          <br />
-                          <div style="width: 100%">
-                            <a class="moreInfo" href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">Mehr erfahren</a>
+                        <a href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">
+                          <div class="topicSection">
+                            <h4 id="urheberrechte">${rgt}</h4>
                           </div>
-                          <br />
-                        </div>
-                      </div>
-                    </a>`.replace("link", img);
+                          <div class="lowerLip">
+                            <h4 id="sectionNo_${kdzObj.places[j].id}">${kdzObj.places[j].description}</h4>
+                            <br />
+                            <div style="width: 100%">
+                              <a class="moreInfo" href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">Mehr erfahren</a>
+                            </div>
+                            <br />
+                          </div>
+                        </a>
+                      </div>`.replace("link", img);
                   kc++;
                 }
               }

@@ -118,7 +118,7 @@
     <div id="textDetailsContainer">
       <h2 id="sectionListKategoriename"></h2>
 
-      <div id="topicList"></div>
+      <div id="topicList" class="elementList"></div>
 
       <script src="Data/kdz.js"></script>
       <script>
@@ -167,22 +167,22 @@
               }
 
               htmlToInsert += `
-                <a class="moreInfo" href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">
                   <div link class="sectionListElement" id="topicNo_${kdzObj.topics[j].id}">
-                    <div class="topicTitle">
-                      <h4 id="urheberrechte">${rgt}</h4>
-                    </div>
-                    <div class="lowerLip">
-                      <h1>${kdzObj.topics[j].title}</h1>
-                      <h2>Anzahl der Abschnitte: ${wieVielAbschnitte}</h2>
-                      <br />
-                      <div style="width: 100%">
-                        <a class="moreInfo" href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">Mehr erfahren</a>
+                    <a class="moreInfo" href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">
+                      <div class="topicTitle">
+                        <h4 id="urheberrechte">${rgt}</h4>
                       </div>
-                      <br />
-                    </div>
-                  </div>
-                </a>`.replace("link", img);
+                      <div class="lowerLip">
+                        <h1>${kdzObj.topics[j].title}</h1>
+                        <h2>Anzahl der Abschnitte: ${wieVielAbschnitte}</h2>
+                        <br />
+                        <div style="width: 100%">
+                          <a class="moreInfo" href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">Mehr erfahren</a>
+                        </div>
+                        <br />
+                      </div>
+                    </a>
+                  </div>`.replace("link", img);
 
               l = j;
 

@@ -587,13 +587,16 @@ li.social-links a {
 
 #sectionListKategoriename,
 #topicSectionTitle,
-.kiezprojektTitle {
+.kiezprojektTitle,
+#firstTitle {
   margin-top: 92.5px;
 }
 
 .sectionListElement {
-  min-height: 15vh;
+  min-height: 40vh;
+  max-height: 300px;
   width: auto;
+  min-width: 100px;
   margin: 15px 0px;
   padding: 5px 5px 0 5px;
 
@@ -604,6 +607,11 @@ li.social-links a {
 
   background-size: cover;
   background-repeat: no-repeat;
+
+  background-position: center;
+
+  position: relative;
+  overflow: hidden;
 }
 
 /* .sectionListElement .mask {
@@ -678,10 +686,13 @@ li.social-links a {
 
 .sectionListElement .lowerLip {
   position: relative;
+  position: absolute;
   text-align: left;
   bottom: 0px;
   margin: 2.5px;
   padding: 2.5px;
+
+  width: 100%;
 
   background-color: white;
   border-radius: 0 0 4px 4px;
