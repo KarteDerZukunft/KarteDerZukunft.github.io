@@ -3,7 +3,7 @@
 @media screen and (min-width: 800px) and (max-width: 1200px) {
     .elementList {
       display: grid;
-      grid-template-columns: auto auto auto;
+      grid-template-columns: 30% 30% 30%;
 
       grid-column-gap: 20px;
       grid-row-gap: 20px;
@@ -44,7 +44,7 @@
 @media screen and (min-width: 1200px) {
     .elementList {
       display: grid;
-      grid-template-columns: auto auto auto auto auto;
+      grid-template-columns: 18% 18% 18% 18% 18%;
 
       grid-column-gap: 20px;
       grid-row-gap: 20px;
