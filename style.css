@@ -381,7 +381,6 @@ a img.aligncenter {
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
-  text-transform: capitalize;
   background-color: transparent;
 }
 
@@ -1317,7 +1316,6 @@ h5 a {
   color: #e7f3ec;
   font-size: 68px;
   font-weight: 300;
-  text-transform: capitalize;
   display: block;
   margin: 0;
   padding: 0 0 30px;
@@ -1477,7 +1475,7 @@ h5 a {
   display: inline-block;
   margin: 0 5px 0 0;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: none;
   vertical-align: middle;
 }
 
@@ -1529,7 +1527,6 @@ h5 a {
   color: #e7f3ec;
   font-size: 20px;
   padding: 30px 15px;
-  text-transform: capitalize;
   font-weight: normal;
 }
 
@@ -1911,7 +1908,7 @@ h5 a {
 }
 
 .message-box h4 {
-  text-transform: uppercase;
+  text-transform: none;
   padding: 0;
   margin: 0 0 5px;
   font-weight: 600;
@@ -2121,7 +2118,7 @@ hr.invis1 {
 .filter-button-group button {
   color: #333;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: none;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
@@ -2381,7 +2378,6 @@ hr.invis1 {
 }
 
 #features h4 {
-  text-transform: capitalize;
   margin: 0;
   font-size: 19px;
 }
@@ -2792,7 +2788,6 @@ select.mobile-device {
   margin: 0;
   font-weight: 400;
   font-size: 20px;
-  text-transform: capitalize;
   line-height: 1 !important;
 }
 
@@ -2812,7 +2807,7 @@ select.mobile-device {
   color: #999;
   display: block;
   padding: 0 58px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .footer .widget-title h3 {

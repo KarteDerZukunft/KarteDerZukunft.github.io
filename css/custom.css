@@ -5,7 +5,7 @@
       display: grid;
       grid-template-columns: 30% 30% 30%;
 
-      grid-column-gap: 20px;
+      grid-column-gap: 3.33%;
       grid-row-gap: 20px;
       max-width: 1200px;
       margin:auto;
@@ -44,9 +44,9 @@
 @media screen and (min-width: 1200px) {
     .elementList {
       display: grid;
-      grid-template-columns: 18% 18% 18% 18% 18%;
+      grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
 
-      grid-column-gap: 20px;
+      grid-column-gap: 3.33%;
       grid-row-gap: 20px;
 
       margin:auto;
