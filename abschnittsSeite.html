@@ -131,7 +131,6 @@
 
     <div id="textDetailsContainer">
       <div class="elementContent">
-
         <div>
           <h2 style="line-height: 1.8rem" id="title"></h2>
 
@@ -139,7 +138,6 @@
             <!-- ${kdzObj.sections[i].description} -->
           </p>
         </div>
-
 
         <div class="kiezprojektContainer candidate">
           <h2>Unsere Kandidierenden</h2>
@@ -172,7 +170,6 @@
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
           </div>
 
-
           <script src="Data/kdz.js"></script>
           <script>
             for (let i = 0; i < kdzObj.candidates.length; i++) {
@@ -194,7 +191,9 @@
             );
 
             while (kdzObj.candidates[random].type[0].slug !== "agh") {
-              random = Math.ceil(Math.random() * (kdzObj.candidates.length - 1));
+              random = Math.ceil(
+                Math.random() * (kdzObj.candidates.length - 1)
+              );
             }
 
             document.getElementById(
@@ -214,7 +213,9 @@
                 kdzObj.candidates[random].image.url ||
               kdzObj.candidates[random].type[0].slug !== "bvv"
             ) {
-              random = Math.ceil(Math.random() * (kdzObj.candidates.length - 1));
+              random = Math.ceil(
+                Math.random() * (kdzObj.candidates.length - 1)
+              );
             }
 
             document.getElementById(
@@ -289,8 +290,10 @@
 
         <br />
 
-        <div class="kiezprojektContainer kiezprojekt" id="kiezprojektContainer"></div>
-
+        <div
+          class="kiezprojektContainer kiezprojekt"
+          id="kiezprojektContainer"
+        ></div>
       </div>
 
       <h5 id="quickLinks" style="font-size: 1.2rem"></h5>
@@ -588,8 +591,6 @@
         }
       </script>
     </div>
-
-
 
     <div class="disclaimer" id="disclaimer">
       <a id="cancelBtn" onclick="return hideForm()"> &#x2715; </a>
