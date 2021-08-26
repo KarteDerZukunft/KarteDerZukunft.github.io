@@ -99,7 +99,7 @@
     </header>
 
     <div id="main-banner" class="banner-one" data-scroll-index="0">
-      <div class="slideshow" id="slideshow"></div>
+      <div class="slideshow" id="slideshow" style="background: black"></div>
 
       <script src="Data/kdz.js"></script>
       <script>
@@ -116,8 +116,10 @@
               <a id="slideLink" href="themenbereichListe.html?cid=${
                 kdzObj.clusters[i].id
               }">
-                <img id="slideImg" src="${kdzObj.clusters[i].image.url}" />
-                <div id="slideCaption" class="text">
+                <div id="slideDiv" style="background-image: url(${
+                  kdzObj.clusters[i].image.url
+                })"></div>
+                <div id="indexCaption" class="text">
                   ${kdzObj.clusters[i].title}
                   <br />
                   <button id="slideCaptionLink">Mehr erfahren</button>
@@ -206,7 +208,9 @@
         <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
         <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
           >Datenschutzerklärung</a
-        > | <a
+        >
+        |
+        <a
           id="TsCs"
           href="https://www.spd-berlin-mitte.de/dl/Wahlprogramm_SPD_Mitte_2021.pdf"
           >Wahlprogramm (pdf)</a

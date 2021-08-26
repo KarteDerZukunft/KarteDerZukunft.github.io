@@ -527,6 +527,50 @@ li.social-links a {
   object-fit: cover;
 }
 
+#main-banner .slideshow .mySlides #slideLink #slideDiv {
+  height: calc(100vh - 60px);
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+
+  mask-image: linear-gradient(to bottom, transparent 5%, black);
+}
+
+#main-banner .slideshow .mySlides #slideLink #indexCaption {
+  position: absolute;
+  top: 37.5vh;
+  left: 5vw;
+  width: 90vw;
+
+  font-size: 2.7rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+#main-banner .slideshow .mySlides #slideLink #indexCaption #slideCaptionLink {
+  background: transparent;
+  border-radius: 25px;
+  border: 2.5px solid;
+  color: white;
+  font-weight: normal;
+  margin-top: 22.5px;
+  padding: 0px 15px;
+
+  transition: 400ms;
+}
+
+#main-banner
+  .slideshow
+  .mySlides
+  #slideLink
+  #indexCaption
+  #slideCaptionLink:hover {
+  box-shadow: 1px 0 0 white, -1px 0 0 white, 0 1px 0 white, 0 -1px 0 white;
+}
+
 #main-banner .slideshow .mySlides #slideLink #slideCaption {
   position: absolute;
   top: calc(-27px - 50%);
@@ -540,9 +584,6 @@ li.social-links a {
   color: white;
   font-weight: bold;
   text-align: left;
-
-  /* text-shadow: 1px 0 0 #ff392b, -1px 0 0 #ff392b, 0 1px 0 #ff392b, 0 -1px 0 #ff392b; */
-  /* text-shadow: 1px 1px 0 #ff392b; */
 }
 
 #main-banner .slideshow .mySlides #slideLink #slideCaption #slideCaptionLink {
