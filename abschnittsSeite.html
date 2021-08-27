@@ -296,7 +296,17 @@
         ></div>
       </div>
 
-      <h5 id="quickLinks" style="font-size: 1.2rem"></h5>
+      <div id="crumbs">
+        <a
+          href="https://www.spd-berlin-mitte.de/dl/Wahlprogramm_SPD_Mitte_2021.pdf"
+          ><button id="breadcrumb">Wahlprogramm (pdf)</button></a
+        >
+      </div>
+
+      <h5 id="quickLinks" style="font-size: 1.2rem">
+        <a href="TsCs.html?Impressum">Impressum</a> |
+        <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a>
+      </h5>
 
       <br />
 
@@ -576,10 +586,15 @@
                 .querySelector("#kiezprojektContainer")
                 .insertAdjacentHTML("beforeend", `${kiezprojektsToInsert}`);
 
-              document.querySelector("#quickLinks").insertAdjacentHTML(
+              document.querySelector("#crumbs").insertAdjacentHTML(
                 "beforeend",
                 `
-                  <a href="themenbereichListe.html?cid=${cid}">${cTitle}</a> | <a href="themenabschnittListe.html?tid=${tid}">${tTitle}</a> | <a href="TsCs.html?Impressum">Impressum</a> | <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a> | <a href="https://www.spd-berlin-mitte.de/dl/Wahlprogramm_SPD_Mitte_2021.pdf">Wahlprogramm (pdf)</a>
+                  <a href="themenbereichListe.html?cid=${cid}"
+                    ><button id="breadcrumb">${cTitle}</button></a
+                  >
+                  <a href="themenabschnittListe.html?tid=${tid}"
+                    ><button id="breadcrumb">${tTitle}</button></a
+                  >
                 `
               );
             }
