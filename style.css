@@ -534,6 +534,7 @@ li.social-links a {
   background-position: center;
 
   mask-image: linear-gradient(to bottom, transparent 5%, black);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 5%, black);
 }
 
 #main-banner .slideshow .mySlides #slideLink #indexCaption {
@@ -548,6 +549,8 @@ li.social-links a {
   color: white;
   font-weight: bold;
   text-align: left;
+
+  z-index: 10;
 }
 
 #main-banner .slideshow .mySlides #slideLink #indexCaption #slideCaptionLink {
