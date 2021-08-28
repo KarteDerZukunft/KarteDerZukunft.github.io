@@ -152,6 +152,18 @@
                     }
                   }
 
+                  let tagString = "";
+
+                  if (kdzObj.sections[j].tags !== "") {
+                    for (
+                      let k = 0;
+                      k < 5 && k < kdzObj.sections[j].tags.length;
+                      k++
+                    ) {
+                      tagString += ` <a href="tagsListe.html?tag=${kdzObj.sections[j].tags[k].slug}">#${kdzObj.sections[j].tags[k].slug}</a>`;
+                    }
+                  }
+
                   htmlToInsert += `
                       <div link class="sectionListElement">
                         <a href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">
@@ -160,11 +172,13 @@
                           </div>
                           <div class="lowerLip">
                             <h4 id="sectionNo_${kdzObj.sections[j].id}">${kdzObj.sections[j].description}</h4>
+                            <h2 class="tagString">
+                              <span class="tagStringBase">${tagString}</span>
+                            </h2>
                             <br />
                             <div style="width: 100%">
                               <a class="moreInfo" href="abschnittsSeite.html?sid=${kdzObj.sections[j].id}">Mehr erfahren</a>
                             </div>
-                            <br />
                           </div>
                         </a>
                       </div>`.replace("link", img);
@@ -201,6 +215,18 @@
                     }
                   }
 
+                  let tagString = "";
+
+                  if (kdzObj.places[j].tags !== "") {
+                    for (
+                      let k = 0;
+                      k < 5 && k < kdzObj.places[j].tags.length;
+                      k++
+                    ) {
+                      tagString += ` <a href="tagsListe.html?tag=${kdzObj.places[j].tags[k].slug}">#${kdzObj.places[j].tags[k].slug}</a>`;
+                    }
+                  }
+
                   htmlToInsert += `
                       <div link class="sectionListElement">
                         <a href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">
@@ -209,11 +235,13 @@
                           </div>
                           <div class="lowerLip">
                             <h4 id="sectionNo_${kdzObj.places[j].id}">${kdzObj.places[j].description}</h4>
+                            <h2 class="tagString">
+                              <span class="tagStringBase">${tagString}</span>
+                            </h2>
                             <br />
                             <div style="width: 100%">
                               <a class="moreInfo" href="kiezprojektSeite.html?kpid=${kdzObj.places[j].id}">Mehr erfahren</a>
                             </div>
-                            <br />
                           </div>
                         </a>
                       </div>`.replace("link", img);
@@ -252,7 +280,7 @@
         >
       </div>
 
-      <h5 id="quickLinks" style="font-size: 1.2rem">
+      <h5 id="quickLinks">
         <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
         <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
           >Datenschutzerklärung</a

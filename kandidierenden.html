@@ -137,6 +137,7 @@
         let c = 0;
         let htmlToInsert = "";
         let img = "uploads/fallBack.jpg";
+        let rgt = ``;
 
         let candidates = [];
 
@@ -144,23 +145,30 @@
           if (kdzObj.candidates[j].type[0].slug === "bt") {
             if (kdzObj.candidates[j].image !== "") {
               img = `style=\"background-image: url(\'${kdzObj.candidates[j].image.url}\');\"`;
+
+              if (kdzObj.candidates[j].image.credits !== "") {
+                rgt = `© ${kdzObj.candidates[j].image.credits}`;
+              }
             }
 
             htmlToInsert += `
-
-                <div link class="sectionListElement">
-                <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
-                  <div class="topicSection"></div>
-                  <br />
-                  <div class="lowerLip">
-                    <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
-                    <div style="width: 100%">
-                      <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
-                    </div>
-                  </div>
-                  </a>
+              <div link class="sectionListElement">
+              <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
+                <div class="topicSection">
+                  <h4 id="urheberrechte">${rgt}</h4>
                 </div>
-                `.replace("link", img);
+                <br />
+                <div class="lowerLip">
+                  <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
+                  <div style="width: 100%">
+                    <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
+                  </div>
+                </div>
+                </a>
+              </div>
+              `.replace("link", img);
+
+            rgt = ``;
 
             c++;
 
@@ -197,21 +205,29 @@
         for (let j = 0; j < bvvListOfCandidates.length; j++) {
           if (bvvListOfCandidates[j].image !== "") {
             img = `style=\"background-image: url(\'${bvvListOfCandidates[j].image.url}\');\"`;
+
+            if (kdzObj.candidates[j].image.credits !== "") {
+              rgt = `© ${kdzObj.candidates[j].image.credits}`;
+            }
           }
 
           htmlToInsert += `
-                <div link class="sectionListElement">
-                  <a class="moreInfo" href="kandidatSeite.html?kid=${bvvListOfCandidates[j].id}">
-                    <div class="topicSection"></div>
-                    <br />
-                    <div class="lowerLip">
-                      <h4 id="sectionNo_${bvvListOfCandidates[j].id}">${bvvListOfCandidates[j].title}</h4>
-                      <div style="width: 100%">
-                        <a class="moreInfo" href="kandidatSeite.html?kid=${bvvListOfCandidates[j].id}">Mehr erfahren</a>
-                      </div>
-                    </div>
-                  </a>
-                </div>`.replace("link", img);
+            <div link class="sectionListElement">
+              <a class="moreInfo" href="kandidatSeite.html?kid=${bvvListOfCandidates[j].id}">
+                <div class="topicSection">
+                  <h4 id="urheberrechte">${rgt}</h4>
+                </div>
+                <br />
+                <div class="lowerLip">
+                  <h4 id="sectionNo_${bvvListOfCandidates[j].id}">${bvvListOfCandidates[j].title}</h4>
+                  <div style="width: 100%">
+                    <a class="moreInfo" href="kandidatSeite.html?kid=${bvvListOfCandidates[j].id}">Mehr erfahren</a>
+                  </div>
+                </div>
+              </a>
+            </div>`.replace("link", img);
+
+          rgt = ``;
 
           c++;
 
@@ -228,21 +244,29 @@
           if (kdzObj.candidates[j].type[0].slug === "agh") {
             if (kdzObj.candidates[j].image !== "") {
               img = `style=\"background-image: url(\'${kdzObj.candidates[j].image.url}\');\"`;
+
+              if (kdzObj.candidates[j].image.credits !== "") {
+                rgt = `© ${kdzObj.candidates[j].image.credits}`;
+              }
             }
 
             htmlToInsert += `
-                <div link class="sectionListElement">
-                  <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
-                    <div class="topicSection"></div>
-                    <br />
-                    <div class="lowerLip">
-                      <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
-                      <div style="width: 100%">
-                        <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
-                      </div>
+              <div link class="sectionListElement">
+                <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">
+                  <div class="topicSection">
+                    <h4 id="urheberrechte">${rgt}</h4>
+                  </div>
+                  <br />
+                  <div class="lowerLip">
+                    <h4 id="sectionNo_${kdzObj.candidates[j].id}">${kdzObj.candidates[j].title}</h4>
+                    <div style="width: 100%">
+                      <a class="moreInfo" href="kandidatSeite.html?kid=${kdzObj.candidates[j].id}">Mehr erfahren</a>
                     </div>
-                  </a>
-                </div>`.replace("link", img);
+                  </div>
+                </a>
+              </div>`.replace("link", img);
+
+            rgt = ``;
 
             c++;
 
@@ -263,7 +287,7 @@
         >
       </div>
 
-      <h5 id="quickLinks" style="font-size: 1.2rem">
+      <h5 id="quickLinks">
         <a id="TsCs" href="TsCs.html?Impressum">Impressum</a> |
         <a id="TsCs" href="TsCs.html?Datenschutzerklärung"
           >Datenschutzerklärung</a

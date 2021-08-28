@@ -303,7 +303,7 @@
         >
       </div>
 
-      <h5 id="quickLinks" style="font-size: 1.2rem">
+      <h5 id="quickLinks">
         <a href="TsCs.html?Impressum">Impressum</a> |
         <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a>
       </h5>
@@ -565,13 +565,19 @@
 
               let c = 5;
               let kiezprojektsToInsert = "";
+              let r = [];
 
               for (let j = 0; j < kdzObj.places.length; j++) {
                 let R = Math.ceil(Math.random() * (kdzObj.places.length - 1));
 
+                if (r.includes(R)) {
+                  continue;
+                }
+
                 if (kdzObj.places[R].belongs_to_cluster == cid) {
                   if (kdzObj.places[R].type[0].slug === "kiezprojekt") {
                     kiezprojektsToInsert += `<a href="kiezprojektSeite.html?kpid=${kdzObj.places[R].id}">${kdzObj.places[R].title}</a><br />`;
+                    r.push(kdzObj.places[R].id);
                     c--;
                   }
                   if (c < 1) {
@@ -585,6 +591,11 @@
               document
                 .querySelector("#kiezprojektContainer")
                 .insertAdjacentHTML("beforeend", `${kiezprojektsToInsert}`);
+
+              if (kiezprojektsToInsert === "") {
+                document.querySelector("#kiezprojektContainer").style.display =
+                  "none";
+              }
 
               document.querySelector("#crumbs").insertAdjacentHTML(
                 "beforeend",

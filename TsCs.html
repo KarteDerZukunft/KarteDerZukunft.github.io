@@ -98,8 +98,12 @@
       </nav>
     </header>
 
+    <div style="margin: 105px 5% 15px 5%; width: 90%">
+      <h1 id="headline"></h1>
+    </div>
+
     <div
-      style="margin: 105px 5% 5px 5%; width: 90%; line-height: 240%"
+      style="margin: 5px 5% 5px 5%; width: 90%; line-height: 240%"
       id="legalContent"
     ></div>
 
@@ -122,6 +126,10 @@
 
       if (urlParams.has("Datenschutzerklärung")) {
         document
+          .querySelector("#headline")
+          .insertAdjacentHTML("beforeend", `Datenschutz`);
+
+        document
           .querySelector("#legalContent")
           .insertAdjacentHTML("beforeend", `${kdzObj.site_meta.privacy}`);
 
@@ -132,6 +140,10 @@
             `<a href="TsCs.html?Impressum">Impressum</a>`
           );
       } else if (urlParams.has("Impressum")) {
+        document
+          .querySelector("#headline")
+          .insertAdjacentHTML("beforeend", `Impressum`);
+
         document
           .querySelector("#legalContent")
           .insertAdjacentHTML("beforeend", `${kdzObj.site_meta.legal}`);
