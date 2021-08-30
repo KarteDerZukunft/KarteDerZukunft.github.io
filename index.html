@@ -116,15 +116,14 @@
               <a id="slideLink" href="themenbereichListe.html?cid=${
                 kdzObj.clusters[i].id
               }">
-                <div id="slideDiv" style="background-image: url(${
-                  kdzObj.clusters[i].image.url
-                })"></div>
                 <div id="indexCaption" class="text">
                   ${kdzObj.clusters[i].title}
                   <br />
                   <button id="slideCaptionLink">Mehr erfahren</button>
                 </div>
-                <!-- ${kdzObj.clusters[i].description} -->
+                <div id="slideDiv" style="background-image: url(${
+                  kdzObj.clusters[i].image.url
+                })"></div>
               </a>
             </div>`;
         }
