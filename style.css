@@ -818,10 +818,6 @@ li.social-links a {
   #main-banner .slideshow {
     margin-top: 0px;
   }
-
-  .disclaimer h2 {
-    font-size: 1.8rem;
-  }
 }
 
 .sectionListElement .lowerLip {
@@ -1120,12 +1116,12 @@ h5 a {
 .disclaimer {
   position: fixed;
   bottom: 0px;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
+  width: calc(100% - 40%);
+  height: calc(100% - 40px);
   z-index: 1050;
 
   padding: 10px;
-  margin: 10px;
+  margin: 20px 20%;
   background-color: #212121ee;
   border-radius: 10px;
 
@@ -1154,6 +1150,10 @@ h5 a {
 
 .disclaimer p a:hover {
   color: #ff392b90;
+}
+
+.disclaimer form .container .row .col textarea {
+  height: 9.6rem;
 }
 
 /* mobile1st: */
@@ -1267,6 +1267,17 @@ h5 a {
 
     border-radius: 5px;
     box-shadow: 1px 1px 2.4px 1px #8e8e8e;
+  }
+
+  .disclaimer {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+
+    margin: 10px;
+  }
+
+  .disclaimer h2 {
+    font-size: 1.8rem;
   }
 }
 
