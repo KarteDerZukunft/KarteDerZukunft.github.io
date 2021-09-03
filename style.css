@@ -3199,3 +3199,8 @@ hr.kpSep {
   margin-top: 10px;
   font-size: 15px;
 }
+
+#myWordCloud {
+  height: 400px;
+  width: 100%;
+}
