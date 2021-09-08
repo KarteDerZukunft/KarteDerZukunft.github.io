@@ -159,19 +159,25 @@
     <div id="textDetailsContainer">
       <h2 id="topicSectionTitle">Unsere Themen</h2>
 
-      <canvas id="myWordCloud"> </canvas>
+      <!-- <canvas id="myWordCloud"> </canvas> -->
 
       <script src="Data/kdz.js"></script>
       <script>
-        var myWords = [];
+        var myWords = {};
 
         for (let i = 0; i < kdzObj.sections.length; i++) {
           if (kdzObj.sections[i].tags !== "") {
             for (let j = 0; j < kdzObj.sections[i].tags.length; j++) {
-              myWords.push(kdzObj.sections[i].tags[j].slug);
+              if (!myWords[`${kdzObj.sections[i].tags[j].slug}`]) {
+                myWords[`${kdzObj.sections[i].tags[j].slug}`] = 1;
+              } else {
+                myWords[`${kdzObj.sections[i].tags[j].slug}`]++;
+              }
             }
           }
         }
+
+        // console.log(myWords);
       </script>
 
       <div id="topicSectionList" class="elementList"></div>
