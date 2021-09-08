@@ -203,23 +203,31 @@
             }
           }
 
-          let color = "#212121";
+          // let color = "#212121";
 
-          if (kdzObj.topics[j].belongs_to_cluster == 1550) {
-            // ...
-          } else if (kdzObj.topics[j].belongs_to_cluster == 11) {
-            // ...
-          } else if (kdzObj.topics[j].belongs_to_cluster == 9) {
-            // ...
-          } else if (kdzObj.topics[j].belongs_to_cluster == 6) {
-            // ...
-          }
+          // if (kdzObj.topics[j].belongs_to_cluster == 1550) {
+          //   // ...
+          // } else if (kdzObj.topics[j].belongs_to_cluster == 11) {
+          //   // ...
+          // } else if (kdzObj.topics[j].belongs_to_cluster == 9) {
+          //   // ...
+          // } else if (kdzObj.topics[j].belongs_to_cluster == 6) {
+          //   // ...
+          // }
 
           let wieVielAbschnitte = 0;
 
           for (let k = 0; k < kdzObj.sections.length; k++) {
             if (kdzObj.sections[k].belongs_to_topic == kdzObj.topics[j].id) {
               wieVielAbschnitte++;
+            }
+          }
+
+          let tagString = "";
+
+          if (kdzObj.topics[j].tags !== "") {
+            for (let k = 0; k < 5 && k < kdzObj.topics[j].tags.length; k++) {
+              tagString += ` <a href="tagsListe.html?tag=${kdzObj.topics[j].tags[k].slug}">#${kdzObj.topics[j].tags[k].slug}</a>`;
             }
           }
 
@@ -232,12 +240,13 @@
                   <div class="lowerLip">
                     <h1>${kdzObj.topics[j].title}</h1>
                     <h2>Anzahl der Abschnitte: ${wieVielAbschnitte}</h2>
-
+                    <h2 class="tagString">
+                      <span class="tagStringBase">${tagString}</span>
+                    </h2>
                     <br />
                     <div style="width: 100%">
                       <a class="moreInfo" href="themenabschnittListe.html?tid=${kdzObj.topics[j].id}">Mehr erfahren</a>
                     </div>
-                    <br />
                   </div>
                 </a>
               </div>`.replace("link", img);
