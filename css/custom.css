@@ -82,3 +82,15 @@
     grid-row-end: span 1;
   }
 }
+
+
+/* Open Layers */
+
+.ol-geocoder {
+  right: 0;
+}
+
+.ol-control, .gcd-gl-result{
+  right:0.6em;
+  left:auto !important;
+}

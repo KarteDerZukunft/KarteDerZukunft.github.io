@@ -63,6 +63,11 @@
     />
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
 
+    <script src="./js/ol-ext/ol-ext.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/ol-geocoder@latest/dist/ol-geocoder.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/ol-geocoder"></script>
+
     <!-- Site CSS -->
     <link rel="stylesheet" href="style.css" />
     <!-- Colors CSS -->
@@ -115,6 +120,36 @@
             zoom: 15,
           }),
         });
+
+
+        // Add map search
+        // popup
+        // var popup = new ol.Overlay.Popup();
+        // karteMap.addOverlay(popup);
+
+        //Instantiate with some options and add the Control
+        var geocoder = new Geocoder('nominatim', {
+          provider: 'osm',
+          lang: 'de-DE',
+          placeholder: 'Ort suchen ...',
+          limit: 5,
+          debug: false,
+          autoComplete: true,
+          keepOpen: true,
+          countrycodes: 'de',
+          // targetType: 'text-input'
+        });
+        karteMap.addControl(geocoder);
+
+        //Listen when an address is chosen
+        geocoder.on('addresschosen', function (evt) {
+        	console.info(evt);
+          window.setTimeout(function () {
+            popup.show(evt.coordinate, evt.address.formatted);
+          }, 3000);
+        });
+
+
 
         // adding the kiezprojekts
 
@@ -180,6 +215,10 @@
             markers.push([
               kdzObj.places[i].coordinates.lng,
               kdzObj.places[i].coordinates.lat,
+              `https://www.kartederzukunft.de/kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m`,
+              kdzObj.places[i].title,
+              kdzObj.places[i].description
+
             ]);
           }
         }
