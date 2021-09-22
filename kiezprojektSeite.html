@@ -1,804 +1,731 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <!-- Basic -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Mobile Metas -->
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- Site Metas -->
-    <title id="tabTitle"></title>
-    <meta
-      property="og:url"
-      content="https://kartederzukunft.de/kiezprojektSeite.html"
-    />
-    <meta
-      name="keywords"
-      content="wahlen, berlin, 2021, spd, berlin-mitte, mitte, klima, öffentlicher raum, kultur"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="AbuRadi" />
-    <meta
-      property="og:title"
-      content="Karte der Zukunft – Digitales, interaktives Wahlprogramm der SPD Mitte"
-    />
-    <meta
-      property="twitter:title"
-      content="Karte der Zukunft – Digitales, interaktives Wahlprogramm der SPD Mitte"
-    />
-    <meta
-      property="og:image"
-      content="https://kartederzukunft.de/images/preview-image.png"
-    />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta
-      property="twitter:image"
-      content="https://kartederzukunft.de/images/preview-image.png"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Karte der Zukunft" />
-    <meta
-      property="og:description"
-      content="Mit der „Karte der Zukunft“ (www.kartederzukunft.de) hat die SPD Berlin-Mitte ein innovatives und interaktives kommunales Wahlprogramm für Bürger*innen geschaffen. Ziel der Website ist es, die Inhalte für alle Bürger*innen einfacher zugänglich zu machen und interaktiv aufzubereiten. Kernstück ist eine digitale Karte, die „Karte der Zukunft“, die Zukunftsprojekte der SPD Berlin-Mitte direkt an Orte knüpft und anzeigt. Über Themenverlinkungen können Bürger*innen recherchieren, was die SPD Berlin-Mitte zu Themen plant, die ihnen wichtig sind. Auch sind Profile aller Kandidierenden für den Bundestag, das Abgeordnetenhaus und die Bezirksverordnetenversammlung Berlin-Mitte verfügbar."
-    />
-    <meta
-      property="twitter:description"
-      content="Mit der „Karte der Zukunft“ (www.kartederzukunft.de) hat die SPD Berlin-Mitte ein innovatives und interaktives kommunales Wahlprogramm für Bürger*innen geschaffen. Ziel der Website ist es, die Inhalte für alle Bürger*innen einfacher zugänglich zu machen und interaktiv aufzubereiten. Kernstück ist eine digitale Karte, die „Karte der Zukunft“, die Zukunftsprojekte der SPD Berlin-Mitte direkt an Orte knüpft und anzeigt. Über Themenverlinkungen können Bürger*innen recherchieren, was die SPD Berlin-Mitte zu Themen plant, die ihnen wichtig sind. Auch sind Profile aller Kandidierenden für den Bundestag, das Abgeordnetenhaus und die Bezirksverordnetenversammlung Berlin-Mitte verfügbar."
-    />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  <!-- Site Metas -->
+  <title id="tabTitle"></title>
+  <meta property="og:url" content="https://kartederzukunft.de/kiezprojektSeite.html" />
+  <meta name="keywords" content="wahlen, berlin, 2021, spd, berlin-mitte, mitte, klima, öffentlicher raum, kultur" />
+  <meta name="description" content="" />
+  <meta name="author" content="AbuRadi" />
+  <meta property="og:title" content="Karte der Zukunft – Digitales, interaktives Wahlprogramm der SPD Mitte" />
+  <meta property="twitter:title" content="Karte der Zukunft – Digitales, interaktives Wahlprogramm der SPD Mitte" />
+  <meta property="og:image" content="https://kartederzukunft.de/images/preview-image.png" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:image" content="https://kartederzukunft.de/images/preview-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Karte der Zukunft" />
+  <meta property="og:description"
+    content="Mit der „Karte der Zukunft“ (www.kartederzukunft.de) hat die SPD Berlin-Mitte ein innovatives und interaktives kommunales Wahlprogramm für Bürger*innen geschaffen. Ziel der Website ist es, die Inhalte für alle Bürger*innen einfacher zugänglich zu machen und interaktiv aufzubereiten. Kernstück ist eine digitale Karte, die „Karte der Zukunft“, die Zukunftsprojekte der SPD Berlin-Mitte direkt an Orte knüpft und anzeigt. Über Themenverlinkungen können Bürger*innen recherchieren, was die SPD Berlin-Mitte zu Themen plant, die ihnen wichtig sind. Auch sind Profile aller Kandidierenden für den Bundestag, das Abgeordnetenhaus und die Bezirksverordnetenversammlung Berlin-Mitte verfügbar." />
+  <meta property="twitter:description"
+    content="Mit der „Karte der Zukunft“ (www.kartederzukunft.de) hat die SPD Berlin-Mitte ein innovatives und interaktives kommunales Wahlprogramm für Bürger*innen geschaffen. Ziel der Website ist es, die Inhalte für alle Bürger*innen einfacher zugänglich zu machen und interaktiv aufzubereiten. Kernstück ist eine digitale Karte, die „Karte der Zukunft“, die Zukunftsprojekte der SPD Berlin-Mitte direkt an Orte knüpft und anzeigt. Über Themenverlinkungen können Bürger*innen recherchieren, was die SPD Berlin-Mitte zu Themen plant, die ihnen wichtig sind. Auch sind Profile aller Kandidierenden für den Bundestag, das Abgeordnetenhaus und die Bezirksverordnetenversammlung Berlin-Mitte verfügbar." />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- Site Icons -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 
-    <!-- OpenLayers CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css"
-      type="text/css"
-    />
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-    <!-- <link
+  <!-- OpenLayers CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css"
+    type="text/css" />
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+
+  <script src="./stats.js"></script>
+
+  <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     /> -->
 
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- Colors CSS -->
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Colors CSS -->
 
-    <!-- ALL VERSION CSS -->
-    <link rel="stylesheet" href="css/versions.css" />
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css" />
+  <!-- ALL VERSION CSS -->
+  <link rel="stylesheet" href="css/versions.css" />
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="css/responsive.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css" />
 
-    <!--[if lt IE 9]>
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
-    <!-- LOADER -->
-    <div id="preloader">
-      <div id="main-ld">
-        <div id="loader"></div>
+<body>
+  <!-- LOADER -->
+  <div id="preloader">
+    <div id="main-ld">
+      <div id="loader"></div>
+    </div>
+  </div>
+  <!-- END LOADER -->
+  <header class="header header_style_01">
+    <nav class="megamenu navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+            aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="images/logos/logo.png" alt="image" /></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="index.html"> Unser Wahlprogramm </a>
+            </li>
+            <li>
+              <a href="karte.html"> Karte der Zukunft </a>
+            </li>
+            <li>
+              <a href="kandidierenden.html"> Unsere Kandidierenden </a>
+            </li>
+            <li>
+              <a href="themenListe.html"> Unsere Themen </a>
+            </li>
+            <li>
+              <a href="kiezprojektenListe.html"> Unsere Projekte </a>
+            </li>
+            <li>
+              <a href="https://www.spd.de/unterstuetzen/mitglied-werden/">
+                <button>Mitmachen</button>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <!-- END LOADER -->
-    <header class="header header_style_01">
-      <nav class="megamenu navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button
-              type="button"
-              class="navbar-toggle collapsed"
-              data-toggle="collapse"
-              data-target="#navbar"
-              aria-expanded="false"
-              aria-controls="navbar"
-            >
-              <span class="sr-only">Toggle Navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html"
-              ><img src="images/logos/logo.png" alt="image"
-            /></a>
+    </nav>
+  </header>
+
+  <div id="topImgContainer"></div>
+
+  <div class="customDivider">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+    </svg>
+  </div>
+
+  <div id="textDetailsContainer">
+    <div class="elementContent">
+      <div>
+        <!-- <h2 id="title" class="kiezprojektTitle"></h2> -->
+        <h2 id="title"></h2>
+        <p id="description">
+          <br />
+        </p>
+      </div>
+
+      <div class="kiezprojektContainer gridCandidate">
+        <h2>Unsere Kandidierenden</h2>
+        <div class="slideshow">
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <a id="_1stSlideLink" href="">
+              <img id="_1stSlideImg" src="" />
+              <div id="_1stSlideCaption" class="text"></div>
+            </a>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a href="index.html"> Unser Wahlprogramm </a>
-              </li>
-              <li>
-                <a href="karte.html"> Karte der Zukunft </a>
-              </li>
-              <li>
-                <a href="kandidierenden.html"> Unsere Kandidierenden </a>
-              </li>
-              <li>
-                <a href="themenListe.html"> Unsere Themen </a>
-              </li>
-              <li>
-                <a href="kiezprojektenListe.html"> Unsere Projekte </a>
-              </li>
-              <li>
-                <a href="https://www.spd.de/unterstuetzen/mitglied-werden/">
-                  <button>Mitmachen</button>
-                </a>
-              </li>
-            </ul>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <a id="_2ndSlideLink" href="">
+              <img id="_2ndSlideImg" src="" />
+              <div id="_2ndSlideCaption" class="text"></div>
+            </a>
           </div>
-        </div>
-      </nav>
-    </header>
 
-    <div id="topImgContainer"></div>
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <a id="_3rdSlideLink" href="">
+              <img id="_3rdSlideImg" src="" />
+              <div id="_3rdSlideCaption" class="text"></div>
+            </a>
+          </div>
 
-    <div class="customDivider">
-      <svg
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1200 120"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
-          class="shape-fill"
-        ></path>
-      </svg>
-    </div>
-
-    <div id="textDetailsContainer">
-      <div class="elementContent">
-        <div>
-          <!-- <h2 id="title" class="kiezprojektTitle"></h2> -->
-          <h2 id="title"></h2>
-          <p id="description">
-            <br />
-          </p>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
 
-        <div class="kiezprojektContainer gridCandidate">
-          <h2>Unsere Kandidierenden</h2>
-          <div class="slideshow">
-            <div class="mySlides fade">
-              <div class="numbertext">1 / 3</div>
-              <a id="_1stSlideLink" href="">
-                <img id="_1stSlideImg" src="" />
-                <div id="_1stSlideCaption" class="text"></div>
-              </a>
-            </div>
+        <script src="Data/kdz.js"></script>
+        <script>
+          for (let i = 0; i < kdzObj.candidates.length; i++) {
+            if (kdzObj.candidates[i].type[0].slug === "bt") {
+              document.getElementById(
+                "_1stSlideLink"
+              ).href = `kandidatSeite.html?kid=${kdzObj.candidates[i].id}`;
 
-            <div class="mySlides fade">
-              <div class="numbertext">2 / 3</div>
-              <a id="_2ndSlideLink" href="">
-                <img id="_2ndSlideImg" src="" />
-                <div id="_2ndSlideCaption" class="text"></div>
-              </a>
-            </div>
+              document.getElementById("_1stSlideImg").src =
+                kdzObj.candidates[i].image.url;
 
-            <div class="mySlides fade">
-              <div class="numbertext">3 / 3</div>
-              <a id="_3rdSlideLink" href="">
-                <img id="_3rdSlideImg" src="" />
-                <div id="_3rdSlideCaption" class="text"></div>
-              </a>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          </div>
-
-          <script src="Data/kdz.js"></script>
-          <script>
-            for (let i = 0; i < kdzObj.candidates.length; i++) {
-              if (kdzObj.candidates[i].type[0].slug === "bt") {
-                document.getElementById(
-                  "_1stSlideLink"
-                ).href = `kandidatSeite.html?kid=${kdzObj.candidates[i].id}`;
-
-                document.getElementById("_1stSlideImg").src =
-                  kdzObj.candidates[i].image.url;
-
-                document.getElementById("_1stSlideCaption").innerHTML =
-                  kdzObj.candidates[i].title;
-              }
+              document.getElementById("_1stSlideCaption").innerHTML =
+                kdzObj.candidates[i].title;
             }
+          }
 
-            var random = Math.ceil(
+          var random = Math.ceil(
+            Math.random() * (kdzObj.candidates.length - 1)
+          );
+
+          while (kdzObj.candidates[random].type[0].slug !== "agh") {
+            random = Math.ceil(
               Math.random() * (kdzObj.candidates.length - 1)
             );
+          }
 
-            while (kdzObj.candidates[random].type[0].slug !== "agh") {
-              random = Math.ceil(
-                Math.random() * (kdzObj.candidates.length - 1)
-              );
-            }
+          document.getElementById(
+            "_2ndSlideLink"
+          ).href = `kandidatSeite.html?kid=${kdzObj.candidates[random].id}`;
 
-            document.getElementById(
-              "_2ndSlideLink"
-            ).href = `kandidatSeite.html?kid=${kdzObj.candidates[random].id}`;
+          document.getElementById("_2ndSlideImg").src =
+            kdzObj.candidates[random].image.url;
 
-            document.getElementById("_2ndSlideImg").src =
-              kdzObj.candidates[random].image.url;
+          document.getElementById("_2ndSlideCaption").innerHTML =
+            kdzObj.candidates[random].title;
 
-            document.getElementById("_2ndSlideCaption").innerHTML =
-              kdzObj.candidates[random].title;
+          random = Math.ceil(Math.random() * (kdzObj.candidates.length - 1));
 
-            random = Math.ceil(Math.random() * (kdzObj.candidates.length - 1));
+          while (
+            document.getElementById("_2ndSlideImg").src ===
+            kdzObj.candidates[random].image.url ||
+            kdzObj.candidates[random].type[0].slug !== "bvv"
+          ) {
+            random = Math.ceil(
+              Math.random() * (kdzObj.candidates.length - 1)
+            );
+          }
 
-            while (
-              document.getElementById("_2ndSlideImg").src ===
-                kdzObj.candidates[random].image.url ||
-              kdzObj.candidates[random].type[0].slug !== "bvv"
-            ) {
-              random = Math.ceil(
-                Math.random() * (kdzObj.candidates.length - 1)
-              );
-            }
+          document.getElementById(
+            "_3rdSlideLink"
+          ).href = `kandidatSeite.html?kid=${kdzObj.candidates[random].id}`;
 
-            document.getElementById(
-              "_3rdSlideLink"
-            ).href = `kandidatSeite.html?kid=${kdzObj.candidates[random].id}`;
+          document.getElementById("_3rdSlideImg").src =
+            kdzObj.candidates[random].image.url;
 
-            document.getElementById("_3rdSlideImg").src =
-              kdzObj.candidates[random].image.url;
-
-            document.getElementById("_3rdSlideCaption").innerHTML =
-              kdzObj.candidates[random].title;
-          </script>
-
-          <br />
-
-          <div style="text-align: center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-          </div>
-
-          <script>
-            var slideIndex = 1;
-
-            showSlides(slideIndex);
-
-            function plusSlides(n) {
-              showSlides((slideIndex += n));
-            }
-
-            function currentSlide(n) {
-              showSlides((slideIndex = n));
-            }
-
-            function showSlides(n) {
-              var i;
-              var slides = document.getElementsByClassName("mySlides");
-              var dots = document.getElementsByClassName("dot");
-
-              if (n > slides.length) {
-                slideIndex = 1;
-              }
-
-              if (n < 1) {
-                slideIndex = slides.length;
-              }
-
-              for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-              }
-
-              for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-              }
-
-              slides[slideIndex - 1].style.display = "contents";
-              dots[slideIndex - 1].className += " active";
-            }
-          </script>
-        </div>
+          document.getElementById("_3rdSlideCaption").innerHTML =
+            kdzObj.candidates[random].title;
+        </script>
 
         <br />
 
-        <!-- The div element for the map -->
-        <div class="mapContainer gridMap">
-          <h2>Weitere Projekte in Deiner Nähe:</h2>
-          <div id="map" class="map"></div>
-          <div id="overlays" style="display: none">
-            <!-- | -->
-          </div>
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
 
-          <script type="text/javascript">
-            const queryString = window.location.search;
-            const urlParams = new URLSearchParams(queryString);
-            let lon = 13.3789;
-            let lat = 52.516396;
+        <script>
+          var slideIndex = 1;
 
-            var thisLon = 13.3789;
-            var thisLat = 52.516396;
+          showSlides(slideIndex);
 
-            // asking users for their geolocation
+          function plusSlides(n) {
+            showSlides((slideIndex += n));
+          }
 
-            function getLocation() {
-              if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(assignPosition);
-              }
+          function currentSlide(n) {
+            showSlides((slideIndex = n));
+          }
+
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+              slideIndex = 1;
             }
 
-            function assignPosition(position) {
-              var aghNameList = [];
-              var aghDistList = [];
-              var tmpPlaceId = 0;
-              var tmpLocation;
+            if (n < 1) {
+              slideIndex = slides.length;
+            }
 
-              for (let j = 0; j < kdzObj.candidates.length; j++) {
-                if (kdzObj.candidates[j].type[0].slug === "agh") {
-                  tmpPlaceId = parseInt(kdzObj.candidates[j].places[0]);
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
 
-                  for (let k = 0; k < kdzObj.places.length; k++) {
-                    if (
-                      kdzObj.places[k].id == tmpPlaceId &&
-                      kdzObj.places[k].coordinates !== ""
-                    ) {
-                      tmpLocation = [
-                        kdzObj.places[k].coordinates.lng,
-                        kdzObj.places[k].coordinates.lat,
-                      ];
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
 
-                      aghNameList.push(kdzObj.candidates[j].title);
-                      aghDistList.push(
-                        Math.sqrt(
-                          Math.abs(tmpLocation[0] - lon) ** 2 +
-                            Math.abs(tmpLocation[1] - lat) ** 2
-                        )
-                      );
-                    }
+            slides[slideIndex - 1].style.display = "contents";
+            dots[slideIndex - 1].className += " active";
+          }
+        </script>
+      </div>
+
+      <br />
+
+      <!-- The div element for the map -->
+      <div class="mapContainer gridMap">
+        <h2>Weitere Projekte in Deiner Nähe:</h2>
+        <div id="map" class="map"></div>
+        <div id="overlays" style="display: none">
+          <!-- | -->
+        </div>
+
+        <script type="text/javascript">
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(queryString);
+          let lon = 13.3789;
+          let lat = 52.516396;
+
+          var thisLon = 13.3789;
+          var thisLat = 52.516396;
+
+          // asking users for their geolocation
+
+          function getLocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(assignPosition);
+            }
+          }
+
+          function assignPosition(position) {
+            var aghNameList = [];
+            var aghDistList = [];
+            var tmpPlaceId = 0;
+            var tmpLocation;
+
+            for (let j = 0; j < kdzObj.candidates.length; j++) {
+              if (kdzObj.candidates[j].type[0].slug === "agh") {
+                tmpPlaceId = parseInt(kdzObj.candidates[j].places[0]);
+
+                for (let k = 0; k < kdzObj.places.length; k++) {
+                  if (
+                    kdzObj.places[k].id == tmpPlaceId &&
+                    kdzObj.places[k].coordinates !== ""
+                  ) {
+                    tmpLocation = [
+                      kdzObj.places[k].coordinates.lng,
+                      kdzObj.places[k].coordinates.lat,
+                    ];
+
+                    aghNameList.push(kdzObj.candidates[j].title);
+                    aghDistList.push(
+                      Math.sqrt(
+                        Math.abs(tmpLocation[0] - lon) ** 2 +
+                        Math.abs(tmpLocation[1] - lat) ** 2
+                      )
+                    );
                   }
                 }
               }
+            }
 
-              for (let l = 0; l < aghDistList.length; l++) {
-                if (aghDistList[l] == Math.min(...aghDistList)) {
-                  for (let c = 0; c < kdzObj.candidates.length; c++) {
-                    if (kdzObj.candidates[c].title === aghNameList[l]) {
-                      document.getElementById(
-                        "_2ndSlideLink"
-                      ).href = `kandidatSeite.html?kid=${kdzObj.candidates[c].id}`;
+            for (let l = 0; l < aghDistList.length; l++) {
+              if (aghDistList[l] == Math.min(...aghDistList)) {
+                for (let c = 0; c < kdzObj.candidates.length; c++) {
+                  if (kdzObj.candidates[c].title === aghNameList[l]) {
+                    document.getElementById(
+                      "_2ndSlideLink"
+                    ).href = `kandidatSeite.html?kid=${kdzObj.candidates[c].id}`;
 
-                      document.getElementById("_2ndSlideImg").src =
-                        kdzObj.candidates[c].image.url;
+                    document.getElementById("_2ndSlideImg").src =
+                      kdzObj.candidates[c].image.url;
 
-                      document.getElementById("_2ndSlideCaption").innerHTML =
-                        kdzObj.candidates[c].title;
-                    }
+                    document.getElementById("_2ndSlideCaption").innerHTML =
+                      kdzObj.candidates[c].title;
                   }
                 }
               }
             }
+          }
 
-            getLocation();
+          getLocation();
 
-            if (urlParams.has("kpid")) {
-              kpid = urlParams.get("kpid");
+          if (urlParams.has("kpid")) {
+            kpid = urlParams.get("kpid");
 
-              var map = new ol.Map({
-                target: "map",
-                layers: [
-                  new ol.layer.Tile({
-                    source: new ol.source.OSM(),
-                  }),
-                ],
-                view: new ol.View({
-                  center: ol.proj.fromLonLat([lon, lat]),
-                  zoom: 15,
+            var map = new ol.Map({
+              target: "map",
+              layers: [
+                new ol.layer.Tile({
+                  source: new ol.source.OSM(),
                 }),
-              });
+              ],
+              view: new ol.View({
+                center: ol.proj.fromLonLat([lon, lat]),
+                zoom: 15,
+              }),
+            });
 
-              // adding the kiezprojekts
+            // adding the kiezprojekts
 
-              const markers = [];
+            const markers = [];
 
-              for (let i = 0; i < kdzObj.places.length; i++) {
-                if (
-                  kdzObj.places[i].type[0].slug === "kiezprojekt" &&
-                  kdzObj.places[i].coordinates !== ""
-                ) {
-                  if (kdzObj.places[i].belongs_to_cluster == 6) {
-                    document.querySelector("#overlays").insertAdjacentHTML(
-                      "beforeend",
-                      `
+            for (let i = 0; i < kdzObj.places.length; i++) {
+              if (
+                kdzObj.places[i].type[0].slug === "kiezprojekt" &&
+                kdzObj.places[i].coordinates !== ""
+              ) {
+                if (kdzObj.places[i].belongs_to_cluster == 6) {
+                  document.querySelector("#overlays").insertAdjacentHTML(
+                    "beforeend",
+                    `
                         <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m"><p>${kdzObj.places[i].title}</p></a>
                         <div class="mapMarkerHeart" id="marker${kdzObj.places[i].id}" title=""></div>
                       `
-                    );
-                  } else if (kdzObj.places[i].belongs_to_cluster == 9) {
-                    document.querySelector("#overlays").insertAdjacentHTML(
-                      "beforeend",
-                      `
+                  );
+                } else if (kdzObj.places[i].belongs_to_cluster == 9) {
+                  document.querySelector("#overlays").insertAdjacentHTML(
+                    "beforeend",
+                    `
                         <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m"><p>${kdzObj.places[i].title}</p></a>
                         <div class="mapMarkerStairs" id="marker${kdzObj.places[i].id}" title=""></div>
                       `
-                    );
-                  } else if (kdzObj.places[i].belongs_to_cluster == 11) {
-                    document.querySelector("#overlays").insertAdjacentHTML(
-                      "beforeend",
-                      `
+                  );
+                } else if (kdzObj.places[i].belongs_to_cluster == 11) {
+                  document.querySelector("#overlays").insertAdjacentHTML(
+                    "beforeend",
+                    `
                         <a class="kpOverlay" id="kpOverlay${kdzObj.places[i].id}" target="_self" href="kiezprojektSeite.html?kpid=${kdzObj.places[i].id}&cf=m"><p>${kdzObj.places[i].title}</p></a>
                         <div class="mapMarkerMarker" id="marker${kdzObj.places[i].id}" title=""></div>
                       `
-                    );
-                  }
+                  );
+                }
 
-                  // keeping the this kiezprojekt's position
+                // keeping the this kiezprojekt's position
 
-                  if (kdzObj.places[i].id == kpid) {
-                    thisLon = kdzObj.places[i].coordinates.lng;
-                    thisLat = kdzObj.places[i].coordinates.lat;
-                  }
+                if (kdzObj.places[i].id == kpid) {
+                  thisLon = kdzObj.places[i].coordinates.lng;
+                  thisLat = kdzObj.places[i].coordinates.lat;
+                }
 
-                  var marker = new ol.Overlay({
-                    position: ol.proj.fromLonLat([
-                      kdzObj.places[i].coordinates.lng,
-                      kdzObj.places[i].coordinates.lat,
-                    ]),
-                    positioning: "center-center",
-                    element: document.getElementById(
-                      `marker${kdzObj.places[i].id}`
-                    ),
-                    stopEvent: false,
-                  });
-
-                  map.addOverlay(marker);
-
-                  var kpOverlayX = new ol.Overlay({
-                    position: ol.proj.fromLonLat([
-                      kdzObj.places[i].coordinates.lng,
-                      kdzObj.places[i].coordinates.lat,
-                    ]),
-                    element: document.getElementById(
-                      `kpOverlay${kdzObj.places[i].id}`
-                    ),
-                  });
-
-                  map.addOverlay(kpOverlayX);
-
-                  markers.push([
+                var marker = new ol.Overlay({
+                  position: ol.proj.fromLonLat([
                     kdzObj.places[i].coordinates.lng,
                     kdzObj.places[i].coordinates.lat,
-                  ]);
-                }
+                  ]),
+                  positioning: "center-center",
+                  element: document.getElementById(
+                    `marker${kdzObj.places[i].id}`
+                  ),
+                  stopEvent: false,
+                });
+
+                map.addOverlay(marker);
+
+                var kpOverlayX = new ol.Overlay({
+                  position: ol.proj.fromLonLat([
+                    kdzObj.places[i].coordinates.lng,
+                    kdzObj.places[i].coordinates.lat,
+                  ]),
+                  element: document.getElementById(
+                    `kpOverlay${kdzObj.places[i].id}`
+                  ),
+                });
+
+                map.addOverlay(kpOverlayX);
+
+                markers.push([
+                  kdzObj.places[i].coordinates.lng,
+                  kdzObj.places[i].coordinates.lat,
+                ]);
               }
+            }
 
-              // (cf: "came from" OR codeFlag)
+            // (cf: "came from" OR codeFlag)
 
-              if (urlParams.has("cf") && urlParams.get("cf") === "m") {
-                map
-                  .getView()
-                  .setCenter(
-                    ol.proj.transform(
-                      [thisLon, thisLat],
-                      "EPSG:4326",
-                      "EPSG:3857"
-                    )
-                  );
-              }
+            if (urlParams.has("cf") && urlParams.get("cf") === "m") {
+              map
+                .getView()
+                .setCenter(
+                  ol.proj.transform(
+                    [thisLon, thisLat],
+                    "EPSG:4326",
+                    "EPSG:3857"
+                  )
+                );
+            }
 
-              for (let i = 0; i < kdzObj.places.length; i++) {
-                if (kdzObj.places[i].id == kpid) {
-                  if (kdzObj.places[i].type[0].slug === "kiezprojekt") {
-                    if (kdzObj.places[i].image.url !== "") {
-                      document
-                        .querySelector("#topImgContainer")
-                        .insertAdjacentHTML(
-                          "beforeend",
-                          `<img src="${kdzObj.places[i].image.url}" />`
-                        );
+            for (let i = 0; i < kdzObj.places.length; i++) {
+              if (kdzObj.places[i].id == kpid) {
+                if (kdzObj.places[i].type[0].slug === "kiezprojekt") {
+                  if (kdzObj.places[i].image.url !== "") {
+                    document
+                      .querySelector("#topImgContainer")
+                      .insertAdjacentHTML(
+                        "beforeend",
+                        `<img src="${kdzObj.places[i].image.url}" />`
+                      );
 
-                      let rgt = ``;
+                    let rgt = ``;
 
-                      if (kdzObj.places[i].image.credits !== "") {
-                        rgt = `© ${kdzObj.places[i].image.credits}`;
-                      }
+                    if (kdzObj.places[i].image.credits !== "") {
+                      rgt = `© ${kdzObj.places[i].image.credits}`;
+                    }
 
-                      document
-                        .querySelector("#topImgContainer")
-                        .insertAdjacentHTML(
-                          "beforeend",
-                          `<h4 id="urheberrechteVorSeite">${rgt}</h4>`
-                        );
-                    } else {
-                      for (let x = 0; x < kdzObj.places.length; x++) {
-                        if (
-                          kdzObj.places[x].id == kpid &&
-                          kdzObj.places[x].type[0].slug === "kiezprojekt"
-                        ) {
-                          cid = kdzObj.places[x].belongs_to_cluster;
-                          for (let p = 0; p < kdzObj.clusters.length; p++) {
-                            if (kdzObj.clusters[p].id == cid) {
-                              if (kdzObj.clusters[p].image.url !== "") {
-                                document
-                                  .querySelector("#topImgContainer")
-                                  .insertAdjacentHTML(
-                                    "beforeend",
-                                    `<img src="${kdzObj.clusters[p].image.url}" />`
-                                  );
-                              } else {
-                                document
-                                  .querySelector("#topImgContainer")
-                                  .insertAdjacentHTML(
-                                    "beforeend",
-                                    `<img src="uploads/fallBack.jpeg" />`
-                                  );
-                              }
-
-                              let rgt = ``;
-
-                              if (kdzObj.clusters[p].image.credits !== "") {
-                                rgt = `© ${kdzObj.clusters[p].image.credits}`;
-                              }
-
+                    document
+                      .querySelector("#topImgContainer")
+                      .insertAdjacentHTML(
+                        "beforeend",
+                        `<h4 id="urheberrechteVorSeite">${rgt}</h4>`
+                      );
+                  } else {
+                    for (let x = 0; x < kdzObj.places.length; x++) {
+                      if (
+                        kdzObj.places[x].id == kpid &&
+                        kdzObj.places[x].type[0].slug === "kiezprojekt"
+                      ) {
+                        cid = kdzObj.places[x].belongs_to_cluster;
+                        for (let p = 0; p < kdzObj.clusters.length; p++) {
+                          if (kdzObj.clusters[p].id == cid) {
+                            if (kdzObj.clusters[p].image.url !== "") {
                               document
                                 .querySelector("#topImgContainer")
                                 .insertAdjacentHTML(
                                   "beforeend",
-                                  `<h4 id="urheberrechteVorSeite">${rgt}</h4>`
+                                  `<img src="${kdzObj.clusters[p].image.url}" />`
+                                );
+                            } else {
+                              document
+                                .querySelector("#topImgContainer")
+                                .insertAdjacentHTML(
+                                  "beforeend",
+                                  `<img src="uploads/fallBack.jpeg" />`
                                 );
                             }
+
+                            let rgt = ``;
+
+                            if (kdzObj.clusters[p].image.credits !== "") {
+                              rgt = `© ${kdzObj.clusters[p].image.credits}`;
+                            }
+
+                            document
+                              .querySelector("#topImgContainer")
+                              .insertAdjacentHTML(
+                                "beforeend",
+                                `<h4 id="urheberrechteVorSeite">${rgt}</h4>`
+                              );
                           }
                         }
                       }
                     }
+                  }
 
-                    document.querySelector("#title").insertAdjacentHTML(
-                      "beforeend",
-                      `
+                  document.querySelector("#title").insertAdjacentHTML(
+                    "beforeend",
+                    `
                         <a href="kiezprojektenListe.html" style="color: #ff392b; font-size: 1.5rem;" id="zuruck">&#10094 Zurück</a><br />
                         <br />
                         Kiezprojekt: ${kdzObj.places[i].title}<br />
                         <br />
                       `
+                  );
+
+                  document
+                    .querySelector("#tabTitle")
+                    .insertAdjacentHTML(
+                      "beforeend",
+                      `${kdzObj.places[i].title}`
                     );
 
-                    document
-                      .querySelector("#tabTitle")
-                      .insertAdjacentHTML(
-                        "beforeend",
-                        `${kdzObj.places[i].title}`
-                      );
+                  document
+                    .querySelector("#description")
+                    .insertAdjacentHTML(
+                      "beforebegin",
+                      `${kdzObj.places[i].description}`
+                    );
+
+                  let tagsToInsert = "";
+
+                  if (kdzObj.places[i].tags !== "") {
+                    for (let j = 0; j < kdzObj.places[i].tags.length; j++) {
+                      tagsToInsert += ` <a href="tagsListe.html?tag=${kdzObj.places[i].tags[j].slug}">#${kdzObj.places[i].tags[j].slug}</a>`;
+                    }
 
                     document
                       .querySelector("#description")
-                      .insertAdjacentHTML(
-                        "beforebegin",
-                        `${kdzObj.places[i].description}`
-                      );
-
-                    let tagsToInsert = "";
-
-                    if (kdzObj.places[i].tags !== "") {
-                      for (let j = 0; j < kdzObj.places[i].tags.length; j++) {
-                        tagsToInsert += ` <a href="tagsListe.html?tag=${kdzObj.places[i].tags[j].slug}">#${kdzObj.places[i].tags[j].slug}</a>`;
-                      }
-
-                      document
-                        .querySelector("#description")
-                        .insertAdjacentHTML("beforeend", `${tagsToInsert}`);
-                    }
-                  } else {
-                    window.location.replace("./404.html");
+                      .insertAdjacentHTML("beforeend", `${tagsToInsert}`);
                   }
+                } else {
+                  window.location.replace("./404.html");
                 }
               }
-            } else {
-              window.location.replace("./404.html");
             }
-          </script>
-        </div>
+          } else {
+            window.location.replace("./404.html");
+          }
+        </script>
       </div>
+    </div>
 
-      <div id="crumbs">
-        <a
-          href="https://www.spd-berlin-mitte.de/dl/Wahlprogramm_SPD_Mitte_2021.pdf"
-          ><button id="breadcrumb">Wahlprogramm (pdf)</button></a
-        >
-      </div>
+    <div id="crumbs">
+      <a href="https://www.spd-berlin-mitte.de/dl/Wahlprogramm_SPD_Mitte_2021.pdf"><button id="breadcrumb">Wahlprogramm
+          (pdf)</button></a>
+    </div>
 
-      <h5 id="quickLinks">
-        <a href="TsCs.html?Impressum">Impressum</a> |
-        <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a>
-      </h5>
+    <h5 id="quickLinks">
+      <a href="TsCs.html?Impressum">Impressum</a> |
+      <a href="TsCs.html?Datenschutzerklärung">Datenschutzerklärung</a>
+    </h5>
 
-      <br />
+    <br />
 
-      <script type="text/javascript">
-        // finding the associated cluster
+    <script type="text/javascript">
+      // finding the associated cluster
 
-        for (let x = 0; x < kdzObj.places.length; x++) {
-          if (
-            kdzObj.places[x].id == kpid &&
-            kdzObj.places[x].type[0].slug === "kiezprojekt"
-          ) {
-            cid = kdzObj.places[x].belongs_to_cluster;
-            for (let p = 0; p < kdzObj.clusters.length; p++) {
-              if (kdzObj.clusters[p].id == cid) {
-                cTitle = kdzObj.clusters[p].title;
-              }
+      for (let x = 0; x < kdzObj.places.length; x++) {
+        if (
+          kdzObj.places[x].id == kpid &&
+          kdzObj.places[x].type[0].slug === "kiezprojekt"
+        ) {
+          cid = kdzObj.places[x].belongs_to_cluster;
+          for (let p = 0; p < kdzObj.clusters.length; p++) {
+            if (kdzObj.clusters[p].id == cid) {
+              cTitle = kdzObj.clusters[p].title;
             }
           }
         }
+      }
 
-        document.querySelector("#crumbs").insertAdjacentHTML(
-          "beforeend",
-          `
+      document.querySelector("#crumbs").insertAdjacentHTML(
+        "beforeend",
+        `
             <a href="themenbereichListe.html?cid=${cid}"
               ><button id="breadcrumb">${cTitle}</button></a
             >
           `
-        );
-      </script>
-    </div>
+      );
+    </script>
+  </div>
 
-    <div class="disclaimer" id="disclaimer">
-      <a id="cancelBtn" onclick="return hideForm()"> &#x2715; </a>
+  <div class="disclaimer" id="disclaimer">
+    <a id="cancelBtn" onclick="return hideForm()"> &#x2715; </a>
 
-      <h2>Wir würden gerne Deine Vorschläge lesen</h2>
-      <form
-        name="quoteFrom"
-        action=""
-        method="POST"
-        class="quoteFromInput"
-        onsubmit="return quateForm()"
-      >
-        <div class="container">
-          <div class="row row-cols-md-1 row-cols-lg-2">
-            <div class="col">
-              <label for="nameInput" class="form-label">Dein Name</label>
-              <input type="text" class="form-control" name="nameInput" />
-            </div>
-            <div class="col">
-              <label for="phoneInput" class="form-label"
-                >Deine Telefonnummer</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                name="phoneInput"
-                placeholder="Optional"
-              />
-            </div>
-            <div class="col">
-              <label for="emailInput" class="form-label"
-                >Deine Email-Adresse</label
-              >
-              <input type="email" class="form-control" name="emailInput" />
-            </div>
+    <h2>Wir würden gerne Deine Vorschläge lesen</h2>
+    <form name="quoteFrom" action="" method="POST" class="quoteFromInput" onsubmit="return quateForm()">
+      <div class="container">
+        <div class="row row-cols-md-1 row-cols-lg-2">
+          <div class="col">
+            <label for="nameInput" class="form-label">Dein Name</label>
+            <input type="text" class="form-control" name="nameInput" />
+          </div>
+          <div class="col">
+            <label for="phoneInput" class="form-label">Deine Telefonnummer</label>
+            <input type="text" class="form-control" name="phoneInput" placeholder="Optional" />
+          </div>
+          <div class="col">
+            <label for="emailInput" class="form-label">Deine Email-Adresse</label>
+            <input type="email" class="form-control" name="emailInput" />
           </div>
         </div>
+      </div>
 
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <label for="description" class="form-label"
-                >Erzähle uns mehr!</label
-              >
-              <textarea
-                name="description"
-                rows="1"
-                cols="50"
-                wrap="physical"
-                class="form-control"
-                id="description"
-              ></textarea>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <label for="description" class="form-label">Erzähle uns mehr!</label>
+            <textarea name="description" rows="1" cols="50" wrap="physical" class="form-control"
+              id="description"></textarea>
           </div>
         </div>
+      </div>
 
-        <div class="container">
-          <div class="row" style="font-size: 1.2rem; margin-left: -10px">
-            <div class="col">
-              <input id="checkbox" type="checkbox" name="consent" value="1" />
-              <label
-                for="description"
-                class="form-label legalNote"
-                style="display: inline"
-                >Hiermit bestätige und akzeptiere ich die
-                Datenschutzbestimmungen (<a
-                  id="link"
-                  href="TsCs.html?Datenschutzerklärung"
-                  >link</a
-                >) und stimme zu, dass die SPD Mitte meine E- Mail-Addresse und
-                Telefonnummer verwenden darf, um mich zu kontaktieren und z.B.
-                zu Veranstaltungen einzuladen.</label
-              >
-            </div>
+      <div class="container">
+        <div class="row" style="font-size: 1.2rem; margin-left: -10px">
+          <div class="col">
+            <input id="checkbox" type="checkbox" name="consent" value="1" />
+            <label for="description" class="form-label legalNote" style="display: inline">Hiermit bestätige und
+              akzeptiere ich die
+              Datenschutzbestimmungen (<a id="link" href="TsCs.html?Datenschutzerklärung">link</a>) und stimme zu, dass
+              die SPD Mitte meine E- Mail-Addresse und
+              Telefonnummer verwenden darf, um mich zu kontaktieren und z.B.
+              zu Veranstaltungen einzuladen.</label>
           </div>
         </div>
+      </div>
 
-        <div class="container">
-          <div class="row row-cols-md-1 row-cols-lg-2">
-            <div class="col" style="margin-left: 5px">
-              <button class="btn btn-primary" type="submit">Senden</button>
-            </div>
-            <div class="col" id="ErrMsg"></div>
+      <div class="container">
+        <div class="row row-cols-md-1 row-cols-lg-2">
+          <div class="col" style="margin-left: 5px">
+            <button class="btn btn-primary" type="submit">Senden</button>
           </div>
+          <div class="col" id="ErrMsg"></div>
         </div>
-      </form>
+      </div>
+    </form>
 
-      <script src="https://smtpjs.com/v3/smtp.js"></script>
-      <script>
-        function quateForm() {
-          var name = document.forms["quoteFrom"]["nameInput"].value;
-          var email = document.forms["quoteFrom"]["emailInput"].value;
-          var phone = document.forms["quoteFrom"]["phoneInput"].value;
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function quateForm() {
+        var name = document.forms["quoteFrom"]["nameInput"].value;
+        var email = document.forms["quoteFrom"]["emailInput"].value;
+        var phone = document.forms["quoteFrom"]["phoneInput"].value;
 
-          var more = document.forms["quoteFrom"]["description"].value;
+        var more = document.forms["quoteFrom"]["description"].value;
 
-          if (
-            name == "" ||
-            email == "" ||
-            more == "" ||
-            !document.querySelector("#checkbox:checked")
-          ) {
-            if (name == "") {
-              document.forms["quoteFrom"]["nameInput"].placeholder =
-                "Bitte geben Sie einen Namen ein";
-              document.forms["quoteFrom"]["nameInput"].classList.add(
-                "formIncompleteError"
-              );
-            }
+        if (
+          name == "" ||
+          email == "" ||
+          more == "" ||
+          !document.querySelector("#checkbox:checked")
+        ) {
+          if (name == "") {
+            document.forms["quoteFrom"]["nameInput"].placeholder =
+              "Bitte geben Sie einen Namen ein";
+            document.forms["quoteFrom"]["nameInput"].classList.add(
+              "formIncompleteError"
+            );
+          }
 
-            if (email == "") {
-              document.forms["quoteFrom"]["emailInput"].placeholder =
-                "Bitte geben Sie eine Email ein";
-              document.forms["quoteFrom"]["emailInput"].classList.add(
-                "formIncompleteError"
-              );
-            }
+          if (email == "") {
+            document.forms["quoteFrom"]["emailInput"].placeholder =
+              "Bitte geben Sie eine Email ein";
+            document.forms["quoteFrom"]["emailInput"].classList.add(
+              "formIncompleteError"
+            );
+          }
 
-            if (more == "") {
-              document.forms["quoteFrom"]["description"].placeholder =
-                "Bitte hinterlassen Sie eine Nachricht zu Senden";
-              document.forms["quoteFrom"]["description"].classList.add(
-                "formIncompleteError"
-              );
-            }
+          if (more == "") {
+            document.forms["quoteFrom"]["description"].placeholder =
+              "Bitte hinterlassen Sie eine Nachricht zu Senden";
+            document.forms["quoteFrom"]["description"].classList.add(
+              "formIncompleteError"
+            );
+          }
 
-            if (!document.querySelector("#checkbox:checked")) {
-              document.querySelector(".legalNote").style.textDecoration =
-                "underline";
-            }
+          if (!document.querySelector("#checkbox:checked")) {
+            document.querySelector(".legalNote").style.textDecoration =
+              "underline";
+          }
 
-            return false;
-          } else {
-            if (email == "") {
-              email = "N/A";
-            }
-            document.getElementById("ErrMsg").innerHTML = ``;
+          return false;
+        } else {
+          if (email == "") {
+            email = "N/A";
+          }
+          document.getElementById("ErrMsg").innerHTML = ``;
 
-            // console.log(`name: ${name}`);
-            // console.log(`email: ${email}`);
-            // console.log(`phone: ${phone}`);
-            // console.log(`more: ${more}`);
+          // console.log(`name: ${name}`);
+          // console.log(`email: ${email}`);
+          // console.log(`phone: ${phone}`);
+          // console.log(`more: ${more}`);
 
-            Email.send({
-              SecureToken: "642e79da-30fa-4f6f-bb52-3fc0ac2ca6f6",
-              To: "zukunftmitte@spd-rosenthaler-vorstadt.de",
-              From: "site@kartederzukunft.de",
-              Subject: "Feedback",
-              Body: `
+          Email.send({
+            SecureToken: "642e79da-30fa-4f6f-bb52-3fc0ac2ca6f6",
+            To: "zukunftmitte@spd-rosenthaler-vorstadt.de",
+            From: "site@kartederzukunft.de",
+            Subject: "Feedback",
+            Body: `
                 <h4>Name: ${name},</h4>
                 <h4>Email: ${email},</h4>
                 <h4>Telefonnummer: ${phone},</h4>
@@ -806,18 +733,18 @@
                 <br />
                 <h4>URL: ${window.location.href}</h4>
               `,
-            }).then((message) => {
-              console.log(message);
+          }).then((message) => {
+            console.log(message);
 
-              alert("Vielen Dank für Ihre Kontaktaufnahme.");
-            });
+            alert("Vielen Dank für Ihre Kontaktaufnahme.");
+          });
 
-            Email.send({
-              SecureToken: "642e79da-30fa-4f6f-bb52-3fc0ac2ca6f6",
-              To: `${email}`,
-              From: "site@kartederzukunft.de",
-              Subject: "Dank für Ihr Feedback",
-              Body: `
+          Email.send({
+            SecureToken: "642e79da-30fa-4f6f-bb52-3fc0ac2ca6f6",
+            To: `${email}`,
+            From: "site@kartederzukunft.de",
+            Subject: "Dank für Ihr Feedback",
+            Body: `
                 Hier ist eine Kopie Ihres Kommentars:
                 <br />
                 <h4>Dein Name: ${name},</h4>
@@ -829,81 +756,76 @@
                 <br />
                 Wir danken Ihnen für die Zeit, die Sie sich beim Ausfüllen des Formulars genommen haben, mit freundlichen Grüßen.
               `,
-            });
+          });
 
-            document.forms["quoteFrom"]["nameInput"].value = ``;
-            document.forms["quoteFrom"]["emailInput"].value = ``;
-            document.forms["quoteFrom"]["phoneInput"].value = ``;
-            document.forms["quoteFrom"]["description"].value = ``;
+          document.forms["quoteFrom"]["nameInput"].value = ``;
+          document.forms["quoteFrom"]["emailInput"].value = ``;
+          document.forms["quoteFrom"]["phoneInput"].value = ``;
+          document.forms["quoteFrom"]["description"].value = ``;
 
-            document.forms["quoteFrom"]["nameInput"].placeholder = ``;
-            document.forms["quoteFrom"]["emailInput"].placeholder = ``;
-            document.forms["quoteFrom"]["description"].placeholder = ``;
+          document.forms["quoteFrom"]["nameInput"].placeholder = ``;
+          document.forms["quoteFrom"]["emailInput"].placeholder = ``;
+          document.forms["quoteFrom"]["description"].placeholder = ``;
 
-            document.forms["quoteFrom"]["nameInput"].classList.remove(
-              "formIncompleteError"
-            );
-            document.forms["quoteFrom"]["emailInput"].classList.remove(
-              "formIncompleteError"
-            );
-            document.forms["quoteFrom"]["description"].classList.remove(
-              "formIncompleteError"
-            );
+          document.forms["quoteFrom"]["nameInput"].classList.remove(
+            "formIncompleteError"
+          );
+          document.forms["quoteFrom"]["emailInput"].classList.remove(
+            "formIncompleteError"
+          );
+          document.forms["quoteFrom"]["description"].classList.remove(
+            "formIncompleteError"
+          );
 
-            document.querySelector("#checkbox").checked = false;
-            document.querySelector(".legalNote").style.textDecoration = "none";
+          document.querySelector("#checkbox").checked = false;
+          document.querySelector(".legalNote").style.textDecoration = "none";
 
-            return false;
-          }
+          return false;
         }
-      </script>
-    </div>
-
-    <script>
-      acknowledged = 1;
-
-      if (acknowledged == 1) {
-        var disclaimer = document.getElementById("disclaimer");
-
-        disclaimer.style.display = "none";
-      }
-
-      function hideForm() {
-        var disclaimer = document.getElementById("disclaimer");
-
-        disclaimer.style.display = "none";
-
-        acknowledged = 1;
-
-        localStorage.setItem("acknowledged", acknowledged);
-      }
-
-      function showForm() {
-        var disclaimer = document.getElementById("disclaimer");
-
-        disclaimer.style.display = "block";
-
-        acknowledged = 0;
-
-        localStorage.setItem("acknowledged", acknowledged);
       }
     </script>
+  </div>
 
-    <a
-      href="#"
-      id="kommentieren"
-      onclick="return showForm()"
-      class="kommentieren global-radius"
-      >Kommentieren</a
-    >
+  <script>
+    acknowledged = 1;
 
-    <a href="#" id="scroll-to-top" class="dmtop global-radius">&#9650;</a>
+    if (acknowledged == 1) {
+      var disclaimer = document.getElementById("disclaimer");
 
-    <!-- ALL JS FILES -->
-    <script src="js/all.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/scrollIt.min.js"></script>
-    <!-- ALL PLUGINS -->
-    <script src="js/custom.js"></script>
-  </body>
+      disclaimer.style.display = "none";
+    }
+
+    function hideForm() {
+      var disclaimer = document.getElementById("disclaimer");
+
+      disclaimer.style.display = "none";
+
+      acknowledged = 1;
+
+      localStorage.setItem("acknowledged", acknowledged);
+    }
+
+    function showForm() {
+      var disclaimer = document.getElementById("disclaimer");
+
+      disclaimer.style.display = "block";
+
+      acknowledged = 0;
+
+      localStorage.setItem("acknowledged", acknowledged);
+    }
+  </script>
+
+  <a href="#" id="kommentieren" onclick="return showForm()" class="kommentieren global-radius">Kommentieren</a>
+
+  <a href="#" id="scroll-to-top" class="dmtop global-radius">&#9650;</a>
+
+  <!-- ALL JS FILES -->
+  <script src="js/all.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/scrollIt.min.js"></script>
+  <!-- ALL PLUGINS -->
+  <script src="js/custom.js"></script>
+</body>
+
 </html>
